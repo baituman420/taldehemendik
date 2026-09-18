@@ -35,11 +35,11 @@ const USER_SESSION = {
   name: "Mikel Zubeldia",
   phone: "600 12 34 56",
   isAuthenticated: true,
-  activeMembershipId: "oyon_inf_a",
+  activeMembershipId: "indautxu_inf_a",
   memberships: [
     {
-      id: "oyon_inf_a",
-      teamName: "CD Oyón · Infantil A",
+      id: "indautxu_inf_a",
+      teamName: "C.D. Indautxu · Infantil A",
       sport: "Fútbol",
       category: "Infantil",
       season: "2026/27",
@@ -47,8 +47,8 @@ const USER_SESSION = {
       roleLabel: "Entrenador"
     },
     {
-      id: "oyon_ale_b",
-      teamName: "CD Oyón · Infantil A",
+      id: "indautxu_ale_b",
+      teamName: "C.D. Indautxu · Infantil A",
       sport: "Fútbol",
       category: "Infantil",
       season: "2026/27",
@@ -75,8 +75,8 @@ const GUIDED_STEPS = [
     role: "coach",
     screen: "v2_00_coach_create_team",
     tab: "onboard",
-    title: "2. Flujo Entrenador: Crear equipo & Código OYON16",
-    desc: "Alta inmediata con 3 datos clave: Nombre, Deporte y Categoría. 18 jugadores precargados. Código OYON16 generado para compartir por WhatsApp.",
+    title: "2. Flujo Entrenador: Crear equipo & Código INDA16",
+    desc: "Alta inmediata con 3 datos clave: Nombre, Deporte y Categoría. 18 jugadores precargados. Código INDA16 generado para compartir por WhatsApp.",
     actionHint: "Pulsa 'Ir a la mesa del entrenador' para acceder al panel con la puesta en marcha."
   },
   {
@@ -85,7 +85,7 @@ const GUIDED_STEPS = [
     screen: "v2_00_parent_join_team",
     tab: "onboard",
     title: "3. Flujo Familia: Solicitud de Vinculación (Privacidad Menor)",
-    desc: "Elena Gómez introduce el código OYON16. El código identifica al club, pero NO muestra datos privados. Elena solicita vincularse a su hijo Ibai (#9).",
+    desc: "Elena Gómez introduce el código INDA16. El código identifica al club, pero NO muestra datos privados. Elena solicita vincularse a su hijo Ibai (#9).",
     actionHint: "Pulsa 'Enviar solicitud de vinculación' para notificar al entrenador."
   },
   {
@@ -103,8 +103,8 @@ const GUIDED_STEPS = [
     screen: "v2_01_coach_home",
     tab: "inicio",
     title: "5. La Mesa del Entrenador: Triage y Pendiente de ti",
-    desc: "El míster visualiza de inmediato la alerta crítica del Torneo Oyón: 11/12 convocados por la baja sobrevenida de Ibai Aranguren (está enfermo).",
-    actionHint: "Pulsa en 'Resolver baja' en la tarjeta del Torneo Oyón."
+    desc: "El míster visualiza de inmediato la alerta crítica del Torneo Indautxu: 11/12 convocados por la baja sobrevenida de Ibai Aranguren (está enfermo).",
+    actionHint: "Pulsa en 'Resolver baja' en la tarjeta del Torneo Indautxu."
   },
   {
     step: 6,
@@ -112,8 +112,8 @@ const GUIDED_STEPS = [
     screen: "v2_02_coach_agenda",
     tab: "agenda",
     title: "6. Agenda Semanal: Cronología y Fases de Eventos",
-    desc: "Los eventos del equipo ordenados en el tiempo: HOY entreno (18:00h), SÁBADO Torneo Oyón (con aviso de baja), LUNES entreno.",
-    actionHint: "Pulsa 'Gestionar evento' en la tarjeta del Torneo Oyón."
+    desc: "Los eventos del equipo ordenados en el tiempo: HOY entreno (18:00h), SÁBADO Torneo Indautxu (con aviso de baja), LUNES entreno.",
+    actionHint: "Pulsa 'Gestionar evento' en la tarjeta del Torneo Indautxu."
   },
   {
     step: 7,
@@ -149,7 +149,7 @@ const GUIDED_STEPS = [
     tab: "inicio",
     title: "10. Inicio Tutor: Solo lo que le importa a la familia",
     desc: "Elena Gómez solo ve a su hijo Ibai, sus horarios y la acción pendiente destacada para el fin de semana, sin listas tácticas de otros niños.",
-    actionHint: "Pulsa 'Responder disponibilidad' en la tarjeta del Torneo Oyón."
+    actionHint: "Pulsa 'Responder disponibilidad' en la tarjeta del Torneo Indautxu."
   },
   {
     step: 11,
@@ -222,16 +222,16 @@ class TeamAppState {
       this.currentRole = "onboard";
       this.goToScreen("v2_00_onboarding_welcome");
       this.showToast("Modo Acceso Inicial / Onboarding");
-    } else if (membershipId === "oyon_inf_a") {
+    } else if (membershipId === "indautxu_inf_a") {
       this.currentRole = "coach";
-      this.userSession.activeMembershipId = "oyon_inf_a";
+      this.userSession.activeMembershipId = "indautxu_inf_a";
       this.goToScreen("v2_01_coach_home", "inicio");
-      this.showToast("CD Oyón · Infantil A: Modo Entrenador (Mikel Zubeldia)");
-    } else if (membershipId === "oyon_ale_b") {
+      this.showToast("C.D. Indautxu · Infantil A: Modo Entrenador (Mikel Zubeldia)");
+    } else if (membershipId === "indautxu_ale_b") {
       this.currentRole = "parent";
-      this.userSession.activeMembershipId = "oyon_ale_b";
+      this.userSession.activeMembershipId = "indautxu_ale_b";
       this.goToScreen("v2_07_parent_home", "inicio");
-      this.showToast("CD Oyón · Infantil A: Modo Familia (Elena Gómez / Ibai #9)");
+      this.showToast("C.D. Indautxu · Infantil A: Modo Familia (Elena Gómez / Ibai #9)");
     }
     this.updateRoleUI();
     this.updateBottomNav();
@@ -239,8 +239,8 @@ class TeamAppState {
 
   setRole(role) {
     if (role === "onboard") this.switchMembership("onboard");
-    else if (role === "coach") this.switchMembership("oyon_inf_a");
-    else this.switchMembership("oyon_ale_b");
+    else if (role === "coach") this.switchMembership("indautxu_inf_a");
+    else this.switchMembership("indautxu_ale_b");
   }
 
   goToTab(tab) {
@@ -256,7 +256,7 @@ class TeamAppState {
       else if (tab === "equipo" || tab === "hijos") this.goToScreen("v2_04_player_detail", "hijos");
       else if (tab === "avisos") this.goToScreen("screen_k_notices", "avisos");
     } else {
-      this.switchMembership("oyon_inf_a");
+      this.switchMembership("indautxu_inf_a");
       this.goToTab(tab);
     }
   }
@@ -389,24 +389,24 @@ class TeamAppState {
 
   // --- Onboarding Simplificado (Regla 9) ---
   finishCoachSetup() {
-    this.switchMembership("oyon_inf_a");
-    this.showToast("✓ Equipo CD Oyón · Infantil A creado con éxito. Código de invitación generado: OYON16.");
+    this.switchMembership("indautxu_inf_a");
+    this.showToast("✓ Equipo C.D. Indautxu · Infantil A creado con éxito. Código de invitación generado: INDA16.");
   }
 
   shareInviteCode() {
-    const inviteLink = "https://baituman420.github.io/taldehemendik/?join=OYON16";
+    const inviteLink = "https://baituman420.github.io/taldehemendik/?join=INDA16";
     if (navigator.clipboard) {
       navigator.clipboard.writeText(inviteLink).catch(() => {});
     }
-    this.showToast("📲 Enlace de invitación copiado: 'Únete al CD Oyón Infantil A con código OYON16'");
+    this.showToast("📲 Enlace de invitación copiado: 'Únete al C.D. Indautxu Infantil A con código INDA16'");
   }
 
   copyInviteCode(btn) {
-    const code = "OYON16";
+    const code = "INDA16";
     if (navigator.clipboard) {
       navigator.clipboard.writeText(code).catch(() => {});
     }
-    this.showToast("Código OYON16 copiado al portapapeles.");
+    this.showToast("Código INDA16 copiado al portapapeles.");
   }
 
   // --- Solicitud de Vinculación y Privacidad (Regla 4) ---
@@ -569,7 +569,7 @@ class TeamAppState {
     if (modal) {
       document.getElementById("sheet-player-num").textContent = `#${player.number}`;
       document.getElementById("sheet-player-name").textContent = player.name;
-      document.getElementById("sheet-player-role").textContent = `${player.role} · CD Oyón Infantil A`;
+      document.getElementById("sheet-player-role").textContent = `${player.role} · C.D. Indautxu Infantil A`;
       document.getElementById("sheet-player-status").textContent = player.rsvp;
       document.getElementById("sheet-tutor-name").textContent = player.tutor;
       document.getElementById("sheet-tutor-phone").textContent = player.phone;

@@ -62,7 +62,7 @@ global_scrubs = [
     ("acta federativa", "convocatoria del partido"),
     ("spam federativo", "mensajes innecesarios"),
     ("Soporte Federativo", "Soporte de Cantera"),
-    ("Federación Alavesa", "CD Oyón Cantera"),
+    ("Federación Alavesa", "C.D. Indautxu Cantera"),
     ("Seguro federativo de Álava", "Contacto familiar registrado"),
     ("Seguro escolar Álava", "Contacto familiar registrado"),
     ("seguro escolar en vigor", "contacto familiar verificado"),
@@ -82,7 +82,7 @@ global_scrubs = [
     ("Quick Medical / Roster Toggle Action", "Acción de Disponibilidad"),
     ("Quórum Federación", "Convocatoria del Partido"),
     ("QUÓRUM FEDERACIÓN", "CONVOCATORIA"),
-    ("Nº Licencia: FV-2011-8942", "CD Oyón Infantil A")
+    ("Nº Licencia: FV-2011-8942", "C.D. Indautxu Infantil A")
 ]
 
 for sid in screens_html:
@@ -161,7 +161,7 @@ coach_startup_banner = """
       <span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
       <h2 class="font-label-lg text-label-lg text-primary font-extrabold uppercase tracking-wide">Puesta en marcha del equipo</h2>
     </div>
-    <span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-bold">Código: OYON16</span>
+    <span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-bold">Código: INDA16</span>
   </div>
 
   <!-- Metric Strip -->
@@ -221,7 +221,7 @@ coach_startup_banner = """
   <div class="flex gap-2">
     <button onclick="teamApp.shareInviteCode()" class="flex-1 h-10 bg-white hover:bg-surface-container-low border border-primary/30 text-primary font-label-md text-label-md font-bold rounded-xl flex items-center justify-center gap-1.5 shadow-xs cursor-pointer active:scale-[0.98]">
       <span class="material-symbols-outlined text-[18px]">share</span>
-      <span>Compartir invitación (OYON16)</span>
+      <span>Compartir invitación (INDA16)</span>
     </button>
     <button onclick="teamApp.dismissOnboardingBanner()" class="h-10 px-3 bg-surface-container-high hover:bg-surface-container text-on-surface-variant rounded-xl text-xs font-semibold cursor-pointer" title="Ocultar puesta en marcha (Equipo rodado)">
       Ocultar
@@ -432,7 +432,7 @@ header_html = """<!DOCTYPE html>
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <title>Talde Hemendik! · CD Oyón Infantil A (2026/27)</title>
+  <title>Talde Hemendik! · C.D. Indautxu Infantil A (2026/27)</title>
   
   <!-- Material Symbols Google Icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
@@ -553,10 +553,10 @@ header_html = """<!DOCTYPE html>
         <button id="role-btn-onboard" onclick="teamApp.switchMembership('onboard')" class="px-2 py-1 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 transition-all cursor-pointer">
           Acceso
         </button>
-        <button id="role-btn-coach" onclick="teamApp.switchMembership('oyon_inf_a')" class="px-2 py-1 rounded-lg text-xs font-bold bg-blue-600 text-white shadow-xs transition-all cursor-pointer" title="Mikel Zubeldia · Entrenador CD Oyón Infantil A">
+        <button id="role-btn-coach" onclick="teamApp.switchMembership('indautxu_inf_a')" class="px-2 py-1 rounded-lg text-xs font-bold bg-blue-600 text-white shadow-xs transition-all cursor-pointer" title="Mikel Zubeldia · Entrenador C.D. Indautxu Infantil A">
           Infantil A (Míster)
         </button>
-        <button id="role-btn-parent" onclick="teamApp.switchMembership('oyon_ale_b')" class="px-2 py-1 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 transition-all cursor-pointer" title="Elena Gómez · Madre de Ibai #9">
+        <button id="role-btn-parent" onclick="teamApp.switchMembership('indautxu_ale_b')" class="px-2 py-1 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 transition-all cursor-pointer" title="Elena Gómez · Madre de Ibai #9">
           Familia (Elena)
         </button>
       </div>
@@ -577,7 +577,7 @@ header_html = """<!DOCTYPE html>
       <!-- Screen Dropdown Direct Jump -->
       <select id="demo-screen-select" onchange="teamApp.goToScreen(this.value)" class="max-w-[130px] sm:max-w-[170px] bg-slate-950 text-slate-200 border border-slate-800 rounded-xl px-2 py-1 text-[11px] sm:text-xs focus:ring-1 focus:ring-blue-500 cursor-pointer text-ellipsis overflow-hidden">
         <option value="v2_00_onboarding_welcome">0. Acceso Inicial</option>
-        <option value="v2_00_coach_create_team">0a. Crear Equipo & OYON16</option>
+        <option value="v2_00_coach_create_team">0a. Crear Equipo & INDA16</option>
         <option value="v2_00_parent_join_team">0b. Familia: Solicitud Vinculación</option>
         <option value="v2_01_coach_home">1. Inicio (La mesa del míster)</option>
         <option value="v2_02_coach_agenda">2. Agenda Semanal</option>
@@ -690,7 +690,7 @@ footer_html = """
           <span id="sheet-player-num" class="w-9 h-9 rounded-full bg-blue-100 text-blue-700 font-extrabold flex items-center justify-center text-sm">#1</span>
           <div>
             <h4 id="sheet-player-name" class="font-bold text-base text-slate-900 leading-tight">Gorka Elejalde</h4>
-            <p id="sheet-player-role" class="text-xs text-slate-500">Portero · CD Oyón Infantil A</p>
+            <p id="sheet-player-role" class="text-xs text-slate-500">Portero · C.D. Indautxu Infantil A</p>
           </div>
         </div>
         <button onclick="teamApp.closePlayerModal()" class="p-1.5 text-slate-400 hover:text-slate-700 rounded-full cursor-pointer">
@@ -856,7 +856,7 @@ body_sections = f"""
           {screens_html["v2_00_onboarding_welcome"]}
         </section>
 
-        <!-- SCREEN 0a: V2 ONBOARDING ENTRENADOR - CREAR EQUIPO & CÓDIGO OYON16 -->
+        <!-- SCREEN 0a: V2 ONBOARDING ENTRENADOR - CREAR EQUIPO & CÓDIGO INDA16 -->
         <section id="v2_00_coach_create_team" class="app-screen-view w-full hidden">
           {screens_html["v2_00_coach_create_team"]}
         </section>

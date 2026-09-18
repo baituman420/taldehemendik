@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <title>Talde Hemendik! · CD Oyón Infantil A (2026/27)</title>
+  <title>Talde Hemendik! · C.D. Indautxu Infantil A (2026/27)</title>
   
   <!-- Material Symbols Google Icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
@@ -124,10 +124,10 @@
         <button id="role-btn-onboard" onclick="teamApp.switchMembership('onboard')" class="px-2 py-1 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 transition-all cursor-pointer">
           Acceso
         </button>
-        <button id="role-btn-coach" onclick="teamApp.switchMembership('oyon_inf_a')" class="px-2 py-1 rounded-lg text-xs font-bold bg-blue-600 text-white shadow-xs transition-all cursor-pointer" title="Mikel Zubeldia · Entrenador CD Oyón Infantil A">
+        <button id="role-btn-coach" onclick="teamApp.switchMembership('indautxu_inf_a')" class="px-2 py-1 rounded-lg text-xs font-bold bg-blue-600 text-white shadow-xs transition-all cursor-pointer" title="Mikel Zubeldia · Entrenador C.D. Indautxu Infantil A">
           Infantil A (Míster)
         </button>
-        <button id="role-btn-parent" onclick="teamApp.switchMembership('oyon_ale_b')" class="px-2 py-1 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 transition-all cursor-pointer" title="Elena Gómez · Madre de Ibai #9">
+        <button id="role-btn-parent" onclick="teamApp.switchMembership('indautxu_ale_b')" class="px-2 py-1 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 transition-all cursor-pointer" title="Elena Gómez · Madre de Ibai #9">
           Familia (Elena)
         </button>
       </div>
@@ -148,7 +148,7 @@
       <!-- Screen Dropdown Direct Jump -->
       <select id="demo-screen-select" onchange="teamApp.goToScreen(this.value)" class="max-w-[130px] sm:max-w-[170px] bg-slate-950 text-slate-200 border border-slate-800 rounded-xl px-2 py-1 text-[11px] sm:text-xs focus:ring-1 focus:ring-blue-500 cursor-pointer text-ellipsis overflow-hidden">
         <option value="v2_00_onboarding_welcome">0. Acceso Inicial</option>
-        <option value="v2_00_coach_create_team">0a. Crear Equipo & OYON16</option>
+        <option value="v2_00_coach_create_team">0a. Crear Equipo & INDA16</option>
         <option value="v2_00_parent_join_team">0b. Familia: Solicitud Vinculación</option>
         <option value="v2_01_coach_home">1. Inicio (La mesa del míster)</option>
         <option value="v2_02_coach_agenda">2. Agenda Semanal</option>
@@ -231,7 +231,7 @@
 <!-- Federated Club Badge -->
 <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container border border-outline-variant/40">
 <span class="w-2 h-2 rounded-full bg-secondary"></span>
-<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold truncate max-w-[120px]">CD Oyón · Infantil A</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold truncate max-w-[120px]">C.D. Indautxu · Infantil A</span>
 </div>
 </header>
 <!-- Main Content Canvas -->
@@ -240,7 +240,7 @@
 <section class="space-y-2">
 <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container border border-outline-variant/40 text-primary">
 <span class="material-symbols-outlined text-[15px]" data-icon="emoji_events">emoji_events</span>
-<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider">Fútbol Base · Cantera</span>
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider">Fútbol Base</span>
 </div>
 <h1 class="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight pt-1">
           Gestión de equipos deportivos de base
@@ -272,7 +272,7 @@
                     Soy entrenador / staff
                   </h3>
 <span class="inline-block mt-0.5 px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-primary font-bold">
-                    Control total de plantilla y actas
+                    Gestión de equipo y convocatorias
                   </span>
 </div>
 </div>
@@ -352,7 +352,7 @@
 <div class="flex items-center justify-between px-3 py-2 bg-surface-container-low rounded-xl border border-outline-variant/20">
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-[18px] text-primary" data-icon="shield">shield</span>
-<span class="font-label-sm text-label-sm text-on-surface font-semibold">Demo activa: CD Oyón (26/27)</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Demo activa: C.D. Indautxu (2026/27)</span>
 </div>
 <span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">ONLINE</span>
 </div>
@@ -385,7 +385,7 @@
 </main>
         </section>
 
-        <!-- SCREEN 0a: V2 ONBOARDING ENTRENADOR - CREAR EQUIPO & CÓDIGO OYON16 -->
+        <!-- SCREEN 0a: V2 ONBOARDING ENTRENADOR - CREAR EQUIPO & CÓDIGO INDA16 -->
         <section id="v2_00_coach_create_team" class="app-screen-view w-full hidden">
           <!-- Mobile Screen Wrapper (390px Max) -->
 <main class="w-full max-w-[390px] bg-background min-h-screen flex flex-col shadow-2xl relative pb-12">
@@ -414,7 +414,7 @@
 <span class="material-symbols-outlined text-primary text-[20px]" data-icon="sports_soccer">sports_soccer</span>
 <h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Datos básicos del equipo</h2>
 </div>
-<span class="font-label-sm text-label-sm text-primary bg-surface-container-high px-2 py-0.5 rounded-full font-bold">CD Oyón</span>
+<span class="font-label-sm text-label-sm text-primary bg-surface-container-high px-2 py-0.5 rounded-full font-bold">C.D. Indautxu</span>
 </div>
 <!-- Field: Nombre del equipo -->
 <div class="space-y-1.5">
@@ -433,7 +433,7 @@
 <span>Club o Entidad</span>
 <span class="font-label-sm text-label-sm text-on-surface-variant font-normal">(opcional)</span>
 </label>
-<input class="w-full h-[50px] bg-surface-container-lowest rounded-xl border-[1.5px] border-outline-variant px-3.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-0 focus:outline-none transition-colors" id="club-name" type="text" value="CD Oyón"/>
+<input class="w-full h-[50px] bg-surface-container-lowest rounded-xl border-[1.5px] border-outline-variant px-3.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-0 focus:outline-none transition-colors" id="club-name" type="text" value="C.D. Indautxu"/>
 </div>
 <!-- Sport Selector Pills -->
 <div class="space-y-1.5">
@@ -488,7 +488,7 @@
 <span class="font-label-sm text-label-sm text-on-surface-variant font-normal">(opcional)</span>
 </label>
 <div class="relative">
-<input class="w-full h-[50px] bg-surface-container-lowest rounded-xl border-[1.5px] border-outline-variant pl-10 pr-3.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-0 focus:outline-none transition-colors" id="pitch-location" type="text" value="Campo Municipal de Oyón"/>
+<input class="w-full h-[50px] bg-surface-container-lowest rounded-xl border-[1.5px] border-outline-variant pl-10 pr-3.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-0 focus:outline-none transition-colors" id="pitch-location" type="text" value="Campo Municipal Indautxu"/>
 <span class="material-symbols-outlined absolute left-3 top-3.5 text-primary text-[20px]" data-icon="location_on">location_on</span>
 </div>
 </div>
@@ -528,7 +528,7 @@
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Código de acceso</span>
 <div class="flex items-center justify-center gap-3">
 <span class="font-stat-display text-stat-display font-extrabold text-primary tracking-widest font-mono select-all">
-              OYON16
+              INDA16
             </span>
 </div>
 <!-- Copy Button -->
@@ -561,7 +561,7 @@
 <!-- Bottom Sideline Coach Notice -->
 <footer class="text-center pt-2 pb-6">
 <p class="font-label-sm text-label-sm text-on-surface-variant">
-          Talde Hemendik! • Gestión de cantera CD Oyón
+          Talde Hemendik! • Gestión de cantera C.D. Indautxu
         </p>
 </footer>
 </div>
@@ -607,7 +607,7 @@
 </div>
 <!-- Input verificado -->
 <div class="relative flex items-center">
-<input class="w-full h-[50px] bg-surface-container-lowest border-2 border-secondary rounded-xl px-4 font-headline-sm text-headline-sm tracking-widest text-on-surface uppercase focus:outline-none focus:ring-0" readonly="" type="text" value="OYON16"/>
+<input class="w-full h-[50px] bg-surface-container-lowest border-2 border-secondary rounded-xl px-4 font-headline-sm text-headline-sm tracking-widest text-on-surface uppercase focus:outline-none focus:ring-0" readonly="" type="text" value="INDA16"/>
 <div class="absolute right-3 flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed/40 text-on-secondary-container font-label-sm text-label-sm font-bold border border-secondary/30">
 <span class="material-symbols-outlined material-symbols-fill text-[16px] text-secondary" data-icon="check_circle">check_circle</span>
 <span>Código válido</span>
@@ -622,7 +622,7 @@
             </div>
 <div class="flex-1 min-w-0">
 <div class="flex items-center gap-2">
-<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">CD Oyón · Infantil A</h2>
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">C.D. Indautxu · Infantil A</h2>
 </div>
 <p class="font-body-sm text-body-sm text-on-surface-variant font-medium">Fútbol Base · Temporada 2026/27</p>
 </div>
@@ -665,7 +665,7 @@
 <span class="px-1.5 py-0.5 rounded bg-secondary-fixed/50 text-on-secondary-fixed-variant font-label-sm text-label-sm">Ficha activa</span>
 </div>
 <p class="font-body-sm text-body-sm text-on-surface-variant truncate">Delantero Centro · Infantil A</p>
-<p class="font-label-sm text-label-sm text-outline">CD Oyón Infantil A</p>
+<p class="font-label-sm text-label-sm text-outline">C.D. Indautxu Infantil A</p>
 </div>
 </div>
 <!-- Radio Button Indicator Activo -->
@@ -761,7 +761,7 @@
 <span class="material-symbols-outlined text-[16px] text-secondary" data-icon="lock">lock</span>
             Datos encriptados extremo a extremo
           </div>
-<span class="font-label-sm text-label-sm underline text-on-surface-variant cursor-pointer">Protocolo CD Oyón</span>
+<span class="font-label-sm text-label-sm underline text-on-surface-variant cursor-pointer">Protocolo C.D. Indautxu</span>
 </div>
 </section>
 </main>
@@ -787,15 +787,15 @@
           <!-- TOP APP BAR -->
 <header class="sticky top-0 z-40 flex items-center justify-between px-margin-mobile py-space-sm w-full bg-surface-container-lowest border-b border-outline-variant/60 shadow-sm">
 <div class="flex items-center gap-3">
-<!-- CD Oyón Crest Badge -->
+<!-- C.D. Indautxu Crest Badge -->
 <div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-headline-sm text-headline-sm font-extrabold shadow-sm ring-2 ring-primary-fixed">
 <span class="material-symbols-outlined text-[22px]" data-icon="sports_soccer" style="font-variation-settings: 'FILL' 1;">sports_soccer</span>
 </div>
 <div>
-<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold tracking-tight block">CD Oyón · Infantil A</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold tracking-tight block">C.D. Indautxu · Infantil A</span>
 <span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
 <span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>
-          Temporada Oficial 26/27
+          Temporada 2026/27
         </span>
 </div>
 </div>
@@ -820,7 +820,7 @@
 <h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">La Mesa del Entrenador</h1>
 <p class="font-label-md text-label-md text-secondary font-bold flex items-center gap-1.5 pt-0.5">
 <span class="material-symbols-outlined text-[18px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-        Jueves 17 de Septiembre 2026 · Todo bajo control
+        Viernes 18 de Septiembre 2026 · 3 cosas necesitan tu atención
       </p>
 </section>
 
@@ -831,7 +831,7 @@
       <span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
       <h2 class="font-label-lg text-label-lg text-primary font-extrabold uppercase tracking-wide">Puesta en marcha del equipo</h2>
     </div>
-    <span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-bold">Código: OYON16</span>
+    <span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-bold">Código: INDA16</span>
   </div>
 
   <!-- Metric Strip -->
@@ -891,7 +891,7 @@
   <div class="flex gap-2">
     <button onclick="teamApp.shareInviteCode()" class="flex-1 h-10 bg-white hover:bg-surface-container-low border border-primary/30 text-primary font-label-md text-label-md font-bold rounded-xl flex items-center justify-center gap-1.5 shadow-xs cursor-pointer active:scale-[0.98]">
       <span class="material-symbols-outlined text-[18px]">share</span>
-      <span>Compartir invitación (OYON16)</span>
+      <span>Compartir invitación (INDA16)</span>
     </button>
     <button onclick="teamApp.dismissOnboardingBanner()" class="h-10 px-3 bg-surface-container-high hover:bg-surface-container text-on-surface-variant rounded-xl text-xs font-semibold cursor-pointer" title="Ocultar puesta en marcha (Equipo rodado)">
       Ocultar
@@ -966,12 +966,12 @@
         </span>
 </div>
 <div class="space-y-3">
-<!-- Item 1: Torneo Oyón (Urgency: Amber) -->
+<!-- Item 1: Torneo Indautxu (Urgency: Amber) -->
 <div class="bg-surface-container-lowest rounded-xl border-l-4 border-l-amber-500 border-y border-r border-outline-variant/70 p-4 space-y-3 shadow-sm">
 <div class="flex items-start justify-between gap-2">
 <div>
-<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold block">Torneo Oyón</span>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">2 familias todavía no han respondido (Ane Gorostiaga, Peio Goikoetxea)</p>
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold block">Torneo Indautxu</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">2 familias todavía no han respondido (Ane Mintegi, Peio Gómez)</p>
 </div>
 <span class="font-label-sm text-label-sm font-bold bg-amber-100 text-amber-900 px-2.5 py-1 rounded-full whitespace-nowrap border border-amber-300">
               Cierra 20:00 h
@@ -990,7 +990,7 @@
 <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Ya tienes suficientes jugadores disponibles (14 disponibles).</p>
 </div>
 <span class="font-label-sm text-label-sm font-bold bg-secondary-fixed text-on-secondary-fixed px-2.5 py-1 rounded-full whitespace-nowrap border border-secondary-fixed-dim">
-              Quórum listo
+              Convocatoria lista
             </span>
 </div>
 <button class="w-full h-[50px] rounded-xl bg-primary-container hover:bg-primary active:scale-[0.98] transition-all text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-1.5 shadow-sm">
@@ -1030,8 +1030,8 @@
 <div class="p-3.5 flex items-center justify-between bg-surface-container-low/40">
 <div class="flex items-center gap-3">
 <div class="w-12 text-center">
-<span class="font-label-sm text-label-sm text-primary font-extrabold block">JUE</span>
-<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface leading-none">17</span>
+<span class="font-label-sm text-label-sm text-primary font-extrabold block">VIE</span>
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface leading-none">18</span>
 </div>
 <div class="border-l border-outline-variant/50 pl-3">
 <span class="font-label-md text-label-md text-on-surface font-bold block">Entrenamiento · 18:30 h</span>
@@ -1050,7 +1050,7 @@
 <span class="font-headline-sm text-headline-sm font-extrabold text-on-surface leading-none">19</span>
 </div>
 <div class="border-l border-outline-variant/50 pl-3">
-<span class="font-label-md text-label-md text-on-surface font-bold block">Torneo Oyón · 10:30 h</span>
+<span class="font-label-md text-label-md text-on-surface font-bold block">Torneo Indautxu · 10:30 h</span>
 <span class="font-body-sm text-body-sm text-on-surface-variant">Polideportivo Municipal</span>
 </div>
 </div>
@@ -1093,7 +1093,7 @@
 </div>
 <div class="flex-1 min-w-0">
 <p class="font-body-sm text-body-sm text-on-surface font-medium leading-snug">
-              El entrenamiento del jueves pasa a las <strong class="text-primary font-bold">18:30 h (+30 min)</strong>.
+              El entrenamiento de hoy viernes pasa a las <strong class="text-primary font-bold">18:30 h (+30 min)</strong>.
             </p>
 <span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5 block">Hace 1h · Notificado a familias</span>
 </div>
@@ -1129,10 +1129,10 @@
           OY
         </div>
 <div class="flex flex-col">
-<span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">CD Oyón · Infantil A</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">C.D. Indautxu · Infantil A</span>
 <span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
 <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-            Temporada 26/27
+            Temporada 2026/27
           </span>
 </div>
 </div>
@@ -1191,7 +1191,7 @@
 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
 <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary"></span>
 </span>
-<h2 class="font-label-lg text-label-lg text-on-surface tracking-wide uppercase">HOY · Jueves 18 Sep</h2>
+<h2 class="font-label-lg text-label-lg text-on-surface tracking-wide uppercase">HOY · Viernes 18 Sep</h2>
 </div>
 <span class="font-label-sm text-label-sm bg-secondary-container/40 text-on-secondary-container px-2 py-0.5 rounded-md font-bold">
               Día de sesión
@@ -1220,7 +1220,7 @@
 </div>
 <div class="flex items-center gap-2.5">
 <span class="material-symbols-outlined text-primary text-[18px]">location_on</span>
-<span class="text-on-surface-variant">Campo Municipal Oyón · <strong class="text-on-surface font-semibold">Hierba Artificial</strong></span>
+<span class="text-on-surface-variant">Campo Municipal Indautxu · <strong class="text-on-surface font-semibold">Hierba Artificial</strong></span>
 </div>
 </div>
 <!-- Status & Attendance Pill -->
@@ -1242,14 +1242,14 @@
 <!-- Day Header -->
 <div class="flex items-center justify-between px-0.5">
 <h2 class="font-label-lg text-label-lg text-on-surface tracking-wide uppercase flex items-center gap-1.5">
-<span>SÁBADO · 20 Sep</span>
+<span>SÁBADO · 19 Sep</span>
 <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
 </h2>
 <span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-bold px-2 py-0.5 rounded-md">
               Oficial
             </span>
 </div>
-<!-- Card 2: Torneo Apertura Oyón (Alert Treatment) -->
+<!-- Card 2: Torneo Indautxu (Alert Treatment) -->
 <article class="bg-surface-container-lowest rounded-2xl border-2 border-tertiary/30 p-4 shadow-sm flex flex-col gap-3 relative overflow-hidden">
 <!-- Alert top stripe accent -->
 <div class="absolute top-0 left-0 right-0 h-1.5 bg-tertiary"></div>
@@ -1261,7 +1261,7 @@
                     Torneo Oficial · Jornada Matinal
                   </span>
 </div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-extrabold">Torneo Apertura Oyón</h3>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-extrabold">Torneo Indautxu</h3>
 </div>
 <div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary shrink-0">
 <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
@@ -1275,7 +1275,7 @@
 </div>
 <div class="flex items-center gap-2.5">
 <span class="material-symbols-outlined text-outline text-[18px]">domain</span>
-<span class="text-on-surface">Polideportivo Municipal Oyón · Pistas Centrales</span>
+<span class="text-on-surface">Polideportivo Municipal Indautxu · Pistas Centrales</span>
 </div>
 </div>
 <!-- Incident Alert Banner -->
@@ -1290,7 +1290,7 @@
                 </span>
 </div>
 <p class="font-body-sm text-body-sm text-on-surface-variant pl-6">
-                Baja de última hora pendiente de sustituto reglamentario (Hugo M. lesión leve).
+                Baja comunicada por familia pendiente de sustituto (Ibai Aranguren #9 - nota: está enfermo).
               </p>
 </div>
 <!-- Dominant Coach Action Button -->
@@ -1301,7 +1301,7 @@
 <div class="flex flex-col gap-2">
 <!-- Day Header -->
 <div class="flex items-center justify-between px-0.5">
-<h2 class="font-label-lg text-label-lg text-on-surface tracking-wide uppercase">LUNES · 22 Sep</h2>
+<h2 class="font-label-lg text-label-lg text-on-surface tracking-wide uppercase">LUNES · 21 Sep</h2>
 <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Próxima semana</span>
 </div>
 <!-- Card 3: Entrenamiento Técnico -->
@@ -1323,7 +1323,7 @@
 </div>
 <div class="flex items-center gap-2.5">
 <span class="material-symbols-outlined text-primary text-[18px]">location_on</span>
-<span class="text-on-surface-variant">Campo Municipal Oyón</span>
+<span class="text-on-surface-variant">Campo Municipal Indautxu</span>
 </div>
 </div>
 <!-- Response Counter Bar -->
@@ -1366,8 +1366,8 @@
 <span class="tracking-tight text-sm">OY</span>
 </div>
 <div class="flex flex-col">
-<span class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">CD Oyón · Infantil A</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">Temporada 2026/27 · CD Oyón Cantera</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">C.D. Indautxu · Infantil A</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Temporada 2026/27 · C.D. Indautxu Cantera</span>
 </div>
 </div>
 <!-- Trailing Icon -->
@@ -1439,15 +1439,14 @@
 <!-- Player List Header Section -->
 <div class="flex items-center justify-between pt-1">
 <h2 class="font-label-md text-label-md text-on-surface-variant tracking-wider uppercase">Listado de Jugadores</h2>
-<span class="font-body-sm text-body-sm text-outline">12 en pantalla</span>
+<span class="font-body-sm text-body-sm text-outline">18 jugadores</span>
 </div>
 <!-- Roster Card Rows -->
 <div class="space-y-2">
-<!-- 1. Ibai Aranguren (No disponible - Highlighted) -->
-<article class="bg-surface-container-lowest border border-tertiary-container/30 rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3 bg-red-50/20">
+<!-- #9 Ibai Aranguren -->
+<article class="bg-red-50/20 border border-tertiary-container/30 rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3 cursor-pointer roster-player-row" onclick="teamApp.goToScreen('v2_04_player_detail', 'equipo')" data-status="baja" data-convocado="false">
 <div class="flex items-center gap-3 min-w-0">
-<!-- Dorsal Avatar with Red Accent -->
-<div class="w-11 h-11 rounded-full bg-tertiary-fixed border border-tertiary/20 flex flex-col items-center justify-center shrink-0">
+<div class="w-11 h-11 rounded-full bg-tertiary-fixed border border-outline-variant flex items-center justify-center shrink-0">
 <span class="text-tertiary font-headline-sm text-headline-sm font-bold leading-none">#9</span>
 </div>
 <div class="truncate">
@@ -1455,26 +1454,29 @@
 <span class="font-label-lg text-label-lg text-on-surface truncate">Ibai Aranguren</span>
 </div>
 <p class="font-body-sm text-body-sm text-outline mb-1">Delantero Centro</p>
-<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container border border-error/20">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container border">
 <span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span>
 <span class="font-label-sm text-label-sm font-bold">No disponible (Nota: Está enfermo)</span>
 </div>
 </div>
 </div>
-<div class="flex items-center text-outline-variant shrink-0">
-<span class="material-symbols-outlined text-[22px] text-tertiary">chevron_right</span>
+<div class="flex items-center text-outline shrink-0">
+<span class="material-symbols-outlined text-[22px]">chevron_right</span>
 </div>
 </article>
-<!-- 2. Ane Mintegi -->
-<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3">
+<!-- #16 Ane Mintegi -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3 cursor-pointer roster-player-row" onclick="teamApp.showPlayerModal(16)" data-status="ok" data-convocado="false">
 <div class="flex items-center gap-3 min-w-0">
 <div class="w-11 h-11 rounded-full bg-surface-container-low border border-outline-variant flex items-center justify-center shrink-0">
 <span class="text-on-surface font-headline-sm text-headline-sm font-bold leading-none">#16</span>
 </div>
 <div class="truncate">
+<div class="flex items-center gap-1.5">
 <span class="font-label-lg text-label-lg text-on-surface truncate">Ane Mintegi</span>
+</div>
 <p class="font-body-sm text-body-sm text-outline mb-1">Centrocampista</p>
-<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-50 text-amber-900 border border-amber-200">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-50 text-amber-900 border-amber-200 border">
+
 <span class="font-label-sm text-label-sm font-bold">Disponible · Reserva Sábado</span>
 </div>
 </div>
@@ -1483,16 +1485,18 @@
 <span class="material-symbols-outlined text-[22px]">chevron_right</span>
 </div>
 </article>
-<!-- 3. Gorka Elejalde -->
-<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3">
+<!-- #1 Gorka Elejalde -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3 cursor-pointer roster-player-row" onclick="teamApp.showPlayerModal(1)" data-status="ok" data-convocado="true">
 <div class="flex items-center gap-3 min-w-0">
-<div class="w-11 h-11 rounded-full bg-primary-fixed flex items-center justify-center shrink-0 border border-primary/20">
+<div class="w-11 h-11 rounded-full bg-primary-fixed border border-outline-variant flex items-center justify-center shrink-0">
 <span class="text-on-primary-fixed font-headline-sm text-headline-sm font-bold leading-none">#1</span>
 </div>
 <div class="truncate">
+<div class="flex items-center gap-1.5">
 <span class="font-label-lg text-label-lg text-on-surface truncate">Gorka Elejalde</span>
+</div>
 <p class="font-body-sm text-body-sm text-outline mb-1">Portero</p>
-<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border-emerald-200 border">
 <span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
 <span class="font-label-sm text-label-sm font-bold">Disponible · Convocado</span>
 </div>
@@ -1502,16 +1506,19 @@
 <span class="material-symbols-outlined text-[22px]">chevron_right</span>
 </div>
 </article>
-<!-- 4. Eneko Zabala -->
-<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3">
+<!-- #2 Eneko Zabala -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3 cursor-pointer roster-player-row" onclick="teamApp.showPlayerModal(2)" data-status="ok" data-convocado="true">
 <div class="flex items-center gap-3 min-w-0">
 <div class="w-11 h-11 rounded-full bg-surface-container-low border border-outline-variant flex items-center justify-center shrink-0">
 <span class="text-on-surface font-headline-sm text-headline-sm font-bold leading-none">#2</span>
 </div>
 <div class="truncate">
+<div class="flex items-center gap-1.5">
 <span class="font-label-lg text-label-lg text-on-surface truncate">Eneko Zabala</span>
+</div>
 <p class="font-body-sm text-body-sm text-outline mb-1">Defensa Central</p>
-<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border-emerald-200 border">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
 <span class="font-label-sm text-label-sm font-bold">Disponible · Convocado</span>
 </div>
 </div>
@@ -1520,16 +1527,19 @@
 <span class="material-symbols-outlined text-[22px]">chevron_right</span>
 </div>
 </article>
-<!-- 5. Julen Ortiz -->
-<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3">
+<!-- #3 Julen Ortiz -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3 cursor-pointer roster-player-row" onclick="teamApp.showPlayerModal(3)" data-status="ok" data-convocado="true">
 <div class="flex items-center gap-3 min-w-0">
 <div class="w-11 h-11 rounded-full bg-surface-container-low border border-outline-variant flex items-center justify-center shrink-0">
 <span class="text-on-surface font-headline-sm text-headline-sm font-bold leading-none">#3</span>
 </div>
 <div class="truncate">
+<div class="flex items-center gap-1.5">
 <span class="font-label-lg text-label-lg text-on-surface truncate">Julen Ortiz</span>
+</div>
 <p class="font-body-sm text-body-sm text-outline mb-1">Defensa Lateral</p>
-<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border-emerald-200 border">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
 <span class="font-label-sm text-label-sm font-bold">Disponible · Convocado</span>
 </div>
 </div>
@@ -1538,16 +1548,19 @@
 <span class="material-symbols-outlined text-[22px]">chevron_right</span>
 </div>
 </article>
-<!-- 6. Jon Beltrán -->
-<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3">
+<!-- #4 Jon Beltrán -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3 cursor-pointer roster-player-row" onclick="teamApp.showPlayerModal(4)" data-status="ok" data-convocado="true">
 <div class="flex items-center gap-3 min-w-0">
 <div class="w-11 h-11 rounded-full bg-surface-container-low border border-outline-variant flex items-center justify-center shrink-0">
 <span class="text-on-surface font-headline-sm text-headline-sm font-bold leading-none">#4</span>
 </div>
 <div class="truncate">
+<div class="flex items-center gap-1.5">
 <span class="font-label-lg text-label-lg text-on-surface truncate">Jon Beltrán</span>
+</div>
 <p class="font-body-sm text-body-sm text-outline mb-1">Defensa Central</p>
-<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border-emerald-200 border">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
 <span class="font-label-sm text-label-sm font-bold">Disponible · Convocado</span>
 </div>
 </div>
@@ -1556,16 +1569,19 @@
 <span class="material-symbols-outlined text-[22px]">chevron_right</span>
 </div>
 </article>
-<!-- 7. Markel Saenz -->
-<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3">
+<!-- #5 Markel Saenz -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3 cursor-pointer roster-player-row" onclick="teamApp.showPlayerModal(5)" data-status="ok" data-convocado="true">
 <div class="flex items-center gap-3 min-w-0">
 <div class="w-11 h-11 rounded-full bg-surface-container-low border border-outline-variant flex items-center justify-center shrink-0">
 <span class="text-on-surface font-headline-sm text-headline-sm font-bold leading-none">#5</span>
 </div>
 <div class="truncate">
+<div class="flex items-center gap-1.5">
 <span class="font-label-lg text-label-lg text-on-surface truncate">Markel Saenz</span>
+</div>
 <p class="font-body-sm text-body-sm text-outline mb-1">Centrocampista Pivote</p>
-<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border-emerald-200 border">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
 <span class="font-label-sm text-label-sm font-bold">Disponible · Convocado</span>
 </div>
 </div>
@@ -1574,16 +1590,19 @@
 <span class="material-symbols-outlined text-[22px]">chevron_right</span>
 </div>
 </article>
-<!-- 8. Ander Lopez -->
-<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3">
+<!-- #6 Ander Lopez -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3 cursor-pointer roster-player-row" onclick="teamApp.showPlayerModal(6)" data-status="ok" data-convocado="true">
 <div class="flex items-center gap-3 min-w-0">
 <div class="w-11 h-11 rounded-full bg-surface-container-low border border-outline-variant flex items-center justify-center shrink-0">
 <span class="text-on-surface font-headline-sm text-headline-sm font-bold leading-none">#6</span>
 </div>
 <div class="truncate">
+<div class="flex items-center gap-1.5">
 <span class="font-label-lg text-label-lg text-on-surface truncate">Ander Lopez</span>
+</div>
 <p class="font-body-sm text-body-sm text-outline mb-1">Centrocampista Interior</p>
-<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border-emerald-200 border">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
 <span class="font-label-sm text-label-sm font-bold">Disponible · Convocado</span>
 </div>
 </div>
@@ -1592,16 +1611,19 @@
 <span class="material-symbols-outlined text-[22px]">chevron_right</span>
 </div>
 </article>
-<!-- 9. Unai Martinez -->
-<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3">
+<!-- #7 Unai Martinez -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3 cursor-pointer roster-player-row" onclick="teamApp.showPlayerModal(7)" data-status="ok" data-convocado="true">
 <div class="flex items-center gap-3 min-w-0">
 <div class="w-11 h-11 rounded-full bg-surface-container-low border border-outline-variant flex items-center justify-center shrink-0">
 <span class="text-on-surface font-headline-sm text-headline-sm font-bold leading-none">#7</span>
 </div>
 <div class="truncate">
+<div class="flex items-center gap-1.5">
 <span class="font-label-lg text-label-lg text-on-surface truncate">Unai Martinez</span>
+</div>
 <p class="font-body-sm text-body-sm text-outline mb-1">Extremo Derecho</p>
-<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border-emerald-200 border">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
 <span class="font-label-sm text-label-sm font-bold">Disponible · Convocado</span>
 </div>
 </div>
@@ -1610,16 +1632,19 @@
 <span class="material-symbols-outlined text-[22px]">chevron_right</span>
 </div>
 </article>
-<!-- 10. Oier Gomez -->
-<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3">
+<!-- #8 Oier Gomez -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3 cursor-pointer roster-player-row" onclick="teamApp.showPlayerModal(8)" data-status="ok" data-convocado="true">
 <div class="flex items-center gap-3 min-w-0">
 <div class="w-11 h-11 rounded-full bg-surface-container-low border border-outline-variant flex items-center justify-center shrink-0">
 <span class="text-on-surface font-headline-sm text-headline-sm font-bold leading-none">#8</span>
 </div>
 <div class="truncate">
+<div class="flex items-center gap-1.5">
 <span class="font-label-lg text-label-lg text-on-surface truncate">Oier Gomez</span>
+</div>
 <p class="font-body-sm text-body-sm text-outline mb-1">Mediapunta</p>
-<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border-emerald-200 border">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
 <span class="font-label-sm text-label-sm font-bold">Disponible · Convocado</span>
 </div>
 </div>
@@ -1628,16 +1653,61 @@
 <span class="material-symbols-outlined text-[22px]">chevron_right</span>
 </div>
 </article>
-<!-- 11. Nahia Garcia -->
-<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3">
+<!-- #10 Mikel Zabaleta -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3 cursor-pointer roster-player-row" onclick="teamApp.showPlayerModal(10)" data-status="ok" data-convocado="true">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-11 h-11 rounded-full bg-surface-container-low border border-outline-variant flex items-center justify-center shrink-0">
+<span class="text-on-surface font-headline-sm text-headline-sm font-bold leading-none">#10</span>
+</div>
+<div class="truncate">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Mikel Zabaleta</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mb-1">Centrocampista</p>
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border-emerald-200 border">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm text-label-sm font-bold">Disponible · Convocado</span>
+</div>
+</div>
+</div>
+<div class="flex items-center text-outline shrink-0">
+<span class="material-symbols-outlined text-[22px]">chevron_right</span>
+</div>
+</article>
+<!-- #11 Aimar Ortiz -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3 cursor-pointer roster-player-row" onclick="teamApp.showPlayerModal(11)" data-status="ok" data-convocado="true">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-11 h-11 rounded-full bg-surface-container-low border border-outline-variant flex items-center justify-center shrink-0">
+<span class="text-on-surface font-headline-sm text-headline-sm font-bold leading-none">#11</span>
+</div>
+<div class="truncate">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Aimar Ortiz</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mb-1">Delantero</p>
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border-emerald-200 border">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm text-label-sm font-bold">Disponible · Convocado</span>
+</div>
+</div>
+</div>
+<div class="flex items-center text-outline shrink-0">
+<span class="material-symbols-outlined text-[22px]">chevron_right</span>
+</div>
+</article>
+<!-- #12 Nahia Garcia -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3 cursor-pointer roster-player-row" onclick="teamApp.showPlayerModal(12)" data-status="ok" data-convocado="false">
 <div class="flex items-center gap-3 min-w-0">
 <div class="w-11 h-11 rounded-full bg-surface-container-low border border-outline-variant flex items-center justify-center shrink-0">
 <span class="text-on-surface font-headline-sm text-headline-sm font-bold leading-none">#12</span>
 </div>
 <div class="truncate">
+<div class="flex items-center gap-1.5">
 <span class="font-label-lg text-label-lg text-on-surface truncate">Nahia Garcia</span>
+</div>
 <p class="font-body-sm text-body-sm text-outline mb-1">Centrocampista</p>
-<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-primary border border-outline-variant">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-primary border-outline-variant border">
+
 <span class="font-label-sm text-label-sm font-bold">Disponible · Reserva</span>
 </div>
 </div>
@@ -1646,17 +1716,104 @@
 <span class="material-symbols-outlined text-[22px]">chevron_right</span>
 </div>
 </article>
-<!-- 12. Irati Fernandez -->
-<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3">
+<!-- #13 Asier Urkijo -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3 cursor-pointer roster-player-row" onclick="teamApp.showPlayerModal(13)" data-status="baja" data-convocado="false">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-11 h-11 rounded-full bg-surface-container-low border border-outline-variant flex items-center justify-center shrink-0">
+<span class="text-on-surface font-headline-sm text-headline-sm font-bold leading-none">#13</span>
+</div>
+<div class="truncate">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Asier Urkijo</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mb-1">Centrocampista</p>
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant border">
+
+<span class="font-label-sm text-label-sm font-bold">No disponible (Viaje familiar)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center text-outline shrink-0">
+<span class="material-symbols-outlined text-[22px]">chevron_right</span>
+</div>
+</article>
+<!-- #14 Iker Baroja -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3 cursor-pointer roster-player-row" onclick="teamApp.showPlayerModal(14)" data-status="ok" data-convocado="true">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-11 h-11 rounded-full bg-surface-container-low border border-outline-variant flex items-center justify-center shrink-0">
+<span class="text-on-surface font-headline-sm text-headline-sm font-bold leading-none">#14</span>
+</div>
+<div class="truncate">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Iker Baroja</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mb-1">Extremo Izquierdo</p>
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border-emerald-200 border">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm text-label-sm font-bold">Disponible · Convocado</span>
+</div>
+</div>
+</div>
+<div class="flex items-center text-outline shrink-0">
+<span class="material-symbols-outlined text-[22px]">chevron_right</span>
+</div>
+</article>
+<!-- #15 Irati Fernandez -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3 cursor-pointer roster-player-row" onclick="teamApp.showPlayerModal(15)" data-status="ok" data-convocado="false">
 <div class="flex items-center gap-3 min-w-0">
 <div class="w-11 h-11 rounded-full bg-surface-container-low border border-outline-variant flex items-center justify-center shrink-0">
 <span class="text-on-surface font-headline-sm text-headline-sm font-bold leading-none">#15</span>
 </div>
 <div class="truncate">
+<div class="flex items-center gap-1.5">
 <span class="font-label-lg text-label-lg text-on-surface truncate">Irati Fernandez</span>
+</div>
 <p class="font-body-sm text-body-sm text-outline mb-1">Delantera</p>
-<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-primary border border-outline-variant">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-primary border-outline-variant border">
+
 <span class="font-label-sm text-label-sm font-bold">Disponible · Reserva</span>
+</div>
+</div>
+</div>
+<div class="flex items-center text-outline shrink-0">
+<span class="material-symbols-outlined text-[22px]">chevron_right</span>
+</div>
+</article>
+<!-- #17 Olatz Bengoa -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3 cursor-pointer roster-player-row" onclick="teamApp.showPlayerModal(17)" data-status="baja" data-convocado="false">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-11 h-11 rounded-full bg-surface-container-low border border-outline-variant flex items-center justify-center shrink-0">
+<span class="text-on-surface font-headline-sm text-headline-sm font-bold leading-none">#17</span>
+</div>
+<div class="truncate">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Olatz Bengoa</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mb-1">Defensa</p>
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant border">
+
+<span class="font-label-sm text-label-sm font-bold">No disponible</span>
+</div>
+</div>
+</div>
+<div class="flex items-center text-outline shrink-0">
+<span class="material-symbols-outlined text-[22px]">chevron_right</span>
+</div>
+</article>
+<!-- #18 Peio Gómez -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3 shadow-sm active:scale-[0.99] transition-all flex items-center justify-between gap-3 cursor-pointer roster-player-row" onclick="teamApp.showPlayerModal(18)" data-status="baja" data-convocado="false">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-11 h-11 rounded-full bg-surface-container-low border border-outline-variant flex items-center justify-center shrink-0">
+<span class="text-on-surface font-headline-sm text-headline-sm font-bold leading-none">#18</span>
+</div>
+<div class="truncate">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Peio Gómez</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mb-1">Defensa</p>
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant border">
+
+<span class="font-label-sm text-label-sm font-bold">No disponible (Sin respuesta)</span>
 </div>
 </div>
 </div>
@@ -1727,7 +1884,7 @@
 <!-- Player Details -->
 <div class="flex-1 min-w-0">
 <div class="flex items-center justify-between">
-<span class="font-label-sm text-label-sm uppercase tracking-wider font-extrabold text-primary">CD Oyón · 2026/27</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-extrabold text-primary">C.D. Indautxu · 2026/27</span>
 <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-error-container text-error border border-error/20">
 <span class="w-1.5 h-1.5 rounded-full bg-error"></span>
                 Baja
@@ -1769,22 +1926,22 @@
 <span class="material-symbols-outlined text-[20px]">event_busy</span>
 </div>
 <div>
-<span class="block text-[11px] font-black uppercase tracking-wider text-tertiary-container">Incidencia de Convocatoria Activa</span>
+<span class="block text-[11px] font-black uppercase tracking-wider text-tertiary-container">Estado de Disponibilidad</span>
 <h2 class="font-headline-sm text-headline-sm font-black text-on-surface leading-tight">
-                Baja para el Torneo del Sábado
+                No disponible este fin de semana
               </h2>
 </div>
 </div>
 <span class="px-2.5 py-1 rounded-full text-label-sm text-label-sm font-extrabold bg-tertiary-fixed text-on-tertiary-fixed border border-tertiary-container/30 shrink-0">
-            Baja Temporal
+            No disponible
           </span>
 </div>
 <div class="bg-surface-container-lowest/90 rounded-xl p-3 border border-outline-variant/40 space-y-2 text-body-sm">
 <div class="flex items-start justify-between">
 <div class="space-y-0.5">
-<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold">Diagnóstico:</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold">Nota familiar:</span>
 <p class="font-headline-sm text-headline-sm font-bold text-tertiary-container flex items-center gap-1">
-<span class="material-symbols-outlined text-[18px]">healing</span>
+<span class="material-symbols-outlined text-[18px]">info</span>
                 No disponible (está enfermo)
               </p>
 </div>
@@ -1828,7 +1985,7 @@
 <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-error-container text-error border border-error/30">NO ASISTE</span>
 </div>
 <p class="font-body-sm text-body-sm font-bold text-on-surface">Entrenamiento semanal en Campo Municipal</p>
-<p class="text-[12px] text-on-surface-variant">Guardando reposo con crioterapia domiciliaria.</p>
+<p class="text-[12px] text-on-surface-variant">Guardando reposo con reposo en casa.</p>
 </div>
 </div>
 <!-- Item 2: Sábado (Match) -->
@@ -1837,12 +1994,12 @@
 <div class="bg-surface-container-low rounded-xl p-3 border border-outline-variant/40 flex flex-col gap-1">
 <div class="flex items-center justify-between">
 <span class="font-label-md text-label-md font-black text-on-surface">Sábado · 09:30h</span>
-<span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-error-container text-error border border-error/30">BAJA CONFIRMADA</span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-error-container text-error border border-error/30">NO ASISTE</span>
 </div>
-<p class="font-body-sm text-body-sm font-bold text-on-surface">Torneo Interpueblos de Oyón · Fase de Grupos</p>
+<p class="font-body-sm text-body-sm font-bold text-on-surface">Torneo Indautxu · Fase de Grupos</p>
 <div class="flex items-center gap-1.5 text-[12px] text-on-surface-variant font-medium">
 <span class="material-symbols-outlined text-[16px] text-primary">person_remove</span>
-<span>Liberó plaza de convocatoria oficial (15 convocados).</span>
+<span>Plaza cubierta por suplente de reserva.</span>
 </div>
 </div>
 </div>
@@ -1855,7 +2012,7 @@
 <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-amber-100 text-amber-900 border border-amber-300">DUDA / EVOLUCIÓN</span>
 </div>
 <p class="font-body-sm text-body-sm font-bold text-on-surface">Entrenamiento técnico y carrera continua</p>
-<p class="text-[12px] text-on-surface-variant">Pendiente de reevaluación con el fisio del club.</p>
+<p class="text-[12px] text-on-surface-variant">Pendiente de evolución para el próximo entrenamiento.</p>
 </div>
 </div>
 </div>
@@ -1888,7 +2045,7 @@
 <span class="material-symbols-outlined text-[18px]">call</span>
 <span>Llamar</span>
 </a>
-<a class="h-[48px] px-3 rounded-xl bg-[#059669] text-white font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.98] transition-transform" href="https://wa.me/34620445566?text=Hola%20Elena,%20te%20escribo%20del%20CD%20Oyón%20sobre%20Ibai" rel="noopener noreferrer" target="_blank">
+<a class="h-[48px] px-3 rounded-xl bg-[#059669] text-white font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.98] transition-transform" href="https://wa.me/34620445566?text=Hola%20Elena,%20te%20escribo%20del%20CD%20Indautxu%20sobre%20Ibai" rel="noopener noreferrer" target="_blank">
 <span class="material-symbols-outlined text-[18px]">chat</span>
 <span>WhatsApp</span>
 </a>
@@ -1910,50 +2067,36 @@
 </div>
 </div>
 </section>
-<!-- 6. Sección: 'Datos de Contacto' -->
+<!-- 6. Sección: 'Información de Equipo y Contacto' -->
 <section class="bg-surface-container-lowest rounded-2xl border border-outline-variant/50 p-space-md shadow-sm mb-4">
 <div class="flex items-center justify-between mb-3">
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary text-[20px]">health_and_safety</span>
-<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Contacto Familiar</h3>
+<span class="material-symbols-outlined text-primary text-[20px]">badge</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Información de Equipo</h3>
 </div>
-<span class="inline-flex items-center gap-1 text-[11px] font-black text-secondary uppercase">
+<span class="inline-flex items-center gap-1 text-[11px] font-black text-secondary uppercase bg-secondary/10 px-2.5 py-0.5 rounded-full">
 <span class="material-symbols-outlined text-[14px]">check_circle</span>
-            Federado
-          </span>
+Plantilla Activa
+</span>
 </div>
 <div class="space-y-2.5">
-<!-- Alergias -->
 <div class="flex items-center justify-between p-2.5 rounded-xl bg-surface-container-low border border-outline-variant/30">
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-secondary text-[18px]">no_food</span>
-<span class="font-label-md text-label-md font-bold text-on-surface">Alergias / Intolerancias</span>
+<span class="material-symbols-outlined text-primary text-[18px]">sports_soccer</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Equipo y Temporada</span>
 </div>
-<span class="px-2.5 py-0.5 rounded-full text-label-sm text-[11px] font-black bg-[#ECFDF5] text-[#065F46] border border-[#A7F3D0]">
-              Ninguna conocida
-            </span>
+<span class="px-2.5 py-0.5 rounded-full text-label-sm text-[11px] font-bold bg-surface-container-lowest text-on-surface border border-outline-variant/50">
+C.D. Indautxu · Infantil A (2026/27)
+</span>
 </div>
-<!-- Observaciones de Calzado / Físicas -->
 <div class="p-2.5 rounded-xl bg-surface-container-low border border-outline-variant/30 space-y-1">
 <div class="flex items-center gap-2 text-on-surface">
-<span class="material-symbols-outlined text-primary text-[18px]">footprint</span>
-<span class="font-label-md text-label-md font-bold">Observación física / Calzado</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">contacts</span>
+<span class="font-label-md text-label-md font-bold">Contactos Familiares Registrados</span>
 </div>
 <p class="text-body-sm text-[13px] text-on-surface-variant font-medium pl-6">
-              Utiliza <strong class="text-on-surface font-bold">plantilla correctora ortopédica</strong> en la bota derecha para pisada pronadora leve.
-            </p>
-</div>
-<!-- Cobertura y Seguro Federativo -->
-<div class="p-3 rounded-xl bg-blue-50/60 border border-primary/20 flex items-start gap-2.5">
-<span class="material-symbols-outlined text-primary text-[22px] shrink-0 mt-0.5">shield</span>
-<div class="flex-1">
-<div class="flex items-center justify-between">
-<span class="font-label-md text-label-md font-black text-primary">Mutualidad Deportiva Escolar Álava</span>
-<span class="text-[10px] font-black uppercase text-secondary">Activa 26/27</span>
-</div>
-<p class="text-[12px] text-on-surface-variant mt-0.5">Nº Póliza: <strong>FED-VI-884920-A</strong></p>
-<p class="text-[11px] text-on-surface-variant">Centro de derivación urgencias: Hospital Santiago Apóstol (Vitoria-Gasteiz).</p>
-</div>
+Elena Gómez (Madre · Principal) y Mikel Aranguren (Padre). Notificaciones activas en app familiar.
+</p>
 </div>
 </div>
 </section>
@@ -1986,7 +2129,7 @@
 </a>
 <div class="text-center px-1">
 <h1 class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight truncate max-w-[190px]">Torneo Apertura</h1>
-<p class="font-label-sm text-label-sm text-on-surface-variant">Sábado 20 Sep · 09:30 h</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Sábado 19 Sep · 09:30 h</p>
 </div>
 <button aria-label="Compartir evento" class="w-9 h-9 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container active:scale-[0.98] transition-colors" type="button">
 <span class="material-symbols-outlined text-[20px]" data-icon="share">share</span>
@@ -2008,17 +2151,17 @@
           </span>
 </div>
 <!-- Title and Schedule -->
-<h2 class="font-headline-md text-headline-md text-on-surface font-extrabold tracking-tight">Torneo Apertura Oyón</h2>
+<h2 class="font-headline-md text-headline-md text-on-surface font-extrabold tracking-tight">Torneo Indautxu</h2>
 <div class="flex items-center gap-1.5 text-on-surface-variant mt-1">
 <span class="material-symbols-outlined text-[16px] text-primary" data-icon="calendar_today">calendar_today</span>
-<p class="font-body-sm text-body-sm font-medium text-on-surface">Sábado 20 Sep · 09:30 - 14:00</p>
+<p class="font-body-sm text-body-sm font-medium text-on-surface">Sábado 19 Sep · 09:30 - 14:00</p>
 </div>
 <!-- Venue / Location -->
 <div class="flex items-start justify-between gap-2 mt-space-sm pt-space-sm border-t border-surface-container-high">
 <div class="flex items-start gap-2">
 <span class="material-symbols-outlined text-[18px] text-primary shrink-0 mt-0.5" data-icon="place">place</span>
 <div>
-<p class="font-label-md text-label-md font-bold text-on-surface leading-snug">Polideportivo Municipal Oyón</p>
+<p class="font-label-md text-label-md font-bold text-on-surface leading-snug">Polideportivo Municipal Indautxu</p>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Pabellón 1 · Pista Central</p>
 </div>
 </div>
@@ -2105,7 +2248,7 @@
 <div class="flex-1 min-w-0">
 <p class="font-label-sm text-label-sm font-bold text-on-surface">Respuestas pendientes de confirmar:</p>
 <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
-<strong class="text-on-surface">Ane Mintegi (#16)</strong> y <strong class="text-on-surface">Peio Gómez (#9)</strong> aún no han respondido al aviso.
+<strong class="text-on-surface">Ane Mintegi (#16)</strong> y <strong class="text-on-surface">Peio Gómez (#18)</strong> aún no han respondido al aviso.
             </p>
 </div>
 </div>
@@ -2137,7 +2280,7 @@
 </div>
 <div>
 <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface leading-tight">2. Convocatoria Oficial</h3>
-<p class="font-label-sm text-label-sm text-on-surface-variant font-medium">12 plazas reglamentarias para acta</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-medium">12 plazas para la convocatoria</p>
 </div>
 </div>
 <!-- Lock Reason / Notice -->
@@ -2224,8 +2367,8 @@
 </button>
 <!-- Header Text -->
 <div class="text-center px-1">
-<h1 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate max-w-[190px]">Torneo Apertura Oyón</h1>
-<p class="font-label-sm text-label-sm text-on-surface-variant font-medium">Sábado 20 Sep · 09:30 h</p>
+<h1 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate max-w-[190px]">Torneo Indautxu</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-medium">Sábado 19 Sep · 09:30 h</p>
 </div>
 <!-- Trailing action -->
 <button aria-label="Compartir incidencia" class="w-9 h-9 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-[0.96]" type="button">
@@ -2235,7 +2378,7 @@
 </header>
 <!-- MAIN SCROLLABLE CONTENT CANVAS -->
 <main class="flex-1 px-margin-mobile pt-3.5 space-y-4">
-<!-- EVENT SUMMARY / STATUS RIBBON & QUORUM -->
+<!-- EVENT SUMMARY / STATUS RIBBON & CONVOCATORIA -->
 <section class="bg-surface-container-lowest rounded-xl p-3.5 border border-outline-variant shadow-sm">
 <div class="flex items-center justify-between gap-2 mb-2">
 <div class="flex items-center gap-1.5 flex-wrap">
@@ -2253,19 +2396,19 @@
 <div class="flex items-start gap-2">
 <span class="material-symbols-outlined text-primary text-[20px] mt-0.5" data-icon="stadium">stadium</span>
 <div>
-<p class="font-headline-sm text-[14px] leading-tight text-on-surface font-bold">Instalaciones Municipales Oyón</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Sábado 20 Sep · 09:30 - 14:00 h</p>
+<p class="font-headline-sm text-[14px] leading-tight text-on-surface font-bold">Polideportivo Municipal Indautxu</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Sábado 19 Sep · 09:30 - 14:00 h</p>
 </div>
 </div>
 </div>
-<!-- Quórum Callout Bar -->
+<!-- Convocatoria Callout Bar -->
 <div class="mt-3 p-2.5 rounded-lg bg-surface-container-low border border-outline-variant/60 flex items-center justify-between">
 <div class="flex items-center gap-2">
 <div class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary">
 <span class="material-symbols-outlined text-[18px]" data-icon="group_remove">group_remove</span>
 </div>
 <div>
-<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Convocatoria del Partido</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Convocatoria del partido</p>
 <p class="font-label-lg text-label-lg text-on-surface">11 / 12 convocados</p>
 </div>
 </div>
@@ -2300,7 +2443,7 @@
 <div class="flex items-center gap-1.5">
 <h2 class="font-headline-sm text-[15px] font-bold text-on-surface leading-tight">Ibai Aranguren</h2>
 </div>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Delantero Centro · Titular</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Delantero Centro</p>
 </div>
 </div>
 <span class="px-2.5 py-1 rounded-full bg-error-container text-tertiary font-label-sm text-[11px] font-bold border border-error/30">
@@ -2324,16 +2467,16 @@
 <div class="p-2.5 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-start gap-2 border border-tertiary/20">
 <span class="material-symbols-outlined text-tertiary text-[20px] shrink-0 mt-0.5 icon-filled" data-icon="warning">warning</span>
 <p class="font-label-md text-label-md leading-snug">
-              Falta 1 jugador para completar los 12 reglamentarios del convocatoria del partido antes del sábado.
+              Falta 1 jugador para completar los 12 convocados del partido antes del sábado.
             </p>
 </div>
 </div>
 </section>
-<!-- SECTION 2: SELECCIONAR SUSTITUTO REGLAMENTARIO -->
+<!-- SECTION 2: SELECCIONAR SUSTITUTO -->
 <section aria-label="Selección de Sustituto" class="bg-surface-container-lowest rounded-xl p-3.5 border border-outline-variant shadow-sm space-y-3">
 <div>
 <div class="flex items-center justify-between">
-<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Seleccionar sustituto reglamentario</h2>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Seleccionar sustituto</h2>
 <span class="px-2 py-0.5 rounded-md bg-surface-container-high text-primary font-label-sm text-[11px]">3 en reserva</span>
 </div>
 <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
@@ -2368,7 +2511,7 @@
 <span class="w-2 h-2 rounded-full bg-secondary"></span>
                 Disponible · Confirmó asistencia ayer
               </span>
-<span class="text-on-surface-variant font-medium">Asist. previa: 100%</span>
+
 </div>
 </div>
 <!-- Candidate 2: Nahia Garcia (UNSELECTED) -->
@@ -2440,7 +2583,7 @@
 <!-- Helper Text -->
 <div class="flex items-center justify-center gap-1.5 text-center text-on-surface-variant font-label-sm text-label-sm px-1">
 <span class="material-symbols-outlined text-[16px] text-secondary shrink-0 icon-filled" data-icon="verified_user">verified_user</span>
-<span>Se enviará aviso automático a Ane Mintegi y se actualizará el acta oficial.</span>
+<span>Se enviará aviso automático a Ane Mintegi y se actualizará el convocatoria oficial.</span>
 </div>
 </div>
 </section>
@@ -2467,7 +2610,7 @@
               </div>
 <div>
 <p class="font-label-md text-label-md text-primary font-bold">Plaza Vacante (Sustituto en selección)</p>
-<p class="font-body-sm text-[12px] text-on-surface-variant">Reemplazo reglamentario de Ibai Aranguren</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Reemplazo  de Ibai Aranguren</p>
 </div>
 </div>
 <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary text-on-primary font-label-sm text-[10px] font-bold">
@@ -2674,7 +2817,7 @@
         </span>
 <div class="flex flex-col text-left leading-none">
 <span class="font-label-md text-label-md text-on-surface font-bold">Ibai Aranguren</span>
-<span class="font-label-sm text-[10px] text-on-surface-variant font-medium">CD Oyón Infantil A</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant font-medium">C.D. Indautxu Infantil A</span>
 </div>
 <span class="material-symbols-outlined text-outline text-[18px] ml-0.5" data-icon="expand_more">expand_more</span>
 </button>
@@ -2692,7 +2835,7 @@
 <!-- Greeting & Synchronized Status Bar -->
 <section class="flex flex-col gap-1">
 <div class="flex items-center justify-between">
-<span class="font-label-md text-label-md text-on-surface-variant font-bold tracking-wide uppercase">Jueves 18 de Septiembre</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-bold tracking-wide uppercase">Viernes 18 de Septiembre 2026</span>
 <span class="inline-flex items-center gap-1 font-label-sm text-label-sm font-bold text-primary bg-primary-fixed/50 px-2 py-0.5 rounded-full border border-primary/20">
 <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
             Semana 3
@@ -2736,15 +2879,15 @@
 <div class="flex items-start gap-2 text-on-surface">
 <span class="material-symbols-outlined text-primary text-[19px] mt-0.5 shrink-0" data-icon="sports_soccer">sports_soccer</span>
 <div class="flex flex-col">
-<span class="font-label-md text-label-md font-bold">Torneo Apertura Oyón</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Sábado 20 Sep · 09:30 h</span>
+<span class="font-label-md text-label-md font-bold">Torneo Indautxu</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Sábado 19 Sep · 09:30 h</span>
 <span class="font-label-sm text-[12px] text-primary-container font-semibold mt-0.5">Llegada a vestuario: 08:45 h</span>
 </div>
 </div>
 <div class="h-[1px] bg-outline-variant/30 w-full"></div>
 <div class="flex items-center gap-2 text-on-surface-variant">
 <span class="material-symbols-outlined text-outline text-[18px] shrink-0" data-icon="location_on">location_on</span>
-<span class="font-body-sm text-body-sm">Polideportivo Municipal Oyón</span>
+<span class="font-body-sm text-body-sm">Polideportivo Municipal Indautxu</span>
 </div>
 </div>
 <!-- Dominant Action Button -->
@@ -2782,7 +2925,7 @@
 <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Entrenamiento semanal</h3>
 <div class="flex items-center gap-1.5 text-on-surface-variant mt-1">
 <span class="material-symbols-outlined text-[16px] text-outline" data-icon="pin_drop">pin_drop</span>
-<span class="font-body-sm text-body-sm">Campo Municipal Oyón · Hierba Artificial</span>
+<span class="font-body-sm text-body-sm">Campo Municipal Indautxu · Hierba Artificial</span>
 </div>
 </div>
 <div class="pt-2 border-t border-outline-variant/30 flex items-center justify-between text-on-surface-variant font-label-sm text-[11px]">
@@ -2799,7 +2942,7 @@
 <!-- Date Tag -->
 <div class="flex items-center gap-1.5 font-label-sm text-label-sm font-bold text-amber-800">
 <span class="material-symbols-outlined text-[16px]" data-icon="calendar_month">calendar_month</span>
-<span>Sábado 20 Sep · 09:30 - 14:00</span>
+<span>Sábado 19 Sep · 09:30 - 14:00</span>
 </div>
 <!-- Status Badge: Pending Response -->
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-100/80 border border-amber-300 text-amber-900 font-label-sm text-[11px] font-extrabold">
@@ -2808,10 +2951,10 @@
 </span>
 </div>
 <div class="flex flex-col">
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Torneo Apertura Oyón</h3>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Torneo Indautxu</h3>
 <div class="flex items-center gap-1.5 text-on-surface-variant mt-1">
 <span class="material-symbols-outlined text-[16px] text-outline" data-icon="stadium">stadium</span>
-<span class="font-body-sm text-body-sm">Polideportivo Oyón · Pistas Centrales</span>
+<span class="font-body-sm text-body-sm">Polideportivo Indautxu · Pistas Centrales</span>
 </div>
 </div>
 <!-- Fast RSVP Segmented Actions Inline -->
@@ -2832,7 +2975,7 @@
 <!-- Date Tag -->
 <div class="flex items-center gap-1.5 font-label-sm text-label-sm font-bold text-on-surface-variant">
 <span class="material-symbols-outlined text-[16px]" data-icon="event">event</span>
-<span>Lunes 22 Sep · 17:30</span>
+<span>Lunes 21 Sep · 17:30</span>
 </div>
 <!-- Status Badge: Neutral Pending Convocatoria -->
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant border border-outline-variant font-label-sm text-[11px] font-bold">
@@ -2844,7 +2987,7 @@
 <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Entrenamiento técnico</h3>
 <div class="flex items-center gap-1.5 text-on-surface-variant mt-1">
 <span class="material-symbols-outlined text-[16px] text-outline" data-icon="pin_drop">pin_drop</span>
-<span class="font-body-sm text-body-sm">Campo Municipal Oyón</span>
+<span class="font-body-sm text-body-sm">Campo Municipal Indautxu</span>
 </div>
 </div>
 </article>
@@ -2898,7 +3041,7 @@
 </button>
 <div>
 <h1 class="font-headline-sm text-headline-sm text-on-surface leading-tight">Confirmar disponibilidad</h1>
-<p class="font-label-sm text-label-sm text-on-surface-variant">Torneo Apertura Oyón</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Torneo Indautxu</p>
 </div>
 </div>
 <div class="px-2.5 py-1 rounded-full bg-surface-container-high border border-outline-variant flex items-center gap-1.5">
@@ -2919,9 +3062,7 @@
 <div>
 <div class="flex items-center gap-2">
 <span class="font-headline-sm text-headline-sm text-on-surface font-bold">Ibai Aranguren</span>
-<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-secondary-container text-on-secondary-fixed-variant tracking-wider uppercase">
-                  Titular
-                </span>
+
 </div>
 <span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
 <span class="material-symbols-outlined text-[14px]" data-icon="shield">shield</span>
@@ -2936,10 +3077,10 @@
 <div class="flex items-start justify-between gap-2">
 <div>
 <span class="font-label-sm text-label-sm text-primary-container font-extrabold uppercase tracking-wide">Jornada Oficial</span>
-<h2 class="font-headline-md text-headline-md text-on-surface leading-snug">Torneo Apertura Oyón</h2>
+<h2 class="font-headline-md text-headline-md text-on-surface leading-snug">Torneo Indautxu</h2>
 </div>
 <div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary-container shrink-0 font-bold text-xs border border-outline-variant/40">
-              CDO
+              CDI
             </div>
 </div>
 <!-- Match Logistics List with Crisp Contrast -->
@@ -2948,7 +3089,7 @@
 <div class="flex items-start gap-2.5">
 <span class="material-symbols-outlined text-primary-container text-[20px] mt-0.5 shrink-0" data-icon="calendar_today">calendar_today</span>
 <div>
-<p class="font-label-md text-label-md text-on-surface font-bold">Sábado 20 Sep · 09:30 - 14:00 h</p>
+<p class="font-label-md text-label-md text-on-surface font-bold">Sábado 19 Sep · 09:30 - 14:00 h</p>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Fase de grupos &amp; eliminatorias</p>
 </div>
 </div>
@@ -2964,7 +3105,7 @@
 <div class="flex items-start gap-2.5">
 <span class="material-symbols-outlined text-primary-container text-[20px] mt-0.5 shrink-0" data-icon="location_on">location_on</span>
 <div class="flex-1">
-<p class="font-label-md text-label-md text-on-surface font-bold">Polideportivo Municipal de Oyón</p>
+<p class="font-label-md text-label-md text-on-surface font-bold">Polideportivo Municipal Indautxu</p>
 <p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
                   Pista Central Cubierta · Acceso Puerta 2
                   <span class="material-symbols-outlined text-[14px] text-primary-container" data-icon="open_in_new">open_in_new</span>
@@ -3026,7 +3167,7 @@
 <span class="font-headline-sm text-headline-sm text-on-surface font-extrabold tracking-tight">NO PUEDE ASISTIR</span>
 </div>
 <p class="font-body-sm text-body-sm text-on-surface-variant font-normal mt-0.5 leading-snug">
-                No estará disponible. Se avisará al míster para liberar su plaza reglamentaria.
+                No estará disponible. Se avisará al míster para liberar su plaza en la convocatoria.
               </p>
 </div>
 <!-- Radio Indicator -->
@@ -3062,27 +3203,10 @@
           </label>
 <span class="font-label-sm text-label-sm text-outline font-medium">(Opcional)</span>
 </div>
-<!-- Quick Tap Helper Chips -->
-<div>
-<p class="font-label-sm text-label-sm text-on-surface-variant mb-1.5 font-semibold">Atajos frecuentes para añadir:</p>
-<div class="flex flex-wrap gap-1.5">
-<button class="px-2.5 py-1 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface border border-outline-variant/70 font-label-sm text-label-sm transition-colors active:scale-95 flex items-center gap-1" onclick="appendNote('Necesita transporte / coche')" type="button">
-<span class="material-symbols-outlined text-[14px] text-primary-container" data-icon="directions_car">directions_car</span>
-              Necesita transporte / coche
-            </button>
-<button class="px-2.5 py-1 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface border border-outline-variant/70 font-label-sm text-label-sm transition-colors active:scale-95 flex items-center gap-1" onclick="appendNote('Molestia física leve')" type="button">
-<span class="material-symbols-outlined text-[14px] text-tertiary" data-icon="healing">healing</span>
-              Molestia física leve
-            </button>
-<button class="px-2.5 py-1 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface border border-outline-variant/70 font-label-sm text-label-sm transition-colors active:scale-95 flex items-center gap-1" onclick="appendNote('Llegará 10 min tarde')" type="button">
-<span class="material-symbols-outlined text-[14px] text-on-surface-variant" data-icon="timer">timer</span>
-              Llegará 10 min tarde
-            </button>
-</div>
-</div>
+
 <!-- Textarea input -->
 <div class="relative">
-<textarea class="w-full rounded-xl border-1.5 border-outline-variant bg-surface p-3 text-on-surface font-body-md text-body-md placeholder:text-outline focus:border-primary-container focus:ring-0 focus:outline-none resize-none transition-all" id="coach-notes" placeholder="Escribe aquí si necesita transporte, tiene alguna molestia física o cualquier nota para el entrenador Mikel..." rows="3"></textarea>
+<textarea class="w-full rounded-xl border-1.5 border-outline-variant bg-surface p-3 text-on-surface font-body-md text-body-md placeholder:text-outline focus:border-primary-container focus:ring-0 focus:outline-none resize-none transition-all" id="coach-notes" placeholder="Escribe aquí cualquier nota para el entrenador Mikel (transporte, llegada tarde, etc.)..." rows="3"></textarea>
 <div class="flex justify-end mt-1">
 <span class="font-label-sm text-label-sm text-outline">Visible solo para entrenadores</span>
 </div>
@@ -3121,7 +3245,7 @@
         </p>
 <div class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container border border-outline-variant/60">
 <span class="material-symbols-outlined text-[13px] text-secondary" data-icon="lock">lock</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Notificación instantánea a cuerpo técnico CD Oyón</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Notificación instantánea a cuerpo técnico C.D. Indautxu</span>
 </div>
 </div>
 </aside>
@@ -3144,7 +3268,7 @@
 <!-- Team Badge Pill -->
 <div class="flex items-center gap-1.5 bg-surface-container px-2.5 py-1 rounded-full border border-outline-variant">
 <span class="material-symbols-outlined text-[16px] text-secondary" style="font-variation-settings: 'FILL' 1;">shield</span>
-<span class="font-label-sm text-label-sm text-on-surface font-bold truncate max-w-[130px]">CD Oyón · Inf A</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold truncate max-w-[130px]">C.D. Indautxu · Inf A</span>
 <span class="w-1 h-1 rounded-full bg-outline"></span>
 <span class="font-label-sm text-label-sm text-on-surface-variant">26/27</span>
 </div>
@@ -3190,7 +3314,7 @@
 </button>
 </div>
 <div class="relative">
-<input class="w-full h-[50px] px-3.5 bg-surface-container-lowest text-on-surface font-body-lg text-body-lg font-semibold rounded-xl border border-outline focus:border-primary-container focus:ring-0 transition-colors" id="event-title" name="title" placeholder="Ej. Partido de Liga vs Logroñés" type="text" value="Torneo Oyón"/>
+<input class="w-full h-[50px] px-3.5 bg-surface-container-lowest text-on-surface font-body-lg text-body-lg font-semibold rounded-xl border border-outline focus:border-primary-container focus:ring-0 transition-colors" id="event-title" name="title" placeholder="Ej. Partido de Liga vs Logroñés" type="text" value="Torneo Indautxu"/>
 </div>
 </section>
 <!-- 3. FECHA Y HORARIOS (Bento Grid Card Format for Quick Pitch Input) -->
@@ -3248,7 +3372,7 @@
 </div>
 <div class="relative flex items-center">
 <span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[20px] pointer-events-none">location_on</span>
-<input class="w-full h-[50px] pl-10 pr-3.5 bg-surface-container-lowest text-on-surface font-body-md text-body-md font-semibold rounded-xl border border-outline focus:border-primary-container focus:ring-0" id="location-input" type="text" value="Polideportivo Municipal de Oyón"/>
+<input class="w-full h-[50px] pl-10 pr-3.5 bg-surface-container-lowest text-on-surface font-body-md text-body-md font-semibold rounded-xl border border-outline focus:border-primary-container focus:ring-0" id="location-input" type="text" value="Polideportivo Municipal de Indautxu"/>
 </div>
 </section>
 <!-- 5. NOTAS OPERATIVAS Y EQUIPACIÓN -->
@@ -3341,13 +3465,13 @@
 </button>
 <div class="flex flex-col">
 <span class="font-headline-sm text-headline-sm font-bold text-on-surface leading-tight">Crear Convocatoria</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">CD Oyón · Infantil A</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">C.D. Indautxu · Infantil A</span>
 </div>
 </div>
 <!-- Event Chip Badge -->
 <div class="flex items-center gap-1 bg-surface-container text-primary-container px-2.5 py-1 rounded-full border border-outline-variant/40">
 <span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
-<span class="font-label-sm text-label-sm whitespace-nowrap">Torneo Oyón · Sáb 19</span>
+<span class="font-label-sm text-label-sm whitespace-nowrap">Torneo Indautxu · Sáb 19</span>
 </div>
 </div>
 </header>
@@ -3757,7 +3881,7 @@
 <div class="flex items-center space-x-2">
 <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm border border-outline-variant">
 <span class="material-symbols-outlined text-[13px] text-primary" data-icon="shield">shield</span>
-            CD Oyón · Infantil A
+            C.D. Indautxu · Infantil A
           </span>
 <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container text-on-tertiary-fixed-variant font-label-sm text-label-sm font-bold">
 <span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span>
@@ -3793,7 +3917,7 @@
 </div>
 <!-- Title -->
 <h2 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1">
-          Convocatoria actualizada: Torneo Oyón
+          Convocatoria actualizada: Torneo Indautxu
         </h2>
 <!-- Author / Coach Signature -->
 <div class="flex items-center space-x-1.5 mb-2.5 text-on-surface-variant text-body-sm font-body-sm">
@@ -3832,7 +3956,7 @@
 </div>
 <!-- Title -->
 <h2 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1">
-        Convocatoria Oficial Torneo Oyón publicada
+        Convocatoria Oficial Torneo Indautxu publicada
       </h2>
 <!-- Author -->
 <div class="flex items-center space-x-1.5 mb-2 text-on-surface-variant text-body-sm font-body-sm">
@@ -3870,7 +3994,7 @@
 <!-- Author -->
 <div class="flex items-center space-x-1.5 mb-2.5 text-on-surface-variant text-body-sm font-body-sm">
 <span class="material-symbols-outlined text-primary text-base" data-icon="manage_accounts">manage_accounts</span>
-<span class="font-bold text-on-surface">Coordinación CD Oyón</span>
+<span class="font-bold text-on-surface">Coordinación C.D. Indautxu</span>
 </div>
 <p class="font-body-md text-body-md text-on-surface-variant leading-snug mb-3">
         La federación ha modificado el inicio del partido del 26 de septiembre de las 10:00 a las 11:00 h debido al arbitraje.
@@ -3980,7 +4104,7 @@
           <span id="sheet-player-num" class="w-9 h-9 rounded-full bg-blue-100 text-blue-700 font-extrabold flex items-center justify-center text-sm">#1</span>
           <div>
             <h4 id="sheet-player-name" class="font-bold text-base text-slate-900 leading-tight">Gorka Elejalde</h4>
-            <p id="sheet-player-role" class="text-xs text-slate-500">Portero · CD Oyón Infantil A</p>
+            <p id="sheet-player-role" class="text-xs text-slate-500">Portero · C.D. Indautxu Infantil A</p>
           </div>
         </div>
         <button onclick="teamApp.closePlayerModal()" class="p-1.5 text-slate-400 hover:text-slate-700 rounded-full cursor-pointer">
