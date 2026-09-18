@@ -427,48 +427,57 @@ master_template = """<!DOCTYPE html>
   <!-- ======================================================== -->
   <!-- BARRA DE CONTROL EXTERNA DE LA DEMO (Separada del producto) -->
   <!-- ======================================================== -->
-  <aside class="w-full max-w-6xl mx-auto px-4 py-3 bg-slate-900 border-b border-slate-800 flex flex-col md:flex-row items-center justify-between gap-3 shrink-0 z-50 sticky top-0 shadow-lg">
+  <aside class="w-full max-w-6xl mx-auto px-2 sm:px-4 py-2 sm:py-3 bg-slate-900 border-b border-slate-800 flex flex-col md:flex-row items-center justify-between gap-2 sm:gap-3 shrink-0 z-50 sticky top-0 shadow-lg">
     
-    <!-- Branding & Info -->
-    <div class="flex items-center gap-2.5">
-      <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-black text-sm shadow-sm">
-        TH!
-      </div>
-      <div>
-        <div class="flex items-center gap-2">
-          <span class="font-extrabold text-sm tracking-tight text-white">Talde Hemendik!</span>
-          <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-blue-900/60 text-blue-300 border border-blue-700/50">Demo MVP</span>
+    <!-- Branding & Info + Mobile Info Toggle -->
+    <div class="w-full md:w-auto flex items-center justify-between gap-2.5">
+      <div class="flex items-center gap-2">
+        <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-black text-xs sm:text-sm shadow-sm">
+          TH!
         </div>
-        <p class="text-[11px] text-slate-400">CD Oyón · Infantil A (18 jugadores)</p>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="font-extrabold text-xs sm:text-sm tracking-tight text-white">Talde Hemendik!</span>
+            <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.2 rounded bg-blue-900/60 text-blue-300 border border-blue-700/50">Demo MVP</span>
+          </div>
+          <p class="text-[10px] sm:text-[11px] text-slate-400">CD Oyón · Infantil A (18 jug.)</p>
+        </div>
       </div>
+
+      <!-- Mobile info card toggle button -->
+      <button onclick="toggleInfoCard()" class="md:hidden px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] flex items-center gap-1 cursor-pointer">
+        <span class="material-symbols-outlined text-[14px]">info</span>
+        <span id="info-btn-label">Paso 1</span>
+        <span id="info-btn-icon" class="material-symbols-outlined text-[14px]">expand_more</span>
+      </button>
     </div>
 
     <!-- Switcher de Roles (Entrenador vs Tutor) -->
-    <div class="flex items-center bg-slate-950 p-1 rounded-xl border border-slate-800">
-      <button id="demo-role-coach" onclick="teamApp.setRole('coach')" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-600 text-white shadow-sm flex items-center gap-1.5 cursor-pointer">
-        <span class="material-symbols-outlined text-[16px]">sports</span>
+    <div class="flex items-center bg-slate-950 p-1 rounded-xl border border-slate-800 shrink-0">
+      <button id="demo-role-coach" onclick="teamApp.setRole('coach')" class="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[11px] sm:text-xs font-bold bg-blue-600 text-white shadow-sm flex items-center gap-1 sm:gap-1.5 cursor-pointer">
+        <span class="material-symbols-outlined text-[15px] sm:text-[16px]">sports</span>
         <span>Míster (Mikel)</span>
       </button>
-      <button id="demo-role-parent" onclick="teamApp.setRole('parent')" class="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:bg-slate-800 flex items-center gap-1.5 cursor-pointer">
-        <span class="material-symbols-outlined text-[16px]">family_restroom</span>
-        <span>Familia (Amaia · Ibai #9)</span>
+      <button id="demo-role-parent" onclick="teamApp.setRole('parent')" class="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[11px] sm:text-xs font-medium text-slate-300 hover:bg-slate-800 flex items-center gap-1 sm:gap-1.5 cursor-pointer">
+        <span class="material-symbols-outlined text-[15px] sm:text-[16px]">family_restroom</span>
+        <span>Familia (Amaia)</span>
       </button>
     </div>
 
     <!-- Navegación de Paso Guiado (1 a 14) -->
-    <div class="flex items-center gap-2">
-      <div class="flex items-center bg-slate-950 px-2 py-1 rounded-xl border border-slate-800 gap-1.5">
+    <div class="w-full md:w-auto flex items-center justify-center gap-1.5 sm:gap-2 overflow-x-hidden">
+      <div class="flex items-center bg-slate-950 px-1.5 sm:px-2 py-1 rounded-xl border border-slate-800 gap-1 shrink-0">
         <button onclick="teamApp.prevStep()" class="p-1 text-slate-400 hover:text-white rounded hover:bg-slate-800 cursor-pointer" title="Paso anterior">
-          <span class="material-symbols-outlined text-[18px]">chevron_left</span>
+          <span class="material-symbols-outlined text-[16px] sm:text-[18px]">chevron_left</span>
         </button>
-        <span id="demo-step-badge" class="font-mono text-xs font-bold text-blue-400 px-1.5">Paso 1 de 14</span>
+        <span id="demo-step-badge" class="font-mono text-[11px] sm:text-xs font-bold text-blue-400 px-1 whitespace-nowrap">Paso 1/14</span>
         <button onclick="teamApp.nextStep()" class="p-1 text-slate-400 hover:text-white rounded hover:bg-slate-800 cursor-pointer" title="Paso siguiente">
-          <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+          <span class="material-symbols-outlined text-[16px] sm:text-[18px]">chevron_right</span>
         </button>
       </div>
 
       <!-- Selector Directo de Pantalla -->
-      <select id="demo-screen-select" onchange="teamApp.goToScreen(this.value)" class="bg-slate-950 text-slate-200 border border-slate-800 rounded-xl px-2.5 py-1 text-xs focus:ring-1 focus:ring-blue-500 cursor-pointer">
+      <select id="demo-screen-select" onchange="teamApp.goToScreen(this.value)" class="flex-1 md:flex-none max-w-[155px] sm:max-w-none bg-slate-950 text-slate-200 border border-slate-800 rounded-xl px-2 py-1 text-[11px] sm:text-xs focus:ring-1 focus:ring-blue-500 cursor-pointer text-ellipsis overflow-hidden">
         <option value="screen_a_home_coach">A · Home Entrenador</option>
         <option value="screen_b_calendar">B · Calendario Equipo</option>
         <option value="screen_c_create_event">C · Crear Evento</option>
@@ -482,30 +491,30 @@ master_template = """<!DOCTYPE html>
         <option value="screen_k_notices">K · Avisos Operativos</option>
       </select>
 
-      <button onclick="teamApp.resetDemo()" class="p-1.5 text-slate-400 hover:text-red-400 hover:bg-slate-800 rounded-lg cursor-pointer" title="Reiniciar toda la demo">
-        <span class="material-symbols-outlined text-[18px]">restart_alt</span>
+      <button onclick="teamApp.resetDemo()" class="p-1.5 text-slate-400 hover:text-red-400 hover:bg-slate-800 rounded-lg cursor-pointer shrink-0" title="Reiniciar toda la demo">
+        <span class="material-symbols-outlined text-[16px] sm:text-[18px]">restart_alt</span>
       </button>
     </div>
   </aside>
 
   <!-- Barra informativa de la etapa guiada -->
-  <div class="w-full max-w-xl mx-auto px-4 mt-2">
-    <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3 shadow-md">
+  <div id="demo-step-card" class="w-full max-w-xl mx-auto px-2 sm:px-4 mt-1 sm:mt-2 transition-all duration-200">
+    <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-2.5 sm:p-3 shadow-md">
       <div class="flex items-center justify-between gap-2 mb-1">
         <h2 id="demo-step-title" class="text-xs font-bold text-blue-400">1. Entrenador entra en Inicio</h2>
         <span class="text-[10px] text-slate-400 font-mono">14 pasos verificables</span>
       </div>
-      <p id="demo-step-desc" class="text-xs text-slate-300 leading-snug">
+      <p id="demo-step-desc" class="text-[11px] sm:text-xs text-slate-300 leading-snug">
         Mikel (entrenador) consulta el resumen operativo. El bloque 'REQUIERE TU ATENCIÓN' destaca el Torneo Oyón con las respuestas recibidas.
       </p>
-      <div class="mt-2 pt-2 border-t border-slate-800/80 flex items-center justify-between text-[11px]">
+      <div class="mt-1.5 pt-1.5 border-t border-slate-800/80 flex items-center justify-between text-[10px] sm:text-[11px]">
         <div class="text-amber-400 font-medium flex items-center gap-1">
-          <span class="material-symbols-outlined text-[14px]">touch_app</span>
+          <span class="material-symbols-outlined text-[13px] sm:text-[14px]">touch_app</span>
           <span id="demo-step-action">Pulsa en 'Gestionar Disponibilidad y Convocatoria' o en la tarjeta del Torneo Oyón.</span>
         </div>
       </div>
       <!-- Barra de progreso lineal -->
-      <div class="w-full bg-slate-800 h-1 rounded-full mt-2 overflow-hidden">
+      <div class="w-full bg-slate-800 h-1 rounded-full mt-1.5 overflow-hidden">
         <div id="demo-step-progress" class="bg-blue-500 h-full rounded-full transition-all duration-300" style="width: 7.14%"></div>
       </div>
     </div>
@@ -514,11 +523,11 @@ master_template = """<!DOCTYPE html>
   <!-- ======================================================== -->
   <!-- MOBILE DEVICE VIEWPORT CONTAINER -->
   <!-- ======================================================== -->
-  <div class="w-full flex-1 flex items-center justify-center p-2 sm:p-4 my-auto">
-    <div class="mockup-wrapper w-full max-w-[390px] h-[844px] bg-surface rounded-[40px] border-[6px] border-slate-900 flex flex-col relative overflow-hidden text-on-surface shadow-2xl">
+  <div class="w-full flex-1 flex items-center justify-center p-0 sm:p-4 my-auto overflow-hidden">
+    <div class="mockup-wrapper w-full sm:max-w-[390px] h-[calc(100dvh-125px)] sm:h-[844px] bg-surface rounded-none sm:rounded-[40px] border-0 sm:border-[6px] border-slate-900 flex flex-col relative overflow-hidden text-on-surface shadow-none sm:shadow-2xl">
       
-      <!-- Top Smartphone Notch / Dynamic Island -->
-      <div class="w-full h-8 bg-surface-container-lowest flex items-center justify-between px-6 shrink-0 z-50 select-none border-b border-outline-variant/30">
+      <!-- Top Smartphone Notch / Dynamic Island (Only on desktop preview) -->
+      <div class="hidden sm:flex w-full h-8 bg-surface-container-lowest items-center justify-between px-6 shrink-0 z-50 select-none border-b border-outline-variant/30">
         <span class="text-[12px] font-bold text-on-surface tracking-tight">10:30</span>
         <div class="w-20 h-4 bg-slate-950 rounded-full mx-auto"></div>
         <div class="flex items-center gap-1.5 text-on-surface text-[12px]">

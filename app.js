@@ -351,7 +351,9 @@ class TeamAppState {
     const stepAction = document.getElementById("demo-step-action");
     const stepProgress = document.getElementById("demo-step-progress");
 
-    if (stepBadge) stepBadge.textContent = `Paso ${stepObj.step} de 14`;
+    if (stepBadge) stepBadge.textContent = `Paso ${stepObj.step}/14`;
+    const infoBtnLabel = document.getElementById("info-btn-label");
+    if (infoBtnLabel) infoBtnLabel.textContent = `Paso ${stepObj.step}`;
     if (stepTitle) stepTitle.textContent = stepObj.title;
     if (stepDesc) stepDesc.textContent = stepObj.desc;
     if (stepAction) stepAction.textContent = stepObj.actionHint;
@@ -414,6 +416,16 @@ class TeamAppState {
 
 // Global instance
 window.teamApp = new TeamAppState();
+window.toggleInfoCard = function() {
+  const card = document.getElementById('demo-step-card');
+  const icon = document.getElementById('info-btn-icon');
+  if (card) {
+    card.classList.toggle('hidden');
+    if (icon) {
+      icon.textContent = card.classList.contains('hidden') ? 'expand_more' : 'expand_less';
+    }
+  }
+};
 document.addEventListener("DOMContentLoaded", () => {
   window.teamApp.render();
 });
