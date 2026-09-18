@@ -80,6 +80,8 @@ global_scrubs = [
     ("Abriendo selector de estado médico", "Abriendo selector de disponibilidad"),
     ("Medical Context & Report Info", "Contexto de Asistencia"),
     ("Quick Medical / Roster Toggle Action", "Acción de Disponibilidad"),
+    ("Quórum Federación", "Convocatoria del Partido"),
+    ("QUÓRUM FEDERACIÓN", "CONVOCATORIA"),
     ("Nº Licencia: FV-2011-8942", "CD Oyón Infantil A")
 ]
 
