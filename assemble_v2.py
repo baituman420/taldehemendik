@@ -20,7 +20,7 @@ screens_source = [
 
 screens_html = {}
 for sid, file_path in screens_source:
-    raw = open(file_path).read()
+    raw = open(file_path, "r", encoding="utf-8").read()
     bm = re.search(r'<body[^>]*>(.*?)</body>', raw, re.DOTALL)
     if bm:
         content = bm.group(1)
@@ -31,7 +31,56 @@ for sid, file_path in screens_source:
         screens_html[sid] = content.strip()
 
 # =========================================================================
-# INJECT INTERACTIVE TRIGGERS & HANDLERS
+# GLOBAL TEXT REPLACEMENTS: DATES (2026/27) & REMOVAL OF MEDICAL SCOPE CREEP
+# =========================================================================
+global_scrubs = [
+    ("2024/25", "2026/27"),
+    ("2024 / 2025", "2026 / 2027"),
+    ("2024-2025", "2026-2027"),
+    ("Temporada 2024/2025", "Temporada 2026/2027"),
+    ("Temporada 2024/25", "Temporada 2026/27"),
+    ("Jueves 17 de Septiembre", "Jueves 17 de Septiembre 2026"),
+    ("Baja médica en la convocatoria", "Cambio de asistencia en la convocatoria"),
+    ("Baja médica (Esguince leve)", "No disponible (Nota: Está enfermo)"),
+    ("ha reportado una baja médica.", "no puede asistir (nota familiar: está enfermo)."),
+    ("ha reportado una baja médica", "no puede asistir (nota familiar: está enfermo)"),
+    ("Baja médica", "No disponible"),
+    ("baja médica", "no disponible"),
+    ("Esguince de tobillo leve", "No disponible (está enfermo)"),
+    ("Esguince leve de tobillo (Grado I) en sesión de entrenamiento escolar.", "No puede asistir este fin de semana (está enfermo)."),
+    ("Esguince leve de tobillo", "No disponible (está enfermo)"),
+    ("Plantilla correctora bota der. · Esguince leve de tobillo", "No disponible (nota: está enfermo)"),
+    ("Fichas médicas al día (100%)", "Plantilla al día (18 jugadores)"),
+    ("Ficha Médica y Seguro", "Datos de Contacto"),
+    ("Ficha Médica:", "Disponibilidad:"),
+    ("Ficha médica:", "Disponibilidad:"),
+    ("Fichas federativas y seguro escolar en regla (18/18)", "Plantilla completa para el evento (18 jugadores)"),
+    ("importados de la ficha federativa", "cargados en la plantilla del equipo"),
+    ("acta federativa", "convocatoria del partido"),
+    ("spam federativo", "mensajes innecesarios"),
+    ("Soporte Federativo", "Soporte de Cantera"),
+    ("Federación Alavesa", "CD Oyón Cantera"),
+    ("Seguro federativo de Álava", "Contacto familiar registrado"),
+    ("Seguro escolar Álava", "Contacto familiar registrado"),
+    ("seguro escolar en vigor", "contacto familiar verificado"),
+    ("Seguro escolar en vigor", "Contacto familiar verificado"),
+    ("detalles médicos, agenda y convocatorias", "agenda, convocatorias y avisos"),
+    ("Rol Legal", "Rol Familiar"),
+    ("Tutor Legal", "Tutor / Familiar"),
+    ("Acceso legal concedido", "Acceso concedido"),
+    ("Validación por el cuerpo técnico", "Validación del entrenador"),
+    ("RGPD Cantera", "Privacidad del Menor"),
+    ("Nº Licencia: FV-2011-8942", "CD Oyón Infantil A")
+]
+
+for sid in screens_html:
+    for old, new in global_scrubs:
+        screens_html[sid] = screens_html[sid].replace(old, new)
+    screens_html[sid] = re.sub(r'data-icon=[\'"]medical_services[\'"]', 'data-icon="event_busy"', screens_html[sid])
+    screens_html[sid] = re.sub(r'>medical_services<', '>event_busy<', screens_html[sid])
+
+# =========================================================================
+# INJECT INTERACTIVE TRIGGERS & SIMPLIFICATIONS
 # =========================================================================
 
 # --- 0. Screen V2-00: Onboarding Welcome ---
@@ -46,7 +95,7 @@ screens_html["v2_00_onboarding_welcome"] = re.sub(
     screens_html["v2_00_onboarding_welcome"]
 )
 
-# --- 0. Screen V2-00: Coach Create Team ---
+# --- 0. Screen V2-00: Coach Create Team (SIMPLIFIED: 3 Core Inputs) ---
 screens_html["v2_00_coach_create_team"] = re.sub(
     r'(<button aria-label="Volver"[^>]*>)',
     r'<button aria-label="Volver" onclick="teamApp.goToScreen(\'v2_00_onboarding_welcome\')" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-surface-container active:scale-[0.98] transition-transform text-on-surface cursor-pointer" type="button">',
@@ -71,7 +120,7 @@ screens_html["v2_00_coach_create_team"] = re.sub(
     screens_html["v2_00_coach_create_team"]
 )
 
-# --- 0. Screen V2-00: Parent Join Team ---
+# --- 0. Screen V2-00: Parent Join Team (PRIVACY FIRST) ---
 screens_html["v2_00_parent_join_team"] = re.sub(
     r'(<button aria-label="Volver"[^>]*>)',
     r'<button aria-label="Volver" onclick="teamApp.goToScreen(\'v2_00_onboarding_welcome\')" class="inline-flex items-center gap-1 text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors py-1 -ml-1 active:scale-[0.98] cursor-pointer" type="button">',
@@ -83,7 +132,6 @@ screens_html["v2_00_parent_join_team"] = re.sub(
     r'<button id="btn-submit" onclick="teamApp.submitParentJoinRequest()" class="w-full h-[52px] bg-primary-container hover:bg-primary text-on-primary rounded-xl font-label-lg text-label-lg flex items-center justify-center gap-2 active:scale-[0.98] transition-all shadow-md cursor-pointer" type="button">',
     screens_html["v2_00_parent_join_team"]
 )
-# Contain bottom bar within phone view
 screens_html["v2_00_parent_join_team"] = screens_html["v2_00_parent_join_team"].replace(
     'class="fixed bottom-0 left-0 right-0 z-50 flex justify-center pointer-events-none"',
     'class="sticky bottom-0 z-40 bg-surface-container-lowest/98 backdrop-blur border-t border-outline-variant p-4 space-y-2.5 shadow-md"'
@@ -120,7 +168,7 @@ coach_startup_banner = """
     </div>
   </div>
 
-  <!-- Pending approval request card -->
+  <!-- Pending approval request card (Privacy Protected) -->
   <div id="coach-pending-approval-card" class="bg-white rounded-xl p-3 border-2 border-amber-300 shadow-xs space-y-2.5">
     <div class="flex items-start gap-2.5">
       <div class="w-8 h-8 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">
@@ -148,12 +196,12 @@ coach_startup_banner = """
     </div>
   </div>
 
-  <!-- Approved confirmation badge (hidden initially) -->
+  <!-- Approved confirmation badge -->
   <div id="coach-approval-success-badge" class="hidden bg-emerald-50 border border-emerald-300 rounded-xl p-3 flex items-center gap-2.5 text-emerald-900">
     <span class="material-symbols-outlined text-secondary text-[22px]">verified</span>
     <div class="text-xs leading-tight">
       <strong>Elena Gómez vinculada a Ibai Aranguren (#9)</strong><br>
-      <span class="text-emerald-700">Acceso legal concedido. Notificación enviada a la familia.</span>
+      <span class="text-emerald-700">Acceso concedido. Notificación enviada a la familia.</span>
     </div>
   </div>
 
@@ -170,7 +218,6 @@ coach_startup_banner = """
 </section>
 """
 
-# Insert startup card right before SECTION 1: 'HOY'
 screens_html["v2_01_coach_home"] = screens_html["v2_01_coach_home"].replace(
     "<!-- SECTION 1: 'HOY' (Immediate operational focus) -->",
     coach_startup_banner + "\n<!-- SECTION 1: 'HOY' (Immediate operational focus) -->"
@@ -252,7 +299,7 @@ screens_html["v2_03_coach_roster"] = re.sub(
 )
 screens_html["v2_03_coach_roster"] = re.sub(
     r'(<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-surface-container-lowest[^"]*">\s*Bajas \(3\)\s*</button>)',
-    r'<button onclick="teamApp.filterRoster(\'bajas\')" class="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high cursor-pointer">Bajas (3)</button>',
+    r'<button onclick="teamApp.filterRoster(\'bajas\')" class="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high cursor-pointer">No disponibles (3)</button>',
     screens_html["v2_03_coach_roster"]
 )
 
@@ -290,7 +337,7 @@ screens_html["v2_05_event_hub_normal"] = re.sub(
     screens_html["v2_05_event_hub_normal"]
 )
 
-# --- 6. Screen V2-06: Event Hub Injury ---
+# --- 6. Screen V2-06: Event Hub Injury (Neutral Substitute Treatment) ---
 screens_html["v2_06_event_hub_injury"] = re.sub(
     r'(<div class="player-card relative [^"]*onclick="selectPlayer\(\'cand-ane\'\)"[^>]*>)',
     r'<div id="sub-card-ane" class="player-card relative bg-surface-container-lowest border-2 border-primary-container rounded-2xl p-4 shadow-sm flex items-center justify-between cursor-pointer active:scale-[0.99] transition-all" onclick="teamApp.selectReserve(\'Ane Mintegi\')">',
@@ -373,7 +420,7 @@ header_html = """<!DOCTYPE html>
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <title>Talde Hemendik! · CD Oyón Infantil A</title>
+  <title>Talde Hemendik! · CD Oyón Infantil A (2026/27)</title>
   
   <!-- Material Symbols Google Icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
@@ -463,7 +510,6 @@ header_html = """<!DOCTYPE html>
     .material-symbols-outlined.icon-filled {
       font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24;
     }
-    /* Hide scrollbars while preserving scroll functionality */
     .no-scrollbar::-webkit-scrollbar {
       display: none;
     }
@@ -490,16 +536,16 @@ header_html = """<!DOCTYPE html>
         <span class="hidden xs:inline">Talde Hemendik!</span>
       </div>
 
-      <!-- Role Switcher (Onboarding, Coach, Parent) -->
+      <!-- Multi-team / Multi-role switcher: USUARIO -> EQUIPO -> ROL -->
       <div class="bg-slate-950 p-0.5 rounded-xl border border-slate-800 flex items-center gap-0.5">
-        <button id="role-btn-onboard" onclick="teamApp.setRole('onboard')" class="px-2 py-1 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 transition-all cursor-pointer">
+        <button id="role-btn-onboard" onclick="teamApp.switchMembership('onboard')" class="px-2 py-1 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 transition-all cursor-pointer">
           Acceso
         </button>
-        <button id="role-btn-coach" onclick="teamApp.setRole('coach')" class="px-2 py-1 rounded-lg text-xs font-bold bg-blue-600 text-white shadow-xs transition-all cursor-pointer">
-          Míster
+        <button id="role-btn-coach" onclick="teamApp.switchMembership('oyon_inf_a')" class="px-2 py-1 rounded-lg text-xs font-bold bg-blue-600 text-white shadow-xs transition-all cursor-pointer" title="Mikel Zubeldia · Entrenador CD Oyón Infantil A">
+          Infantil A (Míster)
         </button>
-        <button id="role-btn-parent" onclick="teamApp.setRole('parent')" class="px-2 py-1 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 transition-all cursor-pointer">
-          Familia
+        <button id="role-btn-parent" onclick="teamApp.switchMembership('oyon_ale_b')" class="px-2 py-1 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 transition-all cursor-pointer" title="Elena Gómez · Madre de Ibai #9">
+          Familia (Elena)
         </button>
       </div>
     </div>
@@ -520,15 +566,15 @@ header_html = """<!DOCTYPE html>
       <select id="demo-screen-select" onchange="teamApp.goToScreen(this.value)" class="max-w-[130px] sm:max-w-[170px] bg-slate-950 text-slate-200 border border-slate-800 rounded-xl px-2 py-1 text-[11px] sm:text-xs focus:ring-1 focus:ring-blue-500 cursor-pointer text-ellipsis overflow-hidden">
         <option value="v2_00_onboarding_welcome">0. Acceso Inicial</option>
         <option value="v2_00_coach_create_team">0a. Crear Equipo & OYON16</option>
-        <option value="v2_00_parent_join_team">0b. Familia: Únete al equipo</option>
-        <option value="v2_01_coach_home">1. Inicio (La mesa míster)</option>
+        <option value="v2_00_parent_join_team">0b. Familia: Solicitud Vinculación</option>
+        <option value="v2_01_coach_home">1. Inicio (La mesa del míster)</option>
         <option value="v2_02_coach_agenda">2. Agenda Semanal</option>
-        <option value="v2_05_event_hub_normal">3. Hub: Disponibilidad</option>
-        <option value="v2_06_event_hub_injury">4. Hub: Incidencia & Bajas</option>
+        <option value="v2_05_event_hub_normal">3. Hub: Disponibilidad Activa</option>
+        <option value="v2_06_event_hub_injury">4. Hub: Asistencia & Suplentes Neutros</option>
         <option value="v2_03_coach_roster">5. Plantilla (18 jug.)</option>
-        <option value="v2_04_player_detail">6. Ficha: Ibai (#9)</option>
+        <option value="v2_04_player_detail">6. Ficha de Campo: Ibai (#9)</option>
         <option value="v2_07_parent_home">7. Familia: Inicio</option>
-        <option value="v2_08_parent_rsvp">8. Familia: RSVP 3s</option>
+        <option value="v2_08_parent_rsvp">8. Familia: RSVP 3 Segundos</option>
         <option value="screen_c_create_event">Aux: Crear Evento</option>
         <option value="screen_e_create_squad">Aux: Convocatoria</option>
         <option value="screen_k_notices">Aux: Tablón Avisos</option>
@@ -568,14 +614,14 @@ header_html = """<!DOCTYPE html>
   </div>
 
   <!-- ======================================================== -->
-  <!-- MOBILE DEVICE VIEWPORT CONTAINER -->
+  <!-- MOBILE DEVICE VIEWPORT CONTAINER (Capacitor Ready) -->
   <!-- ======================================================== -->
   <div class="w-full flex-1 flex items-center justify-center p-0 sm:p-4 my-auto overflow-hidden">
     <div class="mockup-wrapper w-full sm:max-w-[390px] h-[calc(100dvh-125px)] sm:h-[844px] bg-surface rounded-none sm:rounded-[40px] border-0 sm:border-[6px] border-slate-900 flex flex-col relative overflow-hidden text-on-surface shadow-none sm:shadow-2xl">
       
-      <!-- Top Smartphone Notch / Dynamic Island (Only on desktop preview) -->
+      <!-- Top Smartphone Notch (Only on desktop preview) -->
       <div class="hidden sm:flex w-full h-8 bg-surface-container-lowest items-center justify-between px-6 shrink-0 z-50 select-none border-b border-outline-variant/30">
-        <span class="text-[12px] font-bold text-on-surface tracking-tight">10:30</span>
+        <span class="text-[12px] font-bold text-on-surface tracking-tight">18:00</span>
         <div class="w-20 h-4 bg-slate-950 rounded-full mx-auto"></div>
         <div class="flex items-center gap-1.5 text-on-surface text-[12px]">
           <span class="material-symbols-outlined text-[14px]">signal_cellular_4_bar</span>
@@ -642,12 +688,12 @@ footer_html = """
 
       <div class="mt-3 space-y-2.5 text-xs">
         <div class="p-3 bg-blue-50/60 rounded-xl border border-blue-100">
-          <span class="font-bold text-blue-800 block mb-0.5">Estado en Torneo Oyón:</span>
-          <span id="sheet-player-status" class="text-blue-900 font-medium">Convocado (Titular)</span>
+          <span class="font-bold text-blue-800 block mb-0.5">Estado para el Sábado:</span>
+          <span id="sheet-player-status" class="text-blue-900 font-medium">Convocado</span>
         </div>
 
         <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
-          <span class="font-bold text-slate-700 block mb-1">Contacto de emergencia tutores (Protegido):</span>
+          <span class="font-bold text-slate-700 block mb-1">Contacto familiar (Acceso para cuerpo técnico):</span>
           <div class="flex items-center justify-between text-slate-800">
             <div>
               <p id="sheet-tutor-name" class="font-semibold text-slate-900">Iker Elejalde (Padre)</p>
@@ -662,11 +708,11 @@ footer_html = """
         <div class="grid grid-cols-2 gap-2 text-[11px]">
           <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200">
             <span class="text-slate-500 block">Equipación:</span>
-            <span class="font-bold text-slate-800">Talla M (Oficial Azul)</span>
+            <span class="font-bold text-slate-800">Talla M (Azul Oficial)</span>
           </div>
           <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200">
-            <span class="text-slate-500 block">Ficha Médica:</span>
-            <span class="font-bold text-emerald-700">✓ En vigor (24/25)</span>
+            <span class="text-slate-500 block">Temporada:</span>
+            <span class="font-bold text-emerald-700">2026/27 (Alta activa)</span>
           </div>
         </div>
       </div>
@@ -833,7 +879,7 @@ body_sections = f"""
           {screens_html["v2_05_event_hub_normal"]}
         </section>
 
-        <!-- SCREEN 6: V2 EVENT HUB INJURY (BAJA & SUSTITUCIÓN) -->
+        <!-- SCREEN 6: V2 EVENT HUB ASISTENCIA / SUPLENTES (BAJA & SUSTITUCIÓN NEUTRAL) -->
         <section id="v2_06_event_hub_injury" class="app-screen-view w-full hidden">
           <!-- Resolved Banner (Shown after substitution confirmed) -->
           <div id="injury-resolved-banner" class="hidden p-4 mx-4 mt-4 bg-emerald-50 border-2 border-emerald-500 rounded-2xl shadow-sm text-emerald-900">
@@ -842,7 +888,7 @@ body_sections = f"""
               <span>¡Convocatoria 12/12 Completa y Confirmada!</span>
             </div>
             <p class="text-xs text-emerald-700 mt-1">
-              <strong>Ane Mintegi (#16)</strong> ha sido incorporada oficialmente como sustituta de Ibai. Se ha emitido el aviso reglamentario al grupo de familias.
+              <strong>Ane Mintegi (#16)</strong> ha sido incorporada como sustituta de Ibai. Se ha emitido el aviso al grupo de familias.
             </p>
           </div>
           {screens_html["v2_06_event_hub_injury"]}
@@ -875,5 +921,5 @@ body_sections = f"""
 """
 
 final_html = header_html + body_sections + footer_html
-open("/home/anarqorp/TaldeHemendik/index.html", "w").write(final_html)
-print(f"Successfully assembled V2 index.html with Onboarding & Coach Banner! Size: {len(final_html)} chars")
+open("/home/anarqorp/TaldeHemendik/index.html", "w", encoding="utf-8").write(final_html)
+print(f"Successfully assembled cleaned V2 index.html! Size: {len(final_html)} chars")
