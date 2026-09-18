@@ -173,7 +173,7 @@ describe("Vertical Slice 01", () => {
     expect(detail.json().history).toHaveLength(3);
     expect(detail.json().history.map((x: { source: string }) => x.source)).toEqual(["GUARDIAN_RECORDED","STAFF_RECORDED","GUARDIAN_RECORDED"]);
     const coachView = await app.inject({ method: "GET", url: `/v1/events/${ids.event}/availability`, headers: bearer(coachToken) });
-    expect(coachView.json().items[0]).toMatchObject({ first_name: "Ibai", status: "CAN_ATTEND", version: 3, source: "GUARDIAN_RECORDED", actor_user_id: guardianId });
+    expect(coachView.json().items.find((item: { player_id: string }) => item.player_id === ids.ibai)).toMatchObject({ first_name: "Ibai", status: "CAN_ATTEND", version: 3, source: "GUARDIAN_RECORDED", actor_user_id: guardianId });
   });
 
   it("writes outbox and audit without invitation tokens or OTPs", async () => {

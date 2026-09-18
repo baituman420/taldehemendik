@@ -10,7 +10,15 @@ export type ErrorCode =
   | "AVAILABILITY_VERSION_CONFLICT"
   | "PLAYER_NOT_IN_TEAMSEASON"
   | "ROLE_NOT_ALLOWED"
-  | "IDEMPOTENCY_CONFLICT";
+  | "IDEMPOTENCY_CONFLICT"
+  | "EVENT_VERSION_CONFLICT"
+  | "EVENT_NOT_ACTIVE"
+  | "CALLUP_NOT_ENABLED"
+  | "CALLUP_VERSION_CONFLICT"
+  | "CALLUP_WARNINGS_UNCONFIRMED"
+  | "PLAYER_CANNOT_ATTEND"
+  | "ACTION_ITEM_NOT_OPEN"
+  | "SUBSTITUTE_NO_LONGER_ELIGIBLE";
 
 export class DomainError extends Error {
   constructor(public readonly code: ErrorCode, public readonly statusCode: number, message: string) {

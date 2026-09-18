@@ -28,8 +28,11 @@ If the current login shell has not refreshed Docker group membership, use `sg do
 npm run seed
 npm test
 npm run demo
+npm run demo:vs02
 ```
 
 The seed is deliberately minimal and isolated: CD Oyón, season 2026/27 Infantil A, Mikel Zubeldia, Ibai Aranguren #9, Torneo Oyón, plus a second team used only for access-isolation tests.
 
 See [HTTP contracts](./docs/HTTP-CONTRACTS-VS01.md) and [RLS decision](./docs/RLS-DECISION-VS01.md).
+
+VS02 adds [operational contracts](./docs/HTTP-CONTRACTS-VS02.md), [schema](./docs/SCHEMA-VS02.md) and a complete Event → Callup → ActionItem → Replacement proof through `npm run demo:vs02`.

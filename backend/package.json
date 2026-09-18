@@ -12,10 +12,13 @@
     "typecheck": "tsc --noEmit",
     "migrate": "tsx src/db/migrate.ts",
     "seed": "tsx src/db/seed.ts",
-    "pretest": "npm run seed",
-    "test": "vitest run",
-    "test:integration": "vitest run test/integration",
-    "demo": "tsx scripts/demo-vs01.ts"
+    "pretest": "npm run migrate",
+    "test": "npm run test:vs01 && npm run test:vs02",
+    "test:vs01": "npm run seed && vitest run test/integration/invitation.test.ts test/integration/vertical-slice.test.ts --no-file-parallelism",
+    "test:vs02": "npm run seed && vitest run test/integration/events-vs02.test.ts test/integration/operations-vs02.test.ts --no-file-parallelism",
+    "test:integration": "npm test",
+    "demo": "tsx scripts/demo-vs01.ts",
+    "demo:vs02": "npm run seed && tsx scripts/demo-vs02.ts"
   },
   "dependencies": {
     "@fastify/rate-limit": "^10.3.0",
