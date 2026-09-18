@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Talde Hemendik! - Confirmar Asistencia</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-high": "#e2e7ff",
+            "secondary": "#006c4a",
+            "primary-container": "#1d4ed8",
+            "surface": "#faf8ff",
+            "on-surface-variant": "#434655",
+            "surface-bright": "#faf8ff",
+            "surface-container-lowest": "#ffffff",
+            "primary": "#0037b0",
+            "on-background": "#131b2e",
+            "inverse-on-surface": "#eef0ff",
+            "tertiary-fixed-dim": "#ffb4ab",
+            "surface-variant": "#dae2fd",
+            "on-secondary-fixed-variant": "#005137",
+            "on-tertiary-container": "#ffc7c1",
+            "surface-tint": "#2151da",
+            "on-secondary-fixed": "#002114",
+            "on-primary-fixed-variant": "#0039b5",
+            "on-error-container": "#93000a",
+            "on-secondary-container": "#00714e",
+            "surface-dim": "#d2d9f4",
+            "on-secondary": "#ffffff",
+            "on-error": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-tertiary-fixed-variant": "#93000b",
+            "on-surface": "#131b2e",
+            "tertiary-container": "#bb0112",
+            "outline-variant": "#c4c5d7",
+            "primary-fixed": "#dce1ff",
+            "surface-container": "#eaedff",
+            "secondary-fixed": "#85f8c4",
+            "on-primary-container": "#cad3ff",
+            "primary-fixed-dim": "#b7c4ff",
+            "on-tertiary": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "on-tertiary-fixed": "#410002",
+            "background": "#faf8ff",
+            "on-primary-fixed": "#001551",
+            "inverse-surface": "#283044",
+            "inverse-primary": "#b7c4ff",
+            "tertiary-fixed": "#ffdad6",
+            "on-primary": "#ffffff",
+            "secondary-container": "#82f5c1",
+            "surface-container-highest": "#dae2fd",
+            "error": "#ba1a1a",
+            "tertiary": "#8f000b",
+            "secondary-fixed-dim": "#68dba9",
+            "outline": "#747686"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "gutter-mobile": "0.75rem",
+            "margin": "1rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "margin-mobile": "1rem",
+            "space-xl": "2rem"
+          },
+          "fontFamily": {
+            "headline-xl": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "stat-display": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "body-lg": ["17px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "stat-display": ["36px", { "lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "headline-lg": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-md": ["15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-fill {
+      font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col items-center selection:bg-primary-container selection:text-surface-container-lowest">
+<!-- Mobile Viewport Constraint Box -->
+<main class="w-full max-w-md min-h-screen flex flex-col bg-surface pb-36 relative">
+<!-- Modal Navigation Header (Supressing Global BottomNavBar as per transactional flow rule) -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest px-margin-mobile h-14 flex items-center justify-between border-b border-surface-container-highest shadow-sm">
+<button aria-label="Cerrar modal" class="w-10 h-10 -ml-2 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-[0.98] transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Confirmar Asistencia</h1>
+<div class="flex items-center gap-1.5 bg-surface-container-high text-primary px-2.5 py-1 rounded-full border border-surface-container-highest">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">CD Oyón</span>
+</div>
+</header>
+<div class="px-margin-mobile pt-space-md flex flex-col gap-space-md">
+<!-- Player Context Pill & Subheader Badge -->
+<div class="flex items-center justify-between bg-surface-container-lowest border border-outline-variant rounded-xl p-space-sm shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container text-surface-container-lowest flex items-center justify-center font-headline-sm text-headline-sm shadow-sm">
+            9
+          </div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface">Ibai Aranguren</span>
+<span class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm px-1.5 py-0.5 rounded">Infantil A</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tutor/a: Amaia Aranguren</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline">verified_user</span>
+</div>
+<!-- Event Summary Card -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant p-space-md shadow-sm">
+<!-- Event Top Title & Tournament Badge -->
+<div class="flex items-start justify-between gap-2 mb-space-sm">
+<div>
+<div class="flex items-center gap-1.5 text-primary mb-1">
+<span class="material-symbols-outlined text-[18px]">emoji_events</span>
+<span class="font-label-sm text-label-sm tracking-wide">JORNADA 3 · CAMPEONATO OFICIAL</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Torneo Oyón</h2>
+</div>
+<span class="bg-surface-container-low text-primary-container px-2.5 py-1 rounded-full font-label-md text-label-md font-semibold shrink-0">
+            Fútbol 11
+          </span>
+</div>
+<!-- Schedule & Location Rows -->
+<div class="space-y-2 py-space-sm border-t border-surface-container">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-outline-variant text-[20px]">calendar_today</span>
+<span class="font-label-lg text-label-lg text-on-surface">Sábado 19 Sep · 10:30 h</span>
+<span class="bg-error-container text-on-error-container font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold">
+              Citación 09:45 h
+            </span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-outline-variant text-[20px]">location_on</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Polideportivo Municipal de Oyón (Campo 1)</span>
+</div>
+</div>
+<!-- High Contrast Deadline Alert Pill -->
+<div class="mt-space-sm bg-surface-container-low border border-outline-variant rounded-lg p-2.5 flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[20px]">timer</span>
+<p class="font-body-sm text-body-sm text-on-surface font-semibold">
+            Responde antes del <span class="text-tertiary">Jueves 17 (20:00 h)</span> · Cierra en 18h
+          </p>
+</div>
+</article>
+<!-- Main Question Hero Section -->
+<section aria-labelledby="rsvp-question-title" class="mt-1">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-sm text-label-sm text-outline tracking-wider uppercase">Disponibilidad de Ibai</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Paso 1 de 1</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-extrabold leading-snug" id="rsvp-question-title">
+          ¿Puede Ibai asistir al Torneo Oyón este sábado?
+        </h3>
+</section>
+<!-- Three Massive Tactile Choice Buttons (Radio Group) -->
+<div aria-label="Opciones de asistencia" class="flex flex-col gap-space-sm" role="radiogroup">
+<!-- OPTION 1: SÍ, PUEDE ASISTIR (Active / Selected state by default) -->
+<label class="relative flex items-center justify-between p-space-md min-h-[72px] rounded-xl border-2 border-secondary bg-surface-container-low cursor-pointer shadow-sm active:scale-[0.98] transition-all duration-150" id="option-yes">
+<input checked="" class="sr-only" name="rsvp_status" onchange="updateSelection('yes')" type="radio" value="yes"/>
+<div class="flex items-center gap-3.5">
+<div class="w-11 h-11 rounded-xl bg-secondary text-surface-container-lowest flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined material-symbols-fill text-[24px]">check_circle</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-secondary font-bold">SÍ, PUEDE ASISTIR</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Estará en el vestuario a las 09:45 h.</p>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-secondary flex items-center justify-center bg-surface-container-lowest shrink-0 ml-2">
+<div class="w-3.5 h-3.5 rounded-full bg-secondary"></div>
+</div>
+</label>
+<!-- OPTION 2: NO PUEDE ASISTIR -->
+<label class="relative flex items-center justify-between p-space-md min-h-[72px] rounded-xl border-2 border-outline-variant bg-surface-container-lowest hover:border-error cursor-pointer active:scale-[0.98] transition-all duration-150" id="option-no">
+<input class="sr-only" name="rsvp_status" onchange="updateSelection('no')" type="radio" value="no"/>
+<div class="flex items-center gap-3.5">
+<div class="w-11 h-11 rounded-xl bg-error-container text-on-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">cancel</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface font-bold">NO PUEDE ASISTIR</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Permite al míster convocar suplentes.</p>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-outline flex items-center justify-center bg-surface-container-lowest shrink-0 ml-2">
+<div class="w-3.5 h-3.5 rounded-full bg-transparent"></div>
+</div>
+</label>
+<!-- OPTION 3: TODAVÍA NO LO SÉ -->
+<label class="relative flex items-center justify-between p-space-md min-h-[72px] rounded-xl border-2 border-outline-variant bg-surface-container-lowest hover:border-tertiary cursor-pointer active:scale-[0.98] transition-all duration-150" id="option-maybe">
+<input class="sr-only" name="rsvp_status" onchange="updateSelection('maybe')" type="radio" value="maybe"/>
+<div class="flex items-center gap-3.5">
+<div class="w-11 h-11 rounded-xl bg-surface-container text-outline flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">help_outline</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface font-bold">TODAVÍA NO LO SÉ</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Recordatorio el jueves a las 18:00 h.</p>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-outline flex items-center justify-center bg-surface-container-lowest shrink-0 ml-2">
+<div class="w-3.5 h-3.5 rounded-full bg-transparent"></div>
+</div>
+</label>
+</div>
+<!-- Reassurance Banner -->
+<div class="flex items-start gap-2.5 p-3 rounded-lg bg-surface-container border border-outline-variant text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">verified</span>
+<p class="font-body-sm text-body-sm">
+          Podrás modificar tu respuesta en cualquier momento antes del cierre si surge algún imprevisto escolar o familiar.
+        </p>
+</div>
+</div>
+<!-- Fixed Bottom Docked Primary Action Bar -->
+<aside class="fixed bottom-0 left-0 right-0 max-w-md mx-auto z-50 bg-surface-container-lowest/95 backdrop-blur-md px-margin-mobile py-space-sm border-t border-outline-variant shadow-lg">
+<button class="w-full h-[52px] bg-primary-container text-surface-container-lowest rounded-xl font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-md active:scale-[0.98] hover:bg-primary transition-all duration-150" onclick="confirmRSVP()" type="button">
+<span>Confirmar Respuesta</span>
+<span class="material-symbols-outlined text-[22px]">chevron_right</span>
+</button>
+<div class="text-center mt-1">
+<span class="font-label-sm text-label-sm text-outline">Talde Hemendik! · Plataforma deportiva oficial</span>
+</div>
+</aside>
+</main>
+<!-- Interactive State Script for Sideline Fast Tapping -->
+<script>
+    function updateSelection(selectedKey) {
+      const options = {
+        'yes': {
+          element: document.getElementById('option-yes'),
+          borderActive: ['border-secondary', 'bg-surface-container-low'],
+          borderInactive: ['border-outline-variant', 'bg-surface-container-lowest'],
+          titleClass: 'text-secondary'
+        },
+        'no': {
+          element: document.getElementById('option-no'),
+          borderActive: ['border-error', 'bg-surface-container-low'],
+          borderInactive: ['border-outline-variant', 'bg-surface-container-lowest'],
+          titleClass: 'text-error'
+        },
+        'maybe': {
+          element: document.getElementById('option-maybe'),
+          borderActive: ['border-tertiary-container', 'bg-surface-container-low'],
+          borderInactive: ['border-outline-variant', 'bg-surface-container-lowest'],
+          titleClass: 'text-tertiary'
+        }
+      };
+
+      Object.keys(options).forEach(key => {
+        const item = options[key];
+        const radioDot = item.element.querySelector('.shrink-0.ml-2 div');
+        const radioOuter = item.element.querySelector('.shrink-0.ml-2');
+        const titleEl = item.element.querySelector('p');
+
+        if (key === selectedKey) {
+          item.element.classList.remove('border-outline-variant', 'bg-surface-container-lowest');
+          if (key === 'yes') item.element.classList.add('border-secondary', 'bg-surface-container-low');
+          if (key === 'no') item.element.classList.add('border-error', 'bg-surface-container-low');
+          if (key === 'maybe') item.element.classList.add('border-tertiary-container', 'bg-surface-container-low');
+
+          radioOuter.classList.add(key === 'yes' ? 'border-secondary' : key === 'no' ? 'border-error' : 'border-tertiary-container');
+          radioOuter.classList.remove('border-outline');
+          radioDot.classList.add(key === 'yes' ? 'bg-secondary' : key === 'no' ? 'bg-error' : 'bg-tertiary-container');
+          radioDot.classList.remove('bg-transparent');
+          titleEl.className = 'font-headline-sm text-headline-sm font-bold ' + item.titleClass;
+        } else {
+          item.element.classList.remove('border-secondary', 'border-error', 'border-tertiary-container', 'bg-surface-container-low');
+          item.element.classList.add('border-outline-variant', 'bg-surface-container-lowest');
+          radioOuter.classList.remove('border-secondary', 'border-error', 'border-tertiary-container');
+          radioOuter.classList.add('border-outline');
+          radioDot.classList.add('bg-transparent');
+          radioDot.classList.remove('bg-secondary', 'bg-error', 'bg-tertiary-container');
+          titleEl.className = 'font-headline-sm text-headline-sm font-bold text-on-surface';
+        }
+      });
+    }
+
+    function confirmRSVP() {
+      const selected = document.querySelector('input[name="rsvp_status"]:checked').value;
+      const texts = {
+        yes: '¡Asistencia de Ibai confirmada!',
+        no: 'Ausencia comunicada al cuerpo técnico.',
+        maybe: 'Respuesta guardada. Te recordaremos antes del jueves.'
+      };
+      alert(texts[selected]);
+    }
+  </script>
+</body></html>

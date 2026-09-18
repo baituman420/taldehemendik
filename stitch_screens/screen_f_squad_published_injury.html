@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Talde Hemendik! - Convocatoria Oficial &amp; Bajas</title>
+<!-- Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with configuration -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-fixed": "#dce1ff",
+            "surface-container": "#eaedff",
+            "tertiary": "#8f000b",
+            "on-tertiary-fixed": "#410002",
+            "on-primary": "#ffffff",
+            "on-error": "#ffffff",
+            "secondary-fixed-dim": "#68dba9",
+            "primary-fixed-dim": "#b7c4ff",
+            "surface-dim": "#d2d9f4",
+            "tertiary-container": "#bb0112",
+            "error": "#ba1a1a",
+            "secondary-fixed": "#85f8c4",
+            "surface-container-highest": "#dae2fd",
+            "outline-variant": "#c4c5d7",
+            "surface-container-low": "#f2f3ff",
+            "on-tertiary-fixed-variant": "#93000b",
+            "surface": "#faf8ff",
+            "on-secondary-fixed": "#002114",
+            "on-surface": "#131b2e",
+            "secondary": "#006c4a",
+            "inverse-primary": "#b7c4ff",
+            "background": "#faf8ff",
+            "surface-bright": "#faf8ff",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed": "#001551",
+            "on-surface-variant": "#434655",
+            "on-error-container": "#93000a",
+            "on-tertiary-container": "#ffc7c1",
+            "tertiary-fixed": "#ffdad6",
+            "tertiary-fixed-dim": "#ffb4ab",
+            "on-primary-fixed-variant": "#0039b5",
+            "on-primary-container": "#cad3ff",
+            "inverse-on-surface": "#eef0ff",
+            "on-secondary-fixed-variant": "#005137",
+            "inverse-surface": "#283044",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-container": "#00714e",
+            "error-container": "#ffdad6",
+            "surface-variant": "#dae2fd",
+            "surface-tint": "#2151da",
+            "on-background": "#131b2e",
+            "surface-container-high": "#e2e7ff",
+            "secondary-container": "#82f5c1",
+            "on-secondary": "#ffffff",
+            "primary-container": "#1d4ed8",
+            "primary": "#0037b0",
+            "outline": "#747686"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "1rem",
+            "margin": "1rem",
+            "space-xl": "2rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "gutter-mobile": "0.75rem",
+            "space-lg": "1.5rem",
+            "gutter": "1rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "stat-display": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-lg": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "body-lg": ["17px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "body-md": ["15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "stat-display": ["36px", { "lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "800" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined[data-weight="fill"] {
+      font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+    }
+    @keyframes pulse-subtle {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.85; transform: scale(1.02); }
+    }
+    .animate-pulse-subtle {
+      animation: pulse-subtle 2.5s infinite ease-in-out;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased font-body-md min-h-screen flex flex-col justify-between pb-36">
+<!-- TOP APP BAR (Sub-page task focused with Back navigation) -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest shadow-sm flex items-center justify-between px-margin-mobile h-16 w-full">
+<div class="flex items-center gap-3">
+<button aria-label="Volver" class="w-10 h-10 -ml-2 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-[0.98] transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<div>
+<h1 class="font-headline-sm text-headline-sm font-bold text-on-surface leading-tight">Convocatoria Oficial</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-none">CD Oyón · Infantil A</p>
+</div>
+</div>
+<!-- Match context badge -->
+<div class="flex items-center gap-1.5 bg-primary-fixed text-on-primary-fixed px-3 py-1.5 rounded-full border border-primary-fixed-dim shadow-xs">
+<span class="material-symbols-outlined text-[16px] text-primary" data-weight="fill">emoji_events</span>
+<span class="font-label-sm text-label-sm font-bold whitespace-nowrap">Torneo Oyón · Sáb 19</span>
+</div>
+</header>
+<!-- MAIN SCROLLABLE CONTENT CANVAS -->
+<main class="w-full max-w-md mx-auto px-margin-mobile pt-4 space-y-4">
+<!-- 1. CRITICAL ALERT BANNER (Level 1 Alert) -->
+<section class="bg-error-container/40 border-2 border-error rounded-xl p-4 shadow-sm relative overflow-hidden">
+<!-- High glare alert badge background styling -->
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-full bg-error text-on-error flex items-center justify-center shrink-0 shadow-sm animate-pulse-subtle">
+<span class="material-symbols-outlined text-[24px]" data-weight="fill">warning</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2 mb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-error font-extrabold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-error inline-block animate-ping"></span>
+              ALERTA: BAJA DE ÚLTIMA HORA
+            </span>
+<span class="font-label-sm text-label-sm text-tertiary font-bold bg-white/80 px-2 py-0.5 rounded-full">Hace 12 min</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-background font-bold leading-snug">
+            Ibai Aranguren <span class="text-tertiary-container font-extrabold">(#9)</span> ya no puede asistir.
+          </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium mt-0.5">
+            Posición: Delantero · Motivo: <span class="font-bold text-tertiary">Fiebre 38.5°</span>
+</p>
+<p class="font-body-sm text-body-sm text-outline mt-1 text-[12px]">
+            Reportado por Amaia Aranguren (Madre) vía App
+          </p>
+<!-- Attendance slot deficit tracker -->
+<div class="mt-3.5 bg-surface-container-lowest p-3 rounded-lg border border-error/30 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-error text-[18px]">group_remove</span>
+                Plantilla incompleta: 11 / 12 Convocados
+              </span>
+<span class="font-label-sm text-label-sm font-extrabold text-error bg-error-container px-2 py-0.5 rounded">
+                -1 Jugador
+              </span>
+</div>
+<!-- Pitch readiness progress bar -->
+<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden flex">
+<div class="bg-secondary h-full rounded-l-full" style="width: 91.66%"></div>
+<div class="bg-error h-full rounded-r-full animate-pulse" style="width: 8.34%"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. IMMEDIATE REPLACEMENT ASSISTANT ('SUSTITUTOS DISPONIBLES') -->
+<section class="bg-surface-container-lowest border border-outline-variant/60 rounded-xl p-4 shadow-sm">
+<div class="flex items-center justify-between pb-3 border-b border-surface-container-high">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]" data-weight="fill">swap_horizontal_circle</span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Sustitución recomendada</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">3 jugadores disponibles no convocados</p>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-primary bg-primary-fixed px-2.5 py-1 rounded-full">
+          Reserva Rápida
+        </span>
+</div>
+<!-- Candidate 1: Top Recommended -->
+<div class="mt-3 bg-surface-container-low border-2 border-primary-container rounded-xl p-3 relative shadow-xs">
+<div class="absolute -top-2.5 right-3 bg-primary-container text-on-primary font-label-sm text-label-sm px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[13px]" data-weight="fill">star</span>
+          Recomendado
+        </div>
+<div class="flex items-start justify-between gap-2 mt-1">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-headline-sm text-headline-sm font-extrabold">
+              16
+            </div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface leading-tight">Ane Gorostiaga</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Mediocentro / Delantera</p>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Disponible (Reserva 1)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Solid Athletic High-Contrast Action Button -->
+<button class="w-full mt-3 h-[48px] bg-primary-container hover:bg-primary text-on-primary rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-2 active:scale-[0.98] transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+          + Convocar como sustituta
+        </button>
+</div>
+<!-- Candidate 2: Nahia Azkarate -->
+<div class="mt-2.5 border border-outline-variant/60 rounded-xl p-3 flex items-center justify-between bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-headline-sm text-headline-sm font-bold shrink-0">
+            12
+          </div>
+<div class="truncate">
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold truncate">Nahia Azkarate</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Defensa · Reserva 2</p>
+</div>
+</div>
+<button class="h-10 px-3.5 bg-surface-container border border-outline-variant text-primary font-label-md text-label-md rounded-lg flex items-center gap-1 active:scale-[0.98] hover:bg-primary-fixed transition-all shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+          Convocar
+        </button>
+</div>
+<!-- Candidate 3: Irati Zabala -->
+<div class="mt-2 border border-outline-variant/60 rounded-xl p-3 flex items-center justify-between bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-headline-sm text-headline-sm font-bold shrink-0">
+            15
+          </div>
+<div class="truncate">
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold truncate">Irati Zabala</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Extremo · Reserva 3</p>
+</div>
+</div>
+<button class="h-10 px-3.5 bg-surface-container border border-outline-variant text-primary font-label-md text-label-md rounded-lg flex items-center gap-1 active:scale-[0.98] hover:bg-primary-fixed transition-all shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+          Convocar
+        </button>
+</div>
+<!-- Helper Hint Banner -->
+<div class="mt-3.5 p-2.5 rounded-lg bg-surface-container-low flex items-center gap-2 border border-outline-variant/40">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0">info</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-snug">
+          Al pulsar sobre un sustituto, la convocatoria volverá a 12 y se enviará aviso automático a la familia.
+        </p>
+</div>
+</section>
+<!-- 3. CURRENT ROSTER STATUS SECTION ('CONVOCATORIA ACTUAL - 11/12') -->
+<section class="bg-surface-container-lowest border border-outline-variant/60 rounded-xl p-4 shadow-sm mb-4">
+<div class="flex items-center justify-between pb-3 border-b border-surface-container-high">
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Convocatoria Actual</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Infantil A · Torneo Oficial</p>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm font-bold bg-secondary-container/50 text-secondary border border-secondary-fixed-dim px-2.5 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-weight="fill">check_circle</span>
+            11 Confirmados
+          </span>
+<span class="font-label-sm text-label-sm font-bold bg-error-container text-error border border-error/30 px-2.5 py-1 rounded-full flex items-center gap-1">
+            1 Baja
+          </span>
+</div>
+</div>
+<!-- Baja card item placed right at top for instant visual audit -->
+<div class="mt-3 bg-red-50/70 border border-error/40 rounded-lg p-3 flex items-center justify-between opacity-85">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-error/15 text-error flex items-center justify-center font-headline-sm text-headline-sm font-bold line-through">
+            9
+          </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-on-surface line-through decoration-error decoration-2 font-bold">Ibai Aranguren</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 bg-error text-on-error rounded font-bold">Baja sobrevenida</span>
+</div>
+<p class="font-body-sm text-body-sm text-tertiary font-medium">Delantero · Motivo: Fiebre 38.5°</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-error text-[22px]">cancel</span>
+</div>
+<!-- Active Confirmed Players List (11 players) -->
+<div class="mt-3 divide-y divide-surface-container-high">
+<!-- Player 1 -->
+<div class="py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container text-primary font-label-md text-label-md font-bold flex items-center justify-center">
+              7
+            </div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface leading-tight">Unai Etxebarria</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Extremo</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-weight="fill">check_circle</span>
+            Confirmado por familia
+          </span>
+</div>
+<!-- Player 2 -->
+<div class="py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container text-primary font-label-md text-label-md font-bold flex items-center justify-center">
+              4
+            </div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface leading-tight">Jon Gorostiaga</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Defensa</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-weight="fill">check_circle</span>
+            Confirmado por familia
+          </span>
+</div>
+<!-- Player 3 -->
+<div class="py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container text-primary font-label-md text-label-md font-bold flex items-center justify-center">
+              5
+            </div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface leading-tight">Markel Ruiz</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Defensa</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-weight="fill">check_circle</span>
+            Confirmado por familia
+          </span>
+</div>
+<!-- Player 4 -->
+<div class="py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container text-primary font-label-md text-label-md font-bold flex items-center justify-center">
+              10
+            </div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface leading-tight">Mikel Zabaleta</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Centrocampista</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-weight="fill">check_circle</span>
+            Confirmado por familia
+          </span>
+</div>
+<!-- Player 5 -->
+<div class="py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container text-primary font-label-md text-label-md font-bold flex items-center justify-center">
+              11
+            </div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface leading-tight">Aimar Ortiz</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Delantero</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-weight="fill">check_circle</span>
+            Confirmado por familia
+          </span>
+</div>
+<!-- Player 6 -->
+<div class="py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container text-primary font-label-md text-label-md font-bold flex items-center justify-center">
+              3
+            </div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface leading-tight">Julen Bilbao</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Lateral</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-weight="fill">check_circle</span>
+            Confirmado por familia
+          </span>
+</div>
+<!-- Player 7 -->
+<div class="py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container text-primary font-label-md text-label-md font-bold flex items-center justify-center">
+              8
+            </div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface leading-tight">Oier Agirre</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Centrocampista</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-weight="fill">check_circle</span>
+            Confirmado por familia
+          </span>
+</div>
+<!-- Player 8 -->
+<div class="py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container text-primary font-label-md text-label-md font-bold flex items-center justify-center">
+              2
+            </div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface leading-tight">Eneko Larrea</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Defensa</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-weight="fill">check_circle</span>
+            Confirmado por familia
+          </span>
+</div>
+<!-- Player 9 -->
+<div class="py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container text-primary font-label-md text-label-md font-bold flex items-center justify-center">
+              6
+            </div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface leading-tight">Ander Sagasti</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Centrocampista</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-weight="fill">check_circle</span>
+            Confirmado por familia
+          </span>
+</div>
+<!-- Player 10 -->
+<div class="py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container text-primary font-label-md text-label-md font-bold flex items-center justify-center">
+              1
+            </div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface leading-tight">Gorka Mendia</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Portero</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-weight="fill">check_circle</span>
+            Confirmado por familia
+          </span>
+</div>
+<!-- Player 11 -->
+<div class="py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container text-primary font-label-md text-label-md font-bold flex items-center justify-center">
+              14
+            </div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface leading-tight">Iker Baroja</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Extremo</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-weight="fill">check_circle</span>
+            Confirmado por familia
+          </span>
+</div>
+</div>
+</section>
+</main>
+<!-- 4. FIXED BOTTOM STICKY DOCK (Thumb-zone field actions) -->
+<aside class="fixed bottom-0 left-0 right-0 z-50 bg-surface-container-lowest/95 backdrop-blur-md px-margin-mobile py-3 shadow-[0_-4px_20px_rgba(15,23,42,0.08)]">
+<div class="max-w-md mx-auto space-y-2">
+<!-- 52px Athletic Primary Replacement Trigger -->
+<button class="w-full h-[52px] bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg rounded-xl flex items-center justify-center gap-2 shadow-md active:scale-[0.98] transition-all" type="button">
+<span class="material-symbols-outlined text-[22px]">how_to_reg</span>
+<span>Completar con Ane Gorostiaga (#16)</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<!-- Secondary Outline Button for Family Notification Broadcast -->
+<button class="w-full h-[46px] bg-surface-container-lowest border border-outline-variant text-on-surface font-label-md text-label-md rounded-xl flex items-center justify-center gap-2 hover:bg-surface-container active:scale-[0.98] transition-all" type="button">
+<span class="material-symbols-outlined text-outline text-[20px]">notifications_active</span>
+<span>Enviar aviso al grupo de familias</span>
+</button>
+</div>
+</aside>
+</body></html>

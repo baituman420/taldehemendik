@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-[#F8FAFC]" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Talde Hemendik! - Calendario CD Oyón</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined (Exact link mandated) -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary": "#8f000b",
+            "inverse-primary": "#b7c4ff",
+            "on-secondary-container": "#00714e",
+            "surface-tint": "#2151da",
+            "on-tertiary": "#ffffff",
+            "secondary-fixed": "#85f8c4",
+            "on-tertiary-container": "#ffc7c1",
+            "on-surface": "#131b2e",
+            "error": "#ba1a1a",
+            "secondary": "#006c4a",
+            "on-primary-fixed": "#001551",
+            "on-primary-fixed-variant": "#0039b5",
+            "inverse-on-surface": "#eef0ff",
+            "surface-dim": "#d2d9f4",
+            "primary-fixed-dim": "#b7c4ff",
+            "primary-fixed": "#dce1ff",
+            "tertiary-fixed": "#ffdad6",
+            "outline-variant": "#c4c5d7",
+            "on-error": "#ffffff",
+            "on-surface-variant": "#434655",
+            "surface-container-high": "#e2e7ff",
+            "secondary-container": "#82f5c1",
+            "surface-container-highest": "#dae2fd",
+            "on-secondary-fixed-variant": "#005137",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#cad3ff",
+            "background": "#faf8ff",
+            "on-tertiary-fixed": "#410002",
+            "surface-variant": "#dae2fd",
+            "on-tertiary-fixed-variant": "#93000b",
+            "secondary-fixed-dim": "#68dba9",
+            "primary-container": "#1d4ed8",
+            "tertiary-container": "#bb0112",
+            "surface-container": "#eaedff",
+            "outline": "#747686",
+            "on-secondary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "surface-bright": "#faf8ff",
+            "on-background": "#131b2e",
+            "surface": "#faf8ff",
+            "tertiary-fixed-dim": "#ffb4ab",
+            "on-secondary-fixed": "#002114",
+            "primary": "#0037b0",
+            "on-error-container": "#93000a",
+            "inverse-surface": "#283044",
+            "surface-container-low": "#f2f3ff",
+            "error-container": "#ffdad6"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "1rem",
+            "space-xs": "0.25rem",
+            "margin": "1rem",
+            "gutter": "1rem",
+            "space-xl": "2rem",
+            "space-lg": "1.5rem",
+            "gutter-mobile": "0.75rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "stat-display": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "stat-display": ["36px", { "lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-lg": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "body-lg": ["17px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "body-md": ["15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="h-full bg-[#F8FAFC] text-on-surface font-body-md text-body-md antialiased flex justify-center selection:bg-primary-container selection:text-on-primary">
+<!-- Mobile Viewport Container -->
+<div class="w-full max-w-md min-h-screen bg-[#F8FAFC] flex flex-col relative pb-32">
+<!-- Top Bar: Shared Component Implementation (TopAppBar) -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest w-full shadow-sm">
+<div class="flex justify-between items-center w-full px-margin-mobile h-14">
+<div class="flex items-center space-x-2.5">
+<button aria-label="Volver" class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-[0.98] transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]">arrow_back</span>
+</button>
+<div class="flex items-center space-x-2">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary font-headline-sm text-headline-sm font-bold shadow-sm">
+<span class="material-symbols-outlined text-[18px]">sports_soccer</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface leading-tight">CD Oyón · Infantil A</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant leading-none">Temp. 24/25</span>
+</div>
+</div>
+</div>
+<div class="flex items-center space-x-1">
+<span class="bg-surface-container text-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full font-bold">
+            Temp. 24/25
+          </span>
+<button class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-[0.98] transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[24px]">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 px-margin-mobile pt-4 space-y-4">
+<!-- Header Section: Title & Month Selector -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight">Calendario</h1>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-bold">
+            5 eventos
+          </span>
+</div>
+<!-- Month Selector Pill -->
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-1.5 flex items-center justify-between shadow-[0_1px_3px_rgba(15,23,42,0.06)]">
+<button aria-label="Mes anterior" class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-[0.98] transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<div class="flex items-center space-x-2 font-label-lg text-label-lg text-on-surface font-bold">
+<span class="material-symbols-outlined text-primary text-[20px]">calendar_month</span>
+<span>Septiembre 2026</span>
+</div>
+<button aria-label="Mes siguiente" class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-[0.98] transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+<!-- Category Filters -->
+<div class="flex items-center space-x-2 overflow-x-auto pb-1 -mx-margin-mobile px-margin-mobile scrollbar-none">
+<button class="shrink-0 bg-primary-container text-on-primary font-label-md text-label-md px-3.5 py-1.5 rounded-full font-bold shadow-sm active:scale-[0.98] transition-transform" type="button">
+            Todos (5)
+          </button>
+<button class="shrink-0 bg-surface-container-lowest text-on-surface-variant border border-[#CBD5E1] font-label-md text-label-md px-3.5 py-1.5 rounded-full font-semibold hover:bg-surface-container active:scale-[0.98] transition-transform" type="button">
+            Partidos y Torneos (2)
+          </button>
+<button class="shrink-0 bg-surface-container-lowest text-on-surface-variant border border-[#CBD5E1] font-label-md text-label-md px-3.5 py-1.5 rounded-full font-semibold hover:bg-surface-container active:scale-[0.98] transition-transform" type="button">
+            Entrenamientos (3)
+          </button>
+</div>
+</section>
+<!-- Event Cards List -->
+<section class="space-y-3.5 pt-1">
+<!-- CARD 1: Highlight Torneo Oyón -->
+<article class="bg-surface-container-lowest border-2 border-primary-container rounded-2xl p-4 shadow-[0_4px_12px_rgba(29,78,216,0.12)] relative overflow-hidden">
+<!-- Top Accent Tag -->
+<div class="flex items-start justify-between gap-2 mb-2.5">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="bg-primary-container text-on-primary font-label-sm text-label-sm px-2.5 py-0.5 rounded-full uppercase tracking-wider font-extrabold">
+                TORNEO
+              </span>
+<span class="bg-[#FFFBEB] border border-[#FDE68A] text-[#92400E] font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">hourglass_top</span>
+                DISPONIBILIDAD ABIERTA
+              </span>
+</div>
+<span class="text-primary font-label-sm text-label-sm font-extrabold whitespace-nowrap">
+              Jornada Única
+            </span>
+</div>
+<!-- Date & Kickoff Details -->
+<div class="mb-2">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md text-on-surface font-extrabold tracking-tight">
+                Sábado 19 Sep · 10:30 h
+              </span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant font-medium">
+              Convocatoria &amp; llegada: <span class="text-on-surface font-bold">09:45 h</span>
+</p>
+</div>
+<!-- Event Title & Location -->
+<div class="space-y-1 pb-3 border-b border-[#F1F5F9]">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">
+              Torneo Oyón
+            </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 font-medium">
+<span class="material-symbols-outlined text-primary text-[18px]">location_on</span>
+              Polideportivo Municipal de Oyón
+            </p>
+</div>
+<!-- Attendance Progress & Headcount Metrics -->
+<div class="pt-3 pb-3.5 space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant">Convocatoria: 14 de 18 jugadores</span>
+<span class="font-label-sm text-label-sm font-extrabold text-primary">78%</span>
+</div>
+<!-- High-contrast progress bar -->
+<div class="w-full bg-[#E2E8F0] h-2 rounded-full overflow-hidden flex">
+<div class="bg-[#059669] h-full" style="width: 78%"></div>
+<div class="bg-[#DC2626] h-full" style="width: 11%"></div>
+<div class="bg-[#D97706] h-full" style="width: 11%"></div>
+</div>
+<!-- Metric summary badges -->
+<div class="flex items-center gap-2 pt-1">
+<span class="bg-[#ECFDF5] border border-[#A7F3D0] text-[#065F46] font-label-sm text-label-sm px-2.5 py-1 rounded-full font-extrabold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] fill-icon">check_circle</span>
+                14 Sí
+              </span>
+<span class="bg-[#FEF2F2] border border-[#FECACA] text-[#991B1B] font-label-sm text-label-sm px-2.5 py-1 rounded-full font-extrabold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">cancel</span>
+                2 No
+              </span>
+<span class="bg-[#FFFBEB] border border-[#FDE68A] text-[#92400E] font-label-sm text-label-sm px-2.5 py-1 rounded-full font-extrabold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">pending</span>
+                2 Pendientes
+              </span>
+</div>
+</div>
+<!-- Action Button -->
+<a class="w-full h-11 bg-primary-container hover:bg-[#1E40AF] active:scale-[0.98] text-on-primary font-label-lg text-label-lg font-bold rounded-xl flex items-center justify-center gap-2 transition-all shadow-sm" href="#">
+<span>Ver detalle del evento</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</article>
+<!-- CARD 2: Entrenamiento (Próximo) -->
+<article class="bg-surface-container-lowest border border-[#E2E8F0] rounded-2xl p-4 shadow-[0_1px_3px_rgba(15,23,42,0.06)] hover:border-outline-variant transition-colors">
+<div class="flex items-start justify-between gap-2 mb-2">
+<div class="flex items-center gap-2">
+<span class="bg-surface-container text-on-surface font-label-sm text-label-sm px-2.5 py-0.5 rounded-full uppercase tracking-wider font-extrabold">
+                ENTRENAMIENTO
+              </span>
+<span class="bg-[#ECFDF5] border border-[#A7F3D0] text-[#065F46] font-label-sm text-label-sm px-2 py-0.5 rounded-full font-extrabold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] fill-icon">check</span>
+                CONFIRMADO
+              </span>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant">Hierba natural</span>
+</div>
+<!-- Date -->
+<div class="mb-1.5">
+<p class="font-headline-sm text-headline-sm text-on-surface font-extrabold">
+              Miércoles 16 Sep · 18:00 h
+            </p>
+</div>
+<!-- Content Details -->
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">
+            Entrenamiento semanal
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 font-medium mb-3">
+<span class="material-symbols-outlined text-outline text-[18px]">location_on</span>
+            Campo Municipal de Hierba
+          </p>
+<!-- Coach Note Box -->
+<div class="bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl px-3 py-2 flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">info</span>
+<span class="font-medium">Llegada 10 min antes con ropa de entreno</span>
+</div>
+</article>
+<!-- CARD 3: Partido de Liga (Modificado) -->
+<article class="bg-surface-container-lowest border border-[#E2E8F0] rounded-2xl p-4 shadow-[0_1px_3px_rgba(15,23,42,0.06)] hover:border-outline-variant transition-colors">
+<div class="flex items-start justify-between gap-2 mb-2">
+<div class="flex items-center gap-2">
+<span class="bg-[#E0E7FF] text-[#3730A3] font-label-sm text-label-sm px-2.5 py-0.5 rounded-full uppercase tracking-wider font-extrabold">
+                PARTIDO
+              </span>
+<span class="bg-[#FFFBEB] border border-[#FDE68A] text-[#92400E] font-label-sm text-label-sm px-2 py-0.5 rounded-full font-extrabold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">warning</span>
+                MODIFICADO
+              </span>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-tertiary">Aviso horario</span>
+</div>
+<!-- Date -->
+<div class="mb-1.5">
+<p class="font-headline-sm text-headline-sm text-on-surface font-extrabold">
+              Sábado 26 Sep · 11:00 h
+            </p>
+</div>
+<!-- Title -->
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1">
+            Jornada 4: CD Oyón vs Haro Sport
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 font-medium mb-2.5">
+<span class="material-symbols-outlined text-outline text-[18px]">stadium</span>
+            Campo Municipal Oyón
+          </p>
+<!-- Alert Note -->
+<div class="bg-[#FFFBEB] border border-[#FDE68A] rounded-xl px-3 py-2 flex items-center gap-2 text-[#92400E] font-body-sm text-body-sm font-bold">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>Horario cambiado de 10:00 a 11:00</span>
+</div>
+</article>
+<!-- CARD 4: Entrenamiento Físico y Técnico -->
+<article class="bg-surface-container-lowest border border-[#E2E8F0] rounded-2xl p-4 shadow-[0_1px_3px_rgba(15,23,42,0.06)] hover:border-outline-variant transition-colors">
+<div class="flex items-start justify-between gap-2 mb-2">
+<div class="flex items-center gap-2">
+<span class="bg-surface-container text-on-surface font-label-sm text-label-sm px-2.5 py-0.5 rounded-full uppercase tracking-wider font-extrabold">
+                ENTRENAMIENTO
+              </span>
+<span class="bg-[#ECFDF5] border border-[#A7F3D0] text-[#065F46] font-label-sm text-label-sm px-2 py-0.5 rounded-full font-extrabold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] fill-icon">check</span>
+                CONFIRMADO
+              </span>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant">Sesión doble</span>
+</div>
+<div class="mb-1.5">
+<p class="font-headline-sm text-headline-sm text-on-surface font-extrabold">
+              Lunes 21 Sep · 18:00 h
+            </p>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">
+            Entrenamiento físico y técnico
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 font-medium">
+<span class="material-symbols-outlined text-outline text-[18px]">location_on</span>
+            Campo Municipal
+          </p>
+</article>
+</section>
+</main>
+<!-- Floating Action Button (FAB) -->
+<div class="fixed bottom-20 right-4 z-40 max-w-md">
+<button class="h-13 px-5 bg-primary-container hover:bg-[#1E40AF] active:scale-[0.98] text-on-primary rounded-full flex items-center gap-2 shadow-[0_8px_20px_rgba(29,78,216,0.35)] transition-all" type="button">
+<span class="material-symbols-outlined text-[22px] font-bold">add</span>
+<span class="font-label-lg text-label-lg font-bold tracking-wide">Nuevo evento</span>
+</button>
+</div>
+<!-- Bottom Navigation Bar: Shared Component Implementation (BottomNavBar) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter-mobile py-space-xs bg-surface-container-lowest shadow-md">
+<!-- Destination 1: Inicio / Matches -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-2 py-1.5 active:scale-[0.98] transition-transform duration-150 hover:bg-surface-container" href="#">
+<span class="material-symbols-outlined text-[24px]">sports_soccer</span>
+<span class="font-label-sm text-label-sm font-medium mt-0.5">Matches</span>
+</a>
+<!-- Destination 2: Calendario / Training (Active matching current calendar view) -->
+<a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-xl px-3 py-1.5 active:scale-[0.98] transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[24px] fill-icon">fitness_center</span>
+<span class="font-label-sm text-label-sm font-bold mt-0.5">Training</span>
+</a>
+<!-- Destination 3: Roster / Equipo -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-2 py-1.5 active:scale-[0.98] transition-transform duration-150 hover:bg-surface-container" href="#">
+<span class="material-symbols-outlined text-[24px]">groups</span>
+<span class="font-label-sm text-label-sm font-medium mt-0.5">Roster</span>
+</a>
+<!-- Destination 4: Notices / Avisos -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-2 py-1.5 active:scale-[0.98] transition-transform duration-150 hover:bg-surface-container relative" href="#">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+<span class="absolute top-1 right-2 w-2 h-2 rounded-full bg-error"></span>
+<span class="font-label-sm text-label-sm font-medium mt-0.5">Notices</span>
+</a>
+<!-- Destination 5: Settings / Perfil -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-2 py-1.5 active:scale-[0.98] transition-transform duration-150 hover:bg-surface-container" href="#">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+<span class="font-label-sm text-label-sm font-medium mt-0.5">Settings</span>
+</a>
+</nav>
+</div>
+</body></html>

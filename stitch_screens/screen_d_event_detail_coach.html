@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Talde Hemendik! - Detalle del Evento (Torneo Oyón)</title>
+<!-- Material Symbols Outlined Font -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Font: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim as required -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-high": "#e2e7ff",
+            "secondary": "#006c4a",
+            "surface-variant": "#dae2fd",
+            "on-tertiary-container": "#ffc7c1",
+            "outline": "#747686",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed-variant": "#005137",
+            "surface": "#faf8ff",
+            "on-secondary-fixed": "#002114",
+            "inverse-on-surface": "#eef0ff",
+            "surface-container": "#eaedff",
+            "surface-container-low": "#f2f3ff",
+            "primary-container": "#1d4ed8",
+            "inverse-primary": "#b7c4ff",
+            "primary-fixed": "#dce1ff",
+            "outline-variant": "#c4c5d7",
+            "secondary-fixed-dim": "#68dba9",
+            "surface-tint": "#2151da",
+            "on-tertiary-fixed": "#410002",
+            "on-tertiary": "#ffffff",
+            "on-background": "#131b2e",
+            "tertiary-fixed-dim": "#ffb4ab",
+            "on-surface": "#131b2e",
+            "primary-fixed-dim": "#b7c4ff",
+            "on-primary-fixed": "#001551",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed-variant": "#0039b5",
+            "primary": "#0037b0",
+            "on-secondary-container": "#00714e",
+            "tertiary-fixed": "#ffdad6",
+            "error-container": "#ffdad6",
+            "surface-dim": "#d2d9f4",
+            "surface-container-lowest": "#ffffff",
+            "on-error": "#ffffff",
+            "background": "#faf8ff",
+            "on-primary-container": "#cad3ff",
+            "surface-container-highest": "#dae2fd",
+            "on-surface-variant": "#434655",
+            "error": "#ba1a1a",
+            "secondary-container": "#82f5c1",
+            "inverse-surface": "#283044",
+            "tertiary-container": "#bb0112",
+            "tertiary": "#8f000b",
+            "secondary-fixed": "#85f8c4",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed-variant": "#93000b",
+            "surface-bright": "#faf8ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "margin-mobile": "1rem",
+            "margin": "1rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2rem",
+            "space-lg": "1.5rem",
+            "gutter": "1rem",
+            "gutter-mobile": "0.75rem"
+          },
+          "fontFamily": {
+            "stat-display": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "stat-display": ["36px", { "lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "body-md": ["15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "body-lg": ["17px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+      vertical-align: middle;
+    }
+    body {
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="h-full bg-background text-on-surface flex flex-col font-body-md antialiased select-none">
+<!-- STICKY TOP APP BAR (Sub-page task focused header with back button) -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest shadow-sm">
+<div class="flex items-center justify-between px-margin-mobile h-14 max-w-lg mx-auto w-full">
+<!-- Left: Back Navigation -->
+<button aria-label="Volver" class="w-10 h-10 -ml-2 rounded-xl flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-[0.98] transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<!-- Center: Event Identity Anchor -->
+<div class="flex-1 px-2 text-center min-w-0">
+<div class="flex items-center justify-center gap-1.5 leading-none">
+<h1 class="font-headline-sm text-headline-sm text-on-surface truncate font-bold">Torneo Oyón</h1>
+</div>
+<div class="flex items-center justify-center gap-1.5 mt-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">CD Oyón · Infantil A</span>
+<span class="inline-block w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm bg-surface-container px-1.5 py-0.5 rounded text-primary font-bold">Temp. 24/25</span>
+</div>
+</div>
+<!-- Right: Action Icons -->
+<div class="flex items-center gap-1 -mr-2">
+<button aria-label="Editar evento" class="w-9 h-9 rounded-xl flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-[0.98] transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button aria-label="Compartir evento" class="w-9 h-9 rounded-xl flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-[0.98] transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+</div>
+</div>
+</header>
+<!-- MAIN SCROLLABLE CONTENT CANVAS (Edge-safe 16px margins, athletic cards) -->
+<main class="flex-1 overflow-y-auto pb-36 px-margin-mobile pt-3 max-w-lg mx-auto w-full space-y-4">
+<!-- 1. EVENT LOGISTICS SUMMARY CARD -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant p-space-md shadow-sm">
+<!-- Badges Row -->
+<div class="flex items-center justify-between gap-2 pb-3 border-b border-surface-container">
+<span class="inline-flex items-center gap-1 bg-primary-container text-on-primary px-2.5 py-1 rounded-full font-label-sm text-label-sm font-bold tracking-wider">
+<span class="material-symbols-outlined text-[14px]">sports_soccer</span>
+          TORNEO
+        </span>
+<span class="inline-flex items-center gap-1 bg-[#FFFBEB] text-[#92400E] border border-[#FDE68A] px-2.5 py-1 rounded-full font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">hourglass_top</span>
+          DISPONIBILIDAD ABIERTA
+        </span>
+</div>
+<!-- Match Logistics Details -->
+<div class="pt-3 space-y-3">
+<!-- Kickoff & Convocation Time -->
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+</div>
+<div class="flex-1">
+<div class="flex items-baseline justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Sábado 19 Sep · 10:30 h</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">Kickoff</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5 font-medium">
+<span class="material-symbols-outlined text-[15px] text-outline">schedule</span>
+              Convocatoria vestuario: <strong class="text-on-surface">09:45 h</strong> (-45 min)
+            </p>
+</div>
+</div>
+<!-- Location with link -->
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-body-md text-body-md text-on-surface font-bold truncate">Polideportivo Municipal de Oyón</p>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary hover:underline font-bold mt-0.5" href="#maps">
+<span>Abrir en Google Maps</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Equipment & Kit Instructions Box -->
+<div class="bg-surface-container-low rounded-lg p-2.5 border border-outline-variant flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">checkroom</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">
+<strong class="text-on-surface font-semibold">Equipación:</strong> Segunda equipación (azul), espinilleras reglamentarias y botella de agua individual.
+          </p>
+</div>
+<!-- Deadline Notice Bar -->
+<div class="bg-[#FEF3C7] rounded-lg px-3 py-2 border border-[#FDE68A] flex items-center gap-2">
+<span class="material-symbols-outlined text-[#92400E] text-[18px] shrink-0">alarm</span>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-label-md text-[#92400E] font-bold truncate">
+              Límite respuestas: Jueves 17 · 20:00 h
+            </p>
+<p class="font-label-sm text-label-sm text-[#B45309] font-medium">
+              Cierre automático en 18 horas
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. AVAILABILITY BREAKDOWN & COUNTER OVERVIEW -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant p-space-md shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Estado de Plantilla</h2>
+<span class="font-label-sm text-label-sm bg-surface-container text-on-surface-variant font-bold px-2 py-0.5 rounded-full">
+          Total 18 jugadores
+        </span>
+</div>
+<!-- Segmented High-Contrast Status Counters (Outdoor Legible Chips) -->
+<div class="grid grid-cols-3 gap-2">
+<!-- Disponibles -->
+<div class="bg-[#ECFDF5] border border-[#A7F3D0] rounded-xl p-2.5 text-center flex flex-col items-center">
+<div class="flex items-center gap-1 text-[#065F46] font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Disponibles</span>
+</div>
+<span class="font-stat-display text-stat-display text-[#065F46] leading-none mt-1">14</span>
+<span class="font-label-sm text-label-sm text-[#047857] font-semibold mt-0.5">78% plantilla</span>
+</div>
+<!-- Pendientes -->
+<div class="bg-[#FFFBEB] border border-[#FDE68A] rounded-xl p-2.5 text-center flex flex-col items-center">
+<div class="flex items-center gap-1 text-[#92400E] font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">hourglass_bottom</span>
+<span>Pendientes</span>
+</div>
+<span class="font-stat-display text-stat-display text-[#92400E] leading-none mt-1">2</span>
+<span class="font-label-sm text-label-sm text-[#B45309] font-semibold mt-0.5">Falta RSVP</span>
+</div>
+<!-- No Disponibles -->
+<div class="bg-[#FEF2F2] border border-[#FECACA] rounded-xl p-2.5 text-center flex flex-col items-center">
+<div class="flex items-center gap-1 text-[#991B1B] font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">cancel</span>
+<span>Bajas</span>
+</div>
+<span class="font-stat-display text-stat-display text-[#991B1B] leading-none mt-1">2</span>
+<span class="font-label-sm text-label-sm text-[#B91C1C] font-semibold mt-0.5">Confirmadas</span>
+</div>
+</div>
+<!-- Segmented Visual Bar (14 green, 2 amber, 2 red) -->
+<div class="pt-1">
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden flex gap-0.5 p-0.5">
+<!-- 14 green segments (Disponibles) -->
+<div class="h-full bg-[#059669] rounded-l-full" style="width: 77.7%;"></div>
+<!-- 2 amber segments (Pendientes) -->
+<div class="h-full bg-[#D97706]" style="width: 11.1%;"></div>
+<!-- 2 red segments (Bajas) -->
+<div class="h-full bg-[#DC2626] rounded-r-full" style="width: 11.2%;"></div>
+</div>
+<div class="flex justify-between items-center text-[10px] text-on-surface-variant mt-1.5 px-0.5 font-bold uppercase tracking-wider">
+<span class="text-[#065F46]">14 SÍ</span>
+<span class="text-[#92400E]">2 DUDAS</span>
+<span class="text-[#991B1B]">2 NO</span>
+</div>
+</div>
+</section>
+<!-- 3. ACTIONABLE CARD: PENDIENTES DE RESPUESTA (Urgent Coach Nudge Section) -->
+<section class="bg-[#FFFDF7] border-2 border-[#FDE68A] rounded-xl p-space-md shadow-sm space-y-3">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-[#FEF3C7] text-[#92400E] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">notifications_active</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-[#92400E] font-bold">Pendientes de confirmación</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">2 familias aún no han respondido</p>
+</div>
+</div>
+<span class="bg-[#FDE68A] text-[#92400E] font-label-sm text-label-sm font-extrabold px-2 py-0.5 rounded-full">
+          URGENTE
+        </span>
+</div>
+<!-- Pending Players Roster Cards -->
+<div class="space-y-2 pt-1">
+<!-- Pending Player 1 -->
+<div class="bg-surface-container-lowest rounded-lg border border-[#FDE68A] p-2.5 flex items-center justify-between">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-9 h-9 rounded-full bg-[#FFFBEB] border border-[#FDE68A] flex items-center justify-center text-[#92400E] font-bold text-sm shrink-0">
+              #16
+            </div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<p class="font-body-md text-body-md text-on-surface font-bold truncate">Ane Gorostiaga</p>
+<span class="text-[11px] font-bold text-[#D97706] bg-[#FEF3C7] px-1.5 py-0.2 rounded">Lateral</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                Tutor: <strong class="text-on-surface">Iñaki Gorostiaga</strong>
+</p>
+</div>
+</div>
+<!-- Quick Call/WhatsApp triggers -->
+<div class="flex items-center gap-1 shrink-0 ml-2">
+<button aria-label="Llamar al tutor" class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</button>
+<button aria-label="Enviar WhatsApp" class="w-8 h-8 rounded-lg bg-[#ECFDF5] border border-[#A7F3D0] flex items-center justify-center text-[#065F46] active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</button>
+</div>
+</div>
+<!-- Pending Player 2 -->
+<div class="bg-surface-container-lowest rounded-lg border border-[#FDE68A] p-2.5 flex items-center justify-between">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-9 h-9 rounded-full bg-[#FFFBEB] border border-[#FDE68A] flex items-center justify-center text-[#92400E] font-bold text-sm shrink-0">
+              #18
+            </div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<p class="font-body-md text-body-md text-on-surface font-bold truncate">Peio Goikoetxea</p>
+<span class="text-[11px] font-bold text-[#D97706] bg-[#FEF3C7] px-1.5 py-0.2 rounded">Extremo</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                Tutor: <strong class="text-on-surface">Asier Goikoetxea</strong> · <span class="text-outline">Avisado ayer</span>
+</p>
+</div>
+</div>
+<!-- Quick Call/WhatsApp triggers -->
+<div class="flex items-center gap-1 shrink-0 ml-2">
+<button aria-label="Llamar al tutor" class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</button>
+<button aria-label="Enviar WhatsApp" class="w-8 h-8 rounded-lg bg-[#ECFDF5] border border-[#A7F3D0] flex items-center justify-center text-[#065F46] active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quick Coach 1-Tap Action Button -->
+<button class="w-full h-11 bg-[#D97706] hover:bg-[#B45309] active:scale-[0.98] transition-all text-white rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 font-bold shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">forward_to_inbox</span>
+<span>Recordar a los 2 pendientes (Push &amp; WhatsApp)</span>
+</button>
+</section>
+<!-- 4. PLAYERS LIST SECTION - 'DISPONIBLES (14)' -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant p-space-md shadow-sm">
+<div class="flex items-center justify-between pb-3 border-b border-surface-container">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#059669]"></span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Disponibles para convocar</h3>
+</div>
+<span class="font-label-sm text-label-sm text-[#065F46] font-bold bg-[#ECFDF5] border border-[#A7F3D0] px-2 py-0.5 rounded-full">
+          14 de 18
+        </span>
+</div>
+<!-- Athletic Roster Rows (min-height 56px for sideline touch accuracy) -->
+<div class="divide-y divide-surface-container">
+<!-- Player 1 -->
+<div class="py-2.5 flex items-center justify-between min-h-[56px]">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-surface-container text-primary font-bold flex items-center justify-center shrink-0 border border-outline-variant text-sm">
+              #9
+            </div>
+<div class="min-w-0">
+<p class="font-body-md text-body-md text-on-surface font-bold truncate">Ibai Aranguren</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">Delantero Centro</p>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#065F46] bg-[#ECFDF5] px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]">done</span>
+              Ayer 19:12
+            </span>
+</div>
+</div>
+<!-- Player 2 -->
+<div class="py-2.5 flex items-center justify-between min-h-[56px]">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-surface-container text-primary font-bold flex items-center justify-center shrink-0 border border-outline-variant text-sm">
+              #7
+            </div>
+<div class="min-w-0">
+<p class="font-body-md text-body-md text-on-surface font-bold truncate">Unai Etxebarria</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">Extremo Izquierdo</p>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#065F46] bg-[#ECFDF5] px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]">done</span>
+              Ayer 20:05
+            </span>
+</div>
+</div>
+<!-- Player 3 -->
+<div class="py-2.5 flex items-center justify-between min-h-[56px]">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-surface-container text-primary font-bold flex items-center justify-center shrink-0 border border-outline-variant text-sm">
+              #4
+            </div>
+<div class="min-w-0">
+<p class="font-body-md text-body-md text-on-surface font-bold truncate">Jon Gorostiaga</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">Defensa Central</p>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#065F46] bg-[#ECFDF5] px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]">done</span>
+              Hoy 08:30
+            </span>
+</div>
+</div>
+<!-- Player 4 -->
+<div class="py-2.5 flex items-center justify-between min-h-[56px]">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-surface-container text-primary font-bold flex items-center justify-center shrink-0 border border-outline-variant text-sm">
+              #5
+            </div>
+<div class="min-w-0">
+<p class="font-body-md text-body-md text-on-surface font-bold truncate">Markel Ruiz</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">Defensa Central</p>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#065F46] bg-[#ECFDF5] px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]">done</span>
+              Ayer 19:40
+            </span>
+</div>
+</div>
+<!-- Player 5 -->
+<div class="py-2.5 flex items-center justify-between min-h-[56px]">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-surface-container text-primary font-bold flex items-center justify-center shrink-0 border border-outline-variant text-sm">
+              #10
+            </div>
+<div class="min-w-0">
+<p class="font-body-md text-body-md text-on-surface font-bold truncate">Mikel Zabaleta</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">Mediocentro Organizador</p>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#065F46] bg-[#ECFDF5] px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]">done</span>
+              Ayer 21:15
+            </span>
+</div>
+</div>
+<!-- Player 6 -->
+<div class="py-2.5 flex items-center justify-between min-h-[56px]">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-surface-container text-primary font-bold flex items-center justify-center shrink-0 border border-outline-variant text-sm">
+              #11
+            </div>
+<div class="min-w-0">
+<p class="font-body-md text-body-md text-on-surface font-bold truncate">Aimar Ortiz</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">Extremo Derecho</p>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#065F46] bg-[#ECFDF5] px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]">done</span>
+              Hoy 09:00
+            </span>
+</div>
+</div>
+<!-- Player 7 -->
+<div class="py-2.5 flex items-center justify-between min-h-[56px]">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-surface-container text-primary font-bold flex items-center justify-center shrink-0 border border-outline-variant text-sm">
+              #3
+            </div>
+<div class="min-w-0">
+<p class="font-body-md text-body-md text-on-surface font-bold truncate">Julen Bilbao</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">Lateral Izquierdo</p>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#065F46] bg-[#ECFDF5] px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]">done</span>
+              Ayer 20:20
+            </span>
+</div>
+</div>
+<!-- Player 8 -->
+<div class="py-2.5 flex items-center justify-between min-h-[56px]">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-surface-container text-primary font-bold flex items-center justify-center shrink-0 border border-outline-variant text-sm">
+              #8
+            </div>
+<div class="min-w-0">
+<p class="font-body-md text-body-md text-on-surface font-bold truncate">Oier Agirre</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">Interior</p>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#065F46] bg-[#ECFDF5] px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]">done</span>
+              Ayer 19:55
+            </span>
+</div>
+</div>
+<!-- Player 9 -->
+<div class="py-2.5 flex items-center justify-between min-h-[56px]">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-surface-container text-primary font-bold flex items-center justify-center shrink-0 border border-outline-variant text-sm">
+              #2
+            </div>
+<div class="min-w-0">
+<p class="font-body-md text-body-md text-on-surface font-bold truncate">Eneko Larrea</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">Lateral Derecho</p>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#065F46] bg-[#ECFDF5] px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]">done</span>
+              Hoy 08:15
+            </span>
+</div>
+</div>
+<!-- Player 10 -->
+<div class="py-2.5 flex items-center justify-between min-h-[56px]">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-surface-container text-primary font-bold flex items-center justify-center shrink-0 border border-outline-variant text-sm">
+              #6
+            </div>
+<div class="min-w-0">
+<p class="font-body-md text-body-md text-on-surface font-bold truncate">Ander Sagasti</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">Mediocentro Defensivo</p>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#065F46] bg-[#ECFDF5] px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]">done</span>
+              Ayer 21:00
+            </span>
+</div>
+</div>
+<!-- Player 11 -->
+<div class="py-2.5 flex items-center justify-between min-h-[56px]">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-surface-container text-primary font-bold flex items-center justify-center shrink-0 border border-outline-variant text-sm">
+              #1
+            </div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<p class="font-body-md text-body-md text-on-surface font-bold truncate">Gorka Mendia</p>
+<span class="text-[10px] font-extrabold bg-[#E0E7FF] text-[#1E40AF] px-1.5 py-0.2 rounded uppercase">POR</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">Portero</p>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#065F46] bg-[#ECFDF5] px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]">done</span>
+              Ayer 19:10
+            </span>
+</div>
+</div>
+<!-- Player 12 -->
+<div class="py-2.5 flex items-center justify-between min-h-[56px]">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-surface-container text-primary font-bold flex items-center justify-center shrink-0 border border-outline-variant text-sm">
+              #14
+            </div>
+<div class="min-w-0">
+<p class="font-body-md text-body-md text-on-surface font-bold truncate">Iker Baroja</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">Delantero</p>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#065F46] bg-[#ECFDF5] px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]">done</span>
+              Ayer 22:30
+            </span>
+</div>
+</div>
+<!-- Player 13 -->
+<div class="py-2.5 flex items-center justify-between min-h-[56px]">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-surface-container text-primary font-bold flex items-center justify-center shrink-0 border border-outline-variant text-sm">
+              #12
+            </div>
+<div class="min-w-0">
+<p class="font-body-md text-body-md text-on-surface font-bold truncate">Nahia Azkarate</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">Defensa Central</p>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#065F46] bg-[#ECFDF5] px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]">done</span>
+              Hoy 09:10
+            </span>
+</div>
+</div>
+<!-- Player 14 -->
+<div class="py-2.5 flex items-center justify-between min-h-[56px]">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-surface-container text-primary font-bold flex items-center justify-center shrink-0 border border-outline-variant text-sm">
+              #15
+            </div>
+<div class="min-w-0">
+<p class="font-body-md text-body-md text-on-surface font-bold truncate">Irati Zabala</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">Centrocampista</p>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#065F46] bg-[#ECFDF5] px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]">done</span>
+              Hoy 09:45
+            </span>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. 'NO DISPONIBLES (2)' SECTION -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant p-space-md shadow-sm space-y-2.5">
+<div class="flex items-center justify-between pb-2 border-b border-surface-container">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#DC2626]"></span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">No disponibles / Bajas</h3>
+</div>
+<span class="font-label-sm text-label-sm text-[#991B1B] font-bold bg-[#FEF2F2] border border-[#FECACA] px-2 py-0.5 rounded-full">
+          2 bajas
+        </span>
+</div>
+<div class="space-y-2 pt-1">
+<!-- Baja 1 -->
+<div class="bg-[#FFF8F8] border border-[#FECACA] rounded-lg p-2.5 flex items-start justify-between">
+<div class="flex items-start gap-2.5">
+<div class="w-8 h-8 rounded-full bg-[#FEF2F2] text-[#991B1B] font-bold flex items-center justify-center shrink-0 text-sm mt-0.5">
+              #13
+            </div>
+<div>
+<p class="font-body-md text-body-md text-on-surface font-bold">Asier Urkijo</p>
+<p class="font-body-sm text-body-sm text-[#991B1B] font-semibold mt-0.5">
+                Motivo: <span class="font-normal text-on-surface">Viaje familiar programado</span>
+</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-outline shrink-0 ml-2">Hace 2 días</span>
+</div>
+<!-- Baja 2 -->
+<div class="bg-[#FFF8F8] border border-[#FECACA] rounded-lg p-2.5 flex items-start justify-between">
+<div class="flex items-start gap-2.5">
+<div class="w-8 h-8 rounded-full bg-[#FEF2F2] text-[#991B1B] font-bold flex items-center justify-center shrink-0 text-sm mt-0.5">
+              #17
+            </div>
+<div>
+<p class="font-body-md text-body-md text-on-surface font-bold">Olatz Bengoa</p>
+<p class="font-body-sm text-body-sm text-[#991B1B] font-semibold mt-0.5">
+                Motivo: <span class="font-normal text-on-surface">Reposo médico (esguince leve tobillo)</span>
+</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-outline shrink-0 ml-2">Ayer 18:40</span>
+</div>
+</div>
+</section>
+</main>
+<!-- STICKY BOTTOM COACH ACTION DOCK (Thumb zone anchor with target guidance) -->
+<footer class="fixed bottom-0 left-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-md border-t border-outline-variant shadow-lg py-3 px-margin-mobile">
+<div class="max-w-lg mx-auto flex flex-col items-center">
+<!-- Convocation Target Meta Row -->
+<div class="w-full flex items-center justify-between pb-2 px-1">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">
+          Objetivo convocatoria: <strong class="text-on-surface">12 jugadores</strong>
+</span>
+<span class="font-label-sm text-label-sm text-secondary font-extrabold bg-[#ECFDF5] px-2 py-0.5 rounded-md">
+          14 seleccionables
+        </span>
+</div>
+<!-- Primary CTA: 52px height full-width button -->
+<button class="w-full h-[52px] bg-primary-container hover:bg-[#1E40AF] active:scale-[0.98] transition-all text-on-primary rounded-xl font-label-lg text-label-lg flex items-center justify-center gap-2 font-bold shadow-md" type="button">
+<span>Crear Convocatoria (14 disponibles)</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</footer>
+</body></html>
