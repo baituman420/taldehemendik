@@ -1,304 +1,541 @@
 /**
- * Talde Hemendik! - Interactive Demo Controller & State Store
- * Controls:
- * - 14-Step Guided Tour for testing & stakeholder demos
- * - Role Switcher: Coach (Mikel) <-> Parent/Guardian (Amaia - Ibai #9)
- * - Navigation between all 11 Stitch-designed screens (A - K)
- * - Reactive state: Event creation, RSVP collection, Call-up generation, Late drop-out (Fever), Substitution of Ane #16
+ * Talde Hemendik! V2 - Product Architecture Controller
+ * Centered on the Coach's mental model:
+ * 1. La Mesa del Entrenador (INICIO)
+ * 2. El Tiempo del Equipo (AGENDA)
+ * 3. Las Personas (EQUIPO / PLANTILLA)
+ * 4. Comunicaciones Oficiales (AVISOS)
+ * Plus Initial Onboarding & Parent Flow (Elena Gómez / Ibai #9)
  */
 
 const SQUAD_DATA = [
-  { id: 1, number: 1, name: "Gorka Mendia", role: "Portero", status: "DISPONIBLE", rsvp: "Confirmó ayer 19:10", tutor: "Iker Mendia", phone: "611 22 33 44" },
-  { id: 2, number: 2, name: "Eneko Larrea", role: "Lateral", status: "DISPONIBLE", rsvp: "Confirmó hoy 08:15", tutor: "Joseba Larrea", phone: "622 33 44 55" },
-  { id: 3, number: 3, name: "Julen Bilbao", role: "Lateral", status: "DISPONIBLE", rsvp: "Confirmó ayer 20:20", tutor: "Xabier Bilbao", phone: "633 44 55 66" },
-  { id: 4, number: 4, name: "Jon Gorostiaga", role: "Defensa", status: "DISPONIBLE", rsvp: "Confirmó hoy 08:30", tutor: "Iñaki Gorostiaga", phone: "644 55 66 77" },
-  { id: 5, number: 5, name: "Markel Ruiz", role: "Defensa", status: "DISPONIBLE", rsvp: "Confirmó ayer 19:40", tutor: "Elena Ruiz", phone: "655 66 77 88" },
-  { id: 6, number: 6, name: "Ander Sagasti", role: "Centrocampista", status: "DISPONIBLE", rsvp: "Confirmó ayer 21:00", tutor: "Begoña Sagasti", phone: "666 77 88 99" },
-  { id: 7, number: 7, name: "Unai Etxebarria", role: "Extremo", status: "DISPONIBLE", rsvp: "Confirmó ayer 20:05", tutor: "Kepa y Leire", phone: "677 88 99 00" },
-  { id: 8, number: 8, name: "Oier Agirre", role: "Centrocampista", status: "DISPONIBLE", rsvp: "Confirmó ayer 19:55", tutor: "Maite Agirre", phone: "688 99 00 11" },
-  { id: 9, number: 9, name: "Ibai Aranguren", role: "Delantero", status: "DISPONIBLE", rsvp: "Confirmó ayer 19:12", tutor: "Amaia Aranguren", phone: "654 32 10 98" },
-  { id: 10, number: 10, name: "Mikel Zabaleta", role: "Centrocampista", status: "DISPONIBLE", rsvp: "Confirmó ayer 21:15", tutor: "Aitor Zabaleta", phone: "699 00 11 22" },
-  { id: 11, number: 11, name: "Aimar Ortiz", role: "Delantero", status: "DISPONIBLE", rsvp: "Confirmó hoy 09:00", tutor: "Miren Ortiz", phone: "600 11 22 33" },
-  { id: 12, number: 12, name: "Nahia Azkarate", role: "Defensa", status: "DISPONIBLE_RESERVA", rsvp: "Confirmó hoy 09:10", tutor: "Nerea Azkarate", phone: "612 23 34 45" },
-  { id: 13, number: 13, name: "Asier Urkijo", role: "Centrocampista", status: "NO_DISPONIBLE", rsvp: "No puede (Viaje)", tutor: "Mikel Urkijo", phone: "623 34 45 56" },
-  { id: 14, number: 14, name: "Iker Baroja", role: "Extremo", status: "DISPONIBLE", rsvp: "Confirmó ayer 22:30", tutor: "Carmen Baroja", phone: "634 45 56 67" },
-  { id: 15, number: 15, name: "Irati Zabala", role: "Extremo", status: "DISPONIBLE_RESERVA", rsvp: "Confirmó hoy 09:45", tutor: "Patxi Zabala", phone: "645 56 67 78" },
-  { id: 16, number: 16, name: "Ane Gorostiaga", role: "Mediocentro / Delantera", status: "DISPONIBLE_RESERVA", rsvp: "Confirmó hoy", tutor: "Iñaki Gorostiaga", phone: "644 55 66 77" },
-  { id: 17, number: 17, name: "Olatz Bengoa", role: "Defensa", status: "NO_DISPONIBLE", rsvp: "No puede (Reposo lesión)", tutor: "Sonia Bengoa", phone: "656 67 78 89" },
-  { id: 18, number: 18, name: "Peio Goikoetxea", role: "Mediocentro", status: "PENDIENTE", rsvp: "Pendiente", tutor: "Asier Goikoetxea", phone: "667 78 89 90" }
+  { id: 1, number: 1, name: "Gorka Elejalde", role: "Portero", status: "CONVOCADO", rsvp: "Confirmado ayer 19:10", tutor: "Iker Elejalde", phone: "611 22 33 44", medical: "Apto · Sin observaciones" },
+  { id: 2, number: 2, name: "Eneko Zabala", role: "Defensa", status: "CONVOCADO", rsvp: "Confirmado hoy 08:15", tutor: "Joseba Zabala", phone: "622 33 44 55", medical: "Apto" },
+  { id: 3, number: 3, name: "Julen Ortiz", role: "Defensa", status: "CONVOCADO", rsvp: "Confirmado ayer 20:20", tutor: "Xabier Ortiz", phone: "633 44 55 66", medical: "Apto" },
+  { id: 4, number: 4, name: "Jon Beltrán", role: "Defensa", status: "CONVOCADO", rsvp: "Confirmado hoy 08:30", tutor: "Iñaki Beltrán", phone: "644 55 66 77", medical: "Apto" },
+  { id: 5, number: 5, name: "Markel Saenz", role: "Centrocampista", status: "CONVOCADO", rsvp: "Confirmado ayer 19:40", tutor: "Elena Saenz", phone: "655 66 77 88", medical: "Apto" },
+  { id: 6, number: 6, name: "Ander Lopez", role: "Centrocampista", status: "CONVOCADO", rsvp: "Confirmado ayer 21:00", tutor: "Begoña Lopez", phone: "666 77 88 99", medical: "Apto" },
+  { id: 7, number: 7, name: "Unai Martinez", role: "Delantero", status: "CONVOCADO", rsvp: "Confirmado ayer 20:05", tutor: "Kepa Martinez", phone: "677 88 99 00", medical: "Apto" },
+  { id: 8, number: 8, name: "Oier Gomez", role: "Centrocampista", status: "CONVOCADO", rsvp: "Confirmado ayer 19:55", tutor: "Maite Gomez", phone: "688 99 00 11", medical: "Apto" },
+  { id: 9, number: 9, name: "Ibai Aranguren", role: "Delantero Centro", status: "BAJA_MEDICA", rsvp: "Baja (Esguince de tobillo leve)", tutor: "Elena Gómez (Madre)", phone: "620 44 55 66", medical: "Plantilla correctora bota der. · Esguince leve de tobillo" },
+  { id: 10, number: 10, name: "Mikel Zabaleta", role: "Centrocampista", status: "CONVOCADO", rsvp: "Confirmado ayer 21:15", tutor: "Aitor Zabaleta", phone: "699 00 11 22", medical: "Apto" },
+  { id: 11, number: 11, name: "Aimar Ortiz", role: "Delantero", status: "CONVOCADO", rsvp: "Confirmado hoy 09:00", tutor: "Miren Ortiz", phone: "600 11 22 33", medical: "Apto" },
+  { id: 12, number: 12, name: "Nahia Garcia", role: "Centrocampista", status: "RESERVA", rsvp: "Confirmó disponibilidad", tutor: "Nerea Garcia", phone: "612 23 34 45", medical: "Apto" },
+  { id: 13, number: 13, name: "Asier Urkijo", role: "Centrocampista", status: "NO_DISPONIBLE", rsvp: "No puede (Viaje familiar)", tutor: "Mikel Urkijo", phone: "623 34 45 56", medical: "Apto" },
+  { id: 14, number: 14, name: "Iker Baroja", role: "Extremo", status: "CONVOCADO", rsvp: "Confirmado ayer 22:30", tutor: "Carmen Baroja", phone: "634 45 56 67", medical: "Apto" },
+  { id: 15, number: 15, name: "Irati Fernandez", role: "Delantera", status: "RESERVA", rsvp: "Confirmó disponibilidad", tutor: "Patxi Fernandez", phone: "645 56 67 78", medical: "Apto" },
+  { id: 16, number: 16, name: "Ane Mintegi", role: "Centrocampista", status: "SUSTITUTA_ELEGIDA", rsvp: "Disponible · Reserva Torneo", tutor: "Iñaki Mintegi", phone: "644 55 66 77", medical: "Apto" },
+  { id: 17, number: 17, name: "Olatz Bengoa", role: "Defensa", status: "NO_DISPONIBLE", rsvp: "No puede (Reposo lesión)", tutor: "Sonia Bengoa", phone: "656 67 78 89", medical: "En recuperación" },
+  { id: 18, number: 18, name: "Peio Gómez", role: "Defensa", status: "NO_DISPONIBLE", rsvp: "Plazo cerrado sin respuesta", tutor: "Asier Gómez", phone: "667 78 89 90", medical: "Apto" }
 ];
 
 const GUIDED_STEPS = [
   {
     step: 1,
-    role: "coach",
-    screen: "screen_a_home_coach",
-    title: "1. Entrenador entra en Inicio",
-    desc: "Mikel (entrenador) consulta el resumen operativo. El bloque 'REQUIERE TU ATENCIÓN' destaca el Torneo Oyón con las respuestas recibidas.",
-    actionHint: "Pulsa en 'Gestionar Disponibilidad y Convocatoria' o en la tarjeta del Torneo Oyón."
+    role: "onboard",
+    screen: "v2_00_onboarding_welcome",
+    tab: "onboard",
+    title: "1. Acceso Inicial: ¿Cómo vas a utilizar la app?",
+    desc: "Pantalla única de bienvenida para todo el club. El usuario elige su función: 'Soy entrenador / staff' o 'Soy padre, madre o tutor'. Sin apps separadas.",
+    actionHint: "Pulsa 'Soy entrenador / staff' para iniciar la creación del equipo."
   },
   {
     step: 2,
     role: "coach",
-    screen: "screen_c_create_event",
-    title: "2. Crear evento rápido",
-    desc: "Formulario limpio y ultra ágil diseñado para usar a pie de campo. Solo los datos estrictamente necesarios.",
-    actionHint: "Observa el switch 'Solicitar disponibilidad' activado con fecha límite y pulsa 'Crear evento'."
+    screen: "v2_00_coach_create_team",
+    tab: "onboard",
+    title: "2. Flujo Entrenador: Crear equipo & Código OYON16",
+    desc: "Formulario corto: Infantil A, CD Oyón, Fútbol. 18 jugadores precargados federativos. Se genera el código OYON16 con botón para WhatsApp.",
+    actionHint: "Pulsa 'Ir a la mesa del entrenador' para acceder al panel con la puesta en marcha."
   },
   {
     step: 3,
-    role: "coach",
-    screen: "screen_d_event_detail_coach",
-    title: "3. Solicitar disponibilidad",
-    desc: "El evento queda programado y la solicitud se envía automáticamente a las familias de la plantilla.",
-    actionHint: "El sistema muestra las respuestas en tiempo real: 14 Disponibles, 2 No disponibles, 2 Pendientes."
+    role: "parent",
+    screen: "v2_00_parent_join_team",
+    tab: "onboard",
+    title: "3. Flujo Familia: Unirse al equipo & vincular menor",
+    desc: "Elena Gómez entra con el código OYON16. Selecciona a su hijo Ibai Aranguren (#9). El sistema exige validación del míster para proteger los datos médicos del menor.",
+    actionHint: "Pulsa 'Enviar solicitud de vinculación' para notificar al cuerpo técnico."
   },
   {
     step: 4,
-    role: "parent",
-    screen: "screen_g_home_parent",
-    title: "4. Tutor recibe la solicitud",
-    desc: "Cambiamos a la vista de Amaia (madre de Ibai #9). La pantalla es radicalmente más simple: cero ruido, solo su hijo y la acción requerida.",
-    actionHint: "Pulsa el botón grande 'Responder Disponibilidad' en la tarjeta destacada."
+    role: "coach",
+    screen: "v2_01_coach_home",
+    tab: "inicio",
+    title: "4. Mesa del Entrenador: Puesta en marcha & Aprobación",
+    desc: "El inicio muestra temporalmente el estado de puesta en marcha (18 jugadores, 12 vinculadas, 6 pendientes) y la solicitud de Elena Gómez. Con 1 toque el míster aprueba.",
+    actionHint: "Pulsa 'Aceptar' en la solicitud de Elena Gómez para vincularla a Ibai (#9)."
   },
   {
     step: 5,
-    role: "parent",
-    screen: "screen_h_rsvp_parent",
-    title: "5. Tutor responde en 3 segundos",
-    desc: "Tres botones táctiles masivos de alta legibilidad: SÍ, NO, o TODAVÍA NO LO SÉ. Sin formularios largos.",
-    actionHint: "Pulsa 'SÍ, PUEDE ASISTIR' y confirma la respuesta."
+    role: "coach",
+    screen: "v2_01_coach_home",
+    tab: "inicio",
+    title: "5. La Mesa del Entrenador: Triage y Pendiente de ti",
+    desc: "El míster visualiza de inmediato la alerta crítica del Torneo Oyón: 11/12 convocados por la baja médica sobrevenida de Ibai Aranguren.",
+    actionHint: "Pulsa en 'Resolver baja' en la tarjeta del Torneo Oyón."
   },
   {
     step: 6,
     role: "coach",
-    screen: "screen_d_event_detail_coach",
-    title: "6. Entrenador consulta respuestas",
-    desc: "Mikel comprueba en el detalle del evento cómo la lista de disponibles se ha consolidado.",
-    actionHint: "La disponibilidad está clara. Observa quiénes siguen pendientes."
+    screen: "v2_02_coach_agenda",
+    tab: "agenda",
+    title: "6. Agenda Semanal: Cronología y Fases de Eventos",
+    desc: "Los eventos ordenados en el tiempo: HOY entreno (18:00h), SÁBADO Torneo Oyón (con aviso de baja), LUNES entreno. Cada tarjeta refleja la fase de su Event Hub.",
+    actionHint: "Pulsa 'Gestionar evento' en la tarjeta del Torneo Oyón."
   },
   {
     step: 7,
     role: "coach",
-    screen: "screen_d_event_detail_coach",
-    title: "7. Recordar a pendientes con 1 tap",
-    desc: "Sin redactar mensajes en WhatsApp ni perseguir a padres: un solo toque en 'Recordar a pendientes' envía un recordatorio automático.",
-    actionHint: "Pulsa el botón 'Crear Convocatoria' fijado en la parte inferior."
+    screen: "v2_05_event_hub_normal",
+    tab: "agenda",
+    title: "7. Event Hub: Disponibilidad como protagonista",
+    desc: "En fase de recogida, la disponibilidad es el bloque principal: 14 Disponibles, 2 No disponibles, 2 Pendientes. La convocatoria no estorba hasta cerrar el plazo.",
+    actionHint: "Pulsa 'Recordar a pendientes (2)' para enviar un aviso instantáneo."
   },
   {
     step: 8,
     role: "coach",
-    screen: "screen_e_create_squad",
-    title: "8. Crear convocatoria oficial",
-    desc: "El entrenador parte de los disponibles y marca 12 jugadores. Contador flotante en tiempo real (12/12) y reservas identificados.",
-    actionHint: "Pulsa 'Publicar Convocatoria Oficial (12)' para notificar a las familias convocadas."
+    screen: "v2_06_event_hub_injury",
+    tab: "agenda",
+    title: "8. Sustitución de Baja: Tratamiento Neutral de Reservas",
+    desc: "Ibai causa baja médica. El sistema presenta a las 3 reservas disponibles (Ane #16, Nahia #12, Irati #15) con la misma visibilidad neutra, sin rankings arbitrarios.",
+    actionHint: "Selecciona a Ane Mintegi (#16) y pulsa 'Confirmar sustitución'."
   },
   {
     step: 9,
-    role: "parent",
-    screen: "screen_i_callup_parent",
-    title: "9. Tutor consulta la convocatoria",
-    desc: "Amaia recibe el aviso y ve: '¡IBAI ESTÁ CONVOCADO!'. Horarios de partido y vestuario, equipación obligatoria y confirmación.",
-    actionHint: "Supongamos que surge un imprevisto. Pulsa '⚠️ Ya no puede asistir (Informar de baja)'."
+    role: "coach",
+    screen: "v2_03_coach_roster",
+    tab: "equipo",
+    title: "9. Plantilla & Ficha Individual de Ibai (#9)",
+    desc: "18 fichas federativas con filtros rápidos. La ficha individual de Ibai muestra su lesión, contactos de emergencia protegidos de Elena y seguro federativo.",
+    actionHint: "Observa la ficha de Ibai y luego pulsa 'Familia' en la barra superior."
   },
   {
     step: 10,
     role: "parent",
-    screen: "screen_i_callup_parent",
-    title: "10. Tutor informa de baja sobrevenida",
-    desc: "Amaia indica el motivo justificado ('Fiebre 38.5°') con diálogo de seguridad para evitar errores accidentales.",
-    actionHint: "Confirma la baja en el diálogo emergente para ver la reacción inmediata del sistema."
+    screen: "v2_07_parent_home",
+    tab: "inicio",
+    title: "10. Inicio Tutor: Solo lo que le importa a la familia",
+    desc: "Elena Gómez solo ve a su hijo Ibai, sus horarios y la acción pendiente destacada para el fin de semana, sin listas tácticas de otros 17 niños.",
+    actionHint: "Pulsa 'Responder disponibilidad' en la tarjeta del Torneo Oyón."
   },
   {
     step: 11,
-    role: "coach",
-    screen: "screen_f_squad_published_injury",
-    title: "11. Entrenador recibe alerta de crisis",
-    desc: "El entrenador recibe una alerta roja de Nivel 1 en su móvil: 'Ibai ya no puede asistir por fiebre. Plantilla incompleta: 11/12'.",
-    actionHint: "El pánico habitual de WhatsApp se resuelve con el asistente de reemplazo inferior."
-  },
-  {
-    step: 12,
-    role: "coach",
-    screen: "screen_f_squad_published_injury",
-    title: "12. Sistema muestra sustitutos disponibles",
-    desc: "La aplicación detecta automáticamente los 3 jugadores disponibles que no habían sido convocados: Ane, Nahia e Irati.",
-    actionHint: "El sistema destaca a Ane Gorostiaga (#16) como Reserva 1 recomendada."
-  },
-  {
-    step: 13,
-    role: "coach",
-    screen: "screen_f_squad_published_injury",
-    title: "13. Entrenador convoca a Ane con 1 tap",
-    desc: "Sin listas de espera ni mensajes confusos, Mikel pulsa '+ Convocar como sustituta' sobre Ane Gorostiaga.",
-    actionHint: "Pulsa '+ Convocar como sustituta' o el botón inferior azul para resolver la baja."
-  },
-  {
-    step: 14,
-    role: "coach",
-    screen: "screen_f_squad_published_injury",
-    title: "14. Convocatoria actualizada y aviso enviado",
-    desc: "La convocatoria vuelve a estar completa con 12/12 jugadores. La familia de Ane recibe la convocatoria y el tablón de avisos queda actualizado.",
-    actionHint: "¡Flujo completado con éxito! Puedes explorar la plantilla y los avisos o reiniciar la demo."
+    role: "parent",
+    screen: "v2_08_parent_rsvp",
+    tab: "inicio",
+    title: "11. RSVP en 3 Segundos: Cero fricción para familias",
+    desc: "3 botones grandes con ergonomía táctil: SÍ / NO / DUDA. Permite añadir notas para el míster y confirmar con un toque.",
+    actionHint: "Selecciona una opción y pulsa 'Guardar respuesta'."
   }
 ];
 
 class TeamAppState {
   constructor() {
-    this.currentRole = "coach"; // 'coach' | 'parent'
-    this.currentScreen = "screen_a_home_coach";
-    this.currentStepIndex = 0; // 0 to 13
-    
-    // Live dynamic scenario states
-    this.tournamentCreated = true;
-    this.parentRsvpConfirmed = false;
-    this.squadPublished = false;
-    this.ibaiHasDroppedOut = false;
-    this.aneSubstituted = false;
-    
-    this.selectedSquadIds = new Set([9, 7, 4, 5, 10, 11, 3, 8, 2, 6, 1, 14]); // 12 players
+    this.currentRole = "onboard"; // 'onboard' | 'coach' | 'parent'
+    this.currentScreen = "v2_00_onboarding_welcome";
+    this.currentTab = "inicio";
+    this.currentStepIndex = 0;
+    this.selectedSubstitute = "Ane Mintegi";
+    this.substitutionConfirmed = false;
+    this.parentRsvpChoice = "SI";
+    this.isElenaApproved = false;
+    this.linkedFamiliesCount = 12;
+    this.pendingFamiliesCount = 6;
+  }
+
+  init() {
+    // Deep linking & URL parameter handling (WhatsApp invites / RSVP links)
+    const params = new URLSearchParams(window.location.search);
+    const screenParam = params.get("screen") || window.location.hash.replace("#", "");
+    const joinCode = params.get("join");
+    const rsvpParam = params.get("rsvp");
+
+    if (joinCode || screenParam === "v2_00_parent_join_team") {
+      this.currentRole = "parent";
+      this.goToScreen("v2_00_parent_join_team");
+      if (joinCode) this.showToast("Código de invitación " + joinCode + " validado.");
+    } else if (rsvpParam || screenParam === "v2_08_parent_rsvp") {
+      this.currentRole = "parent";
+      this.goToScreen("v2_08_parent_rsvp", "inicio");
+    } else if (screenParam && document.getElementById(screenParam)) {
+      if (screenParam.startsWith("v2_07_") || screenParam.startsWith("v2_08_")) {
+        this.currentRole = "parent";
+      } else if (screenParam.startsWith("v2_00_")) {
+        this.currentRole = "onboard";
+      } else {
+        this.currentRole = "coach";
+      }
+      this.goToScreen(screenParam);
+    } else {
+      this.goToScreen(this.currentScreen);
+    }
+
+    this.updateBottomNav();
+    this.updateRoleUI();
+    this.updateStepUI();
   }
 
   setRole(role) {
     this.currentRole = role;
-    if (role === "coach") {
-      if (this.currentScreen.includes("parent")) {
-        this.currentScreen = this.ibaiHasDroppedOut ? "screen_f_squad_published_injury" : "screen_a_home_coach";
-      }
+    if (role === "onboard") {
+      this.goToScreen("v2_00_onboarding_welcome");
+    } else if (role === "coach") {
+      this.goToScreen("v2_01_coach_home", "inicio");
     } else {
-      if (this.currentScreen.includes("coach") || this.currentScreen === "screen_j_roster") {
-        this.currentScreen = this.squadPublished ? "screen_i_callup_parent" : "screen_g_home_parent";
-      }
+      this.goToScreen("v2_07_parent_home", "inicio");
     }
-    this.render();
+    this.updateRoleUI();
+    this.updateBottomNav();
+    const roleLabels = {
+      onboard: "Modo Acceso Inicial / Onboarding",
+      coach: "Modo Entrenador: Mikel Zubeldia (CD Oyón)",
+      parent: "Modo Familia: Elena Gómez (Madre de Ibai #9)"
+    };
+    this.showToast(roleLabels[role] || "Cambio de vista realizado");
   }
 
-  goToScreen(screenId) {
+  goToTab(tab) {
+    this.currentTab = tab;
+    if (this.currentRole === "coach") {
+      if (tab === "inicio") this.goToScreen("v2_01_coach_home", "inicio");
+      else if (tab === "agenda") this.goToScreen("v2_02_coach_agenda", "agenda");
+      else if (tab === "equipo") this.goToScreen("v2_03_coach_roster", "equipo");
+      else if (tab === "avisos") this.goToScreen("screen_k_notices", "avisos");
+    } else if (this.currentRole === "parent") {
+      if (tab === "inicio") this.goToScreen("v2_07_parent_home", "inicio");
+      else if (tab === "agenda") this.goToScreen("v2_02_coach_agenda", "agenda");
+      else if (tab === "equipo" || tab === "hijos") this.goToScreen("v2_04_player_detail", "hijos");
+      else if (tab === "avisos") this.goToScreen("screen_k_notices", "avisos");
+    } else {
+      // In onboard mode, clicking tabs switches to coach view
+      this.setRole("coach");
+      this.goToTab(tab);
+    }
+  }
+
+  goToScreen(screenId, tab = null) {
     this.currentScreen = screenId;
-    if (screenId.includes("parent")) {
-      this.currentRole = "parent";
-    } else if (screenId.includes("coach") || screenId === "screen_c_create_event" || screenId === "screen_e_create_squad") {
-      this.currentRole = "coach";
+    if (tab) this.currentTab = tab;
+
+    // Hide all screens
+    const allScreens = document.querySelectorAll(".app-screen-view");
+    allScreens.forEach(s => s.classList.add("hidden"));
+
+    // Show target screen
+    const target = document.getElementById(screenId);
+    if (target) {
+      target.classList.remove("hidden");
+      const viewport = document.getElementById("phone-viewport");
+      if (viewport) viewport.scrollTop = 0;
     }
-    this.render();
+
+    // Sync select dropdown in toolbar
+    const select = document.getElementById("demo-screen-select");
+    if (select) select.value = screenId;
+
+    this.updateBottomNav();
   }
 
-  goToStep(stepNumber) {
-    const target = GUIDED_STEPS.find(s => s.step === stepNumber);
-    if (!target) return;
-    this.currentStepIndex = stepNumber - 1;
-    this.currentRole = target.role;
-    this.currentScreen = target.screen;
+  updateBottomNav() {
+    const bottomNav = document.getElementById("master-bottom-nav");
+    if (!bottomNav) return;
 
-    // Apply logical scenario state adjustments for each step
-    if (stepNumber >= 5) this.parentRsvpConfirmed = true;
-    if (stepNumber >= 8) this.squadPublished = true;
-    if (stepNumber >= 10) this.ibaiHasDroppedOut = true;
-    if (stepNumber >= 13) this.aneSubstituted = true;
+    // If on onboarding screen, hide bottom nav
+    if (this.currentScreen.startsWith("v2_00_")) {
+      bottomNav.classList.add("hidden");
+      return;
+    } else {
+      bottomNav.classList.remove("hidden");
+    }
 
-    if (stepNumber < 5) this.parentRsvpConfirmed = false;
-    if (stepNumber < 8) this.squadPublished = false;
-    if (stepNumber < 10) this.ibaiHasDroppedOut = false;
-    if (stepNumber < 13) this.aneSubstituted = false;
+    const tabInicio = document.getElementById("nav-tab-inicio");
+    const tabAgenda = document.getElementById("nav-tab-agenda");
+    const tabEquipo = document.getElementById("nav-tab-equipo");
+    const tabAvisos = document.getElementById("nav-tab-avisos");
+    const equipoLabel = document.getElementById("nav-label-equipo");
+    const equipoIcon = document.getElementById("nav-icon-equipo");
 
-    this.render();
-    this.showToast(`Paso ${stepNumber}: ${target.title}`);
+    if (equipoLabel) {
+      equipoLabel.textContent = this.currentRole === "coach" ? "Equipo" : "Mis Hijos";
+    }
+    if (equipoIcon) {
+      equipoIcon.textContent = this.currentRole === "coach" ? "groups" : "face";
+    }
+
+    // Reset styles
+    [tabInicio, tabAgenda, tabEquipo, tabAvisos].forEach(el => {
+      if (el) {
+        el.className = "flex-1 flex flex-col items-center justify-center py-1 text-on-surface-variant hover:text-primary transition-colors cursor-pointer";
+        const label = el.querySelector("span:last-child");
+        if (label) label.className = "text-[11px] font-medium tracking-tight";
+      }
+    });
+
+    // Determine active tab
+    let activeTabEl = tabInicio;
+    if (this.currentTab === "agenda" || this.currentScreen === "v2_02_coach_agenda" || this.currentScreen === "v2_05_event_hub_normal" || this.currentScreen === "v2_06_event_hub_injury" || this.currentScreen === "screen_c_create_event") {
+      activeTabEl = tabAgenda;
+    } else if (this.currentTab === "equipo" || this.currentTab === "hijos" || this.currentScreen === "v2_03_coach_roster" || this.currentScreen === "v2_04_player_detail") {
+      activeTabEl = tabEquipo;
+    } else if (this.currentTab === "avisos" || this.currentScreen === "screen_k_notices") {
+      activeTabEl = tabAvisos;
+    }
+
+    if (activeTabEl) {
+      activeTabEl.className = "flex-1 flex flex-col items-center justify-center py-1 text-primary font-bold transition-colors cursor-pointer";
+      const label = activeTabEl.querySelector("span:last-child");
+      if (label) label.className = "text-[11px] font-bold tracking-tight text-primary";
+    }
+  }
+
+  updateRoleUI() {
+    const btnOnboard = document.getElementById("role-btn-onboard");
+    const btnCoach = document.getElementById("role-btn-coach");
+    const btnParent = document.getElementById("role-btn-parent");
+
+    [btnOnboard, btnCoach, btnParent].forEach(btn => {
+      if (btn) btn.className = "px-2 py-1 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 transition-all cursor-pointer";
+    });
+
+    if (this.currentRole === "onboard" && btnOnboard) {
+      btnOnboard.className = "px-2 py-1 rounded-lg text-xs font-bold bg-blue-600 text-white shadow-xs transition-all cursor-pointer";
+    } else if (this.currentRole === "coach" && btnCoach) {
+      btnCoach.className = "px-2 py-1 rounded-lg text-xs font-bold bg-blue-600 text-white shadow-xs transition-all cursor-pointer";
+    } else if (this.currentRole === "parent" && btnParent) {
+      btnParent.className = "px-2 py-1 rounded-lg text-xs font-bold bg-blue-600 text-white shadow-xs transition-all cursor-pointer";
+    }
   }
 
   nextStep() {
     if (this.currentStepIndex < GUIDED_STEPS.length - 1) {
-      this.goToStep(this.currentStepIndex + 2);
+      this.currentStepIndex++;
+      this.applyCurrentStep();
     }
   }
 
   prevStep() {
     if (this.currentStepIndex > 0) {
-      this.goToStep(this.currentStepIndex);
+      this.currentStepIndex--;
+      this.applyCurrentStep();
     }
   }
 
-  resetDemo() {
+  applyCurrentStep() {
+    const step = GUIDED_STEPS[this.currentStepIndex];
+    if (this.currentRole !== step.role) {
+      this.currentRole = step.role;
+      this.updateRoleUI();
+    }
+    this.goToScreen(step.screen, step.tab);
+    this.updateStepUI();
+  }
+
+  updateStepUI() {
+    const step = GUIDED_STEPS[this.currentStepIndex];
+    const titleEl = document.getElementById("demo-step-title");
+    const descEl = document.getElementById("demo-step-desc");
+    const actionEl = document.getElementById("demo-step-action");
+    const progressEl = document.getElementById("demo-step-progress");
+
+    if (titleEl) titleEl.textContent = step.title;
+    if (descEl) descEl.textContent = step.desc;
+    if (actionEl) actionEl.textContent = step.actionHint;
+    if (progressEl) {
+      const pct = Math.round(((this.currentStepIndex + 1) / GUIDED_STEPS.length) * 100);
+      progressEl.style.width = `${pct}%`;
+    }
+  }
+
+  // --- Onboarding Specific Interactions ---
+  finishCoachSetup() {
     this.currentRole = "coach";
-    this.currentScreen = "screen_a_home_coach";
-    this.currentStepIndex = 0;
-    this.tournamentCreated = true;
-    this.parentRsvpConfirmed = false;
-    this.squadPublished = false;
-    this.ibaiHasDroppedOut = false;
-    this.aneSubstituted = false;
-    this.selectedSquadIds = new Set([9, 7, 4, 5, 10, 11, 3, 8, 2, 6, 1, 14]);
-    this.render();
-    this.showToast("Demo reiniciada al estado inicial.");
+    this.updateRoleUI();
+    this.goToScreen("v2_01_coach_home", "inicio");
+    this.showToast("✓ Equipo CD Oyón · Infantil A creado con 18 jugadores federados precargados.");
   }
 
-  togglePlayerInSquad(playerId) {
-    if (this.selectedSquadIds.has(playerId)) {
-      this.selectedSquadIds.delete(playerId);
-    } else {
-      if (this.selectedSquadIds.size >= 12) {
-        this.showToast("Máximo 12 jugadores convocados permitidos.");
-        return;
+  shareInviteCode() {
+    const inviteLink = "https://taldehemendik.app/unete/OYON16";
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(inviteLink).catch(() => {});
+    }
+    this.showToast("📲 Invitación WhatsApp copiada: 'Únete al CD Oyón Infantil A con código OYON16'");
+  }
+
+  copyInviteCode(btn) {
+    const code = "OYON16";
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(code).catch(() => {});
+    }
+    this.showToast("Código OYON16 copiado al portapapeles.");
+  }
+
+  submitParentJoinRequest() {
+    const btn = document.getElementById("btn-submit");
+    if (btn) {
+      btn.disabled = true;
+      btn.classList.remove("bg-primary-container");
+      btn.classList.add("bg-secondary");
+      btn.innerHTML = `<span class="material-symbols-outlined text-[20px] animate-spin">progress_activity</span><span>Enviando al míster...</span>`;
+    }
+
+    setTimeout(() => {
+      if (btn) {
+        btn.innerHTML = `<span class="material-symbols-outlined text-[20px]">check_circle</span><span>¡Solicitud enviada a Mikel Zubeldia!</span>`;
       }
-      this.selectedSquadIds.add(playerId);
+      this.showToast("✓ Solicitud de vinculación registrada para Ibai #9. Esperando aprobación técnica.");
+      setTimeout(() => {
+        if (btn) {
+          btn.disabled = false;
+          btn.classList.add("bg-primary-container");
+          btn.classList.remove("bg-secondary");
+          btn.innerHTML = `<span>Enviar solicitud de vinculación</span><span class="material-symbols-outlined text-[20px]">send</span>`;
+        }
+        // Advance to step 4 or show coach view
+        this.currentStepIndex = 3;
+        this.applyCurrentStep();
+      }, 1400);
+    }, 1000);
+  }
+
+  approveGuardianRequest() {
+    this.isElenaApproved = true;
+    this.linkedFamiliesCount = 13;
+    this.pendingFamiliesCount = 5;
+
+    const reqCard = document.getElementById("coach-pending-approval-card");
+    const successBadge = document.getElementById("coach-approval-success-badge");
+    const linkedEl = document.getElementById("coach-linked-count");
+    const pendingEl = document.getElementById("coach-pending-count");
+
+    if (reqCard) reqCard.classList.add("hidden");
+    if (successBadge) successBadge.classList.remove("hidden");
+    if (linkedEl) linkedEl.textContent = this.linkedFamiliesCount;
+    if (pendingEl) pendingEl.textContent = this.pendingFamiliesCount;
+
+    this.showToast("✓ Vinculación aprobada: Elena Gómez ahora tiene acceso a la ficha de Ibai Aranguren.");
+  }
+
+  rejectGuardianRequest() {
+    const reqCard = document.getElementById("coach-pending-approval-card");
+    if (reqCard) reqCard.classList.add("hidden");
+    this.showToast("Solicitud rechazada.");
+  }
+
+  dismissOnboardingBanner() {
+    const banner = document.getElementById("coach-onboarding-banner");
+    if (banner) {
+      banner.style.transition = "all 0.3s ease-out";
+      banner.style.opacity = "0";
+      banner.style.transform = "scale(0.95)";
+      setTimeout(() => {
+        banner.classList.add("hidden");
+        this.showToast("✓ Estado de puesta en marcha ocultado. Mostrando La Mesa del Entrenador.");
+      }, 300);
     }
-    this.render();
   }
 
-  triggerParentRsvp(answer) {
-    if (answer === "SI") {
-      this.parentRsvpConfirmed = true;
-      this.showToast("✓ Respuesta registrada: Ibai asistirá al torneo.");
-      this.goToScreen("screen_g_home_parent");
-    } else if (answer === "NO") {
-      this.showToast("Respuesta registrada: Ibai no podrá asistir.");
-      this.goToScreen("screen_g_home_parent");
-    } else {
-      this.showToast("Respuesta registrada: Pendiente de confirmación.");
-      this.goToScreen("screen_g_home_parent");
-    }
+  // --- Injury & Event Hub Interactions ---
+  selectReserve(name) {
+    this.selectedSubstitute = name;
+    ["ane", "nahia", "irati"].forEach(cand => {
+      const card = document.getElementById(`sub-card-${cand}`);
+      const radio = document.getElementById(`sub-radio-${cand}`);
+      if (card) {
+        if (name.toLowerCase().includes(cand)) {
+          card.classList.add("border-primary", "bg-blue-50/40");
+          card.classList.remove("border-outline-variant/60");
+          if (radio) radio.textContent = "radio_button_checked";
+        } else {
+          card.classList.remove("border-primary", "bg-blue-50/40");
+          card.classList.add("border-outline-variant/60");
+          if (radio) radio.textContent = "radio_button_unchecked";
+        }
+      }
+    });
+    this.showToast(`Sustituta elegida para convocar: ${name}`);
   }
 
-  triggerCallUpPublished() {
-    this.squadPublished = true;
-    this.showToast("📢 Convocatoria de 12 jugadores publicada y avisos enviados.");
-    this.goToScreen("screen_f_squad_published_injury");
+  confirmSubstitution() {
+    this.substitutionConfirmed = true;
+    const banner = document.getElementById("injury-resolved-banner");
+    if (banner) banner.classList.remove("hidden");
+    const activeSection = document.getElementById("injury-active-alert");
+    if (activeSection) activeSection.classList.add("opacity-50");
+
+    this.showToast(`✓ ¡Convocatoria 12/12 completa! Se ha convocado a ${this.selectedSubstitute} y se ha emitido el aviso oficial.`);
+    setTimeout(() => {
+      this.goToScreen("v2_01_coach_home", "inicio");
+    }, 1800);
   }
 
-  triggerLateInjury() {
-    this.ibaiHasDroppedOut = true;
-    this.showToast("⚠️ Baja de Ibai comunicada al entrenador.");
-    this.goToStep(11);
+  nudgePending() {
+    this.showToast("🔔 Recordatorio instantáneo enviado a Ane Mintegi y Peio Gómez vía App.");
   }
 
-  triggerSubstitution() {
-    this.aneSubstituted = true;
-    this.selectedSquadIds.delete(9); // Ibai out
-    this.selectedSquadIds.add(16); // Ane in
-    this.showToast("✓ ¡Ane Gorostiaga (#16) convocada! Convocatoria completa 12/12.");
-    this.goToStep(14);
+  selectRsvpOption(choice) {
+    this.parentRsvpChoice = choice;
+    const options = ["si", "no", "duda"];
+    options.forEach(opt => {
+      const el = document.getElementById(`rsvp-opt-${opt}`);
+      const rad = document.getElementById(`rsvp-radio-${opt}`);
+      if (el) {
+        if (opt === choice.toLowerCase()) {
+          el.classList.add("ring-2", "ring-primary");
+          if (rad) rad.textContent = "radio_button_checked";
+        } else {
+          el.classList.remove("ring-2", "ring-primary");
+          if (rad) rad.textContent = "radio_button_unchecked";
+        }
+      }
+    });
   }
 
-  openPlayerModal(playerId) {
+  saveParentRsvp() {
+    const statusMap = {
+      SI: "✓ Disponibilidad confirmada: SÍ, asistirá.",
+      NO: "Disponibilidad guardada: NO asistirá.",
+      DUDA: "Disponibilidad guardada: Pendiente de confirmación."
+    };
+    this.showToast(statusMap[this.parentRsvpChoice] || "Respuesta guardada con éxito.");
+    setTimeout(() => {
+      this.goToScreen("v2_07_parent_home", "inicio");
+    }, 1200);
+  }
+
+  showToast(message) {
+    const toast = document.getElementById("demo-toast");
+    if (!toast) return;
+    toast.textContent = message;
+    toast.classList.remove("opacity-0", "pointer-events-none", "translate-y-2");
+    toast.classList.add("opacity-100", "translate-y-0");
+
+    if (this._toastTimer) clearTimeout(this._toastTimer);
+    this._toastTimer = setTimeout(() => {
+      toast.classList.remove("opacity-100", "translate-y-0");
+      toast.classList.add("opacity-0", "pointer-events-none", "translate-y-2");
+    }, 3200);
+  }
+
+  showPlayerModal(playerId) {
     const player = SQUAD_DATA.find(p => p.id === playerId);
     if (!player) return;
-    const modal = document.getElementById("player-detail-sheet");
-    const nameEl = document.getElementById("sheet-player-name");
-    const numEl = document.getElementById("sheet-player-num");
-    const roleEl = document.getElementById("sheet-player-role");
-    const tutorEl = document.getElementById("sheet-tutor-name");
-    const phoneEl = document.getElementById("sheet-tutor-phone");
-    const statusEl = document.getElementById("sheet-player-status");
-
-    if (nameEl) nameEl.textContent = player.name;
-    if (numEl) numEl.textContent = `#${player.number}`;
-    if (roleEl) roleEl.textContent = player.role;
-    if (tutorEl) tutorEl.textContent = player.tutor;
-    if (phoneEl) phoneEl.textContent = player.phone;
-    if (statusEl) {
-      statusEl.textContent = player.status === "NO_DISPONIBLE" ? "No disponible (Baja justificada)" : (player.status === "PENDIENTE" ? "Pendiente de respuesta" : "Disponible para convocar");
+    if (player.id === 9) {
+      this.goToScreen("v2_04_player_detail", "equipo");
+      return;
     }
-
-    if (modal) modal.classList.remove("hidden");
+    const modal = document.getElementById("player-detail-sheet");
+    if (modal) {
+      document.getElementById("sheet-player-num").textContent = `#${player.number}`;
+      document.getElementById("sheet-player-name").textContent = player.name;
+      document.getElementById("sheet-player-role").textContent = `${player.role} · CD Oyón Infantil A`;
+      document.getElementById("sheet-player-status").textContent = player.rsvp;
+      document.getElementById("sheet-tutor-name").textContent = player.tutor;
+      document.getElementById("sheet-tutor-phone").textContent = player.phone;
+      modal.classList.remove("hidden");
+    }
   }
 
   closePlayerModal() {
@@ -306,126 +543,48 @@ class TeamAppState {
     if (modal) modal.classList.add("hidden");
   }
 
-  showToast(message, duration = 3000) {
-    const toastEl = document.getElementById("demo-toast");
-    if (!toastEl) return;
-    toastEl.textContent = message;
-    toastEl.classList.remove("opacity-0", "pointer-events-none", "translate-y-2");
-    toastEl.classList.add("opacity-100", "translate-y-0");
-    clearTimeout(this._toastTimeout);
-    this._toastTimeout = setTimeout(() => {
-      toastEl.classList.add("opacity-0", "pointer-events-none", "translate-y-2");
-      toastEl.classList.remove("opacity-100", "translate-y-0");
-    }, duration);
-  }
-
-  render() {
-    // 1. Update active screen view visibility
-    const screens = document.querySelectorAll(".app-screen-view");
-    screens.forEach(screen => {
-      if (screen.id === this.currentScreen) {
-        screen.classList.remove("hidden");
-      } else {
-        screen.classList.add("hidden");
+  filterRoster(type) {
+    const rows = document.querySelectorAll(".roster-player-row");
+    rows.forEach(r => {
+      if (type === "all") {
+        r.classList.remove("hidden");
+      } else if (type === "disponibles") {
+        r.classList.toggle("hidden", r.dataset.status === "baja");
+      } else if (type === "convocados") {
+        r.classList.toggle("hidden", r.dataset.convocado !== "true");
+      } else if (type === "bajas") {
+        r.classList.toggle("hidden", r.dataset.status !== "baja");
       }
     });
+    this.showToast(`Filtro aplicado: ${type.toUpperCase()}`);
+  }
 
-    // 2. Update external demo controls
-    const roleCoachBtn = document.getElementById("demo-role-coach");
-    const roleParentBtn = document.getElementById("demo-role-parent");
-    if (roleCoachBtn && roleParentBtn) {
-      if (this.currentRole === "coach") {
-        roleCoachBtn.className = "px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-600 text-white shadow-sm flex items-center gap-1.5 cursor-pointer";
-        roleParentBtn.className = "px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:bg-slate-800 flex items-center gap-1.5 cursor-pointer";
-      } else {
-        roleParentBtn.className = "px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 text-white shadow-sm flex items-center gap-1.5 cursor-pointer";
-        roleCoachBtn.className = "px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:bg-slate-800 flex items-center gap-1.5 cursor-pointer";
-      }
+  resetDemo() {
+    this.currentStepIndex = 0;
+    this.substitutionConfirmed = false;
+    this.isElenaApproved = false;
+    this.linkedFamiliesCount = 12;
+    this.pendingFamiliesCount = 6;
+    const reqCard = document.getElementById("coach-pending-approval-card");
+    const successBadge = document.getElementById("coach-approval-success-badge");
+    const banner = document.getElementById("coach-onboarding-banner");
+    if (reqCard) reqCard.classList.remove("hidden");
+    if (successBadge) successBadge.classList.add("hidden");
+    if (banner) {
+      banner.classList.remove("hidden");
+      banner.style.opacity = "1";
+      banner.style.transform = "scale(1)";
     }
-
-    // 3. Update guided step info
-    const stepObj = GUIDED_STEPS[this.currentStepIndex];
-    const stepBadge = document.getElementById("demo-step-badge");
-    const stepTitle = document.getElementById("demo-step-title");
-    const stepDesc = document.getElementById("demo-step-desc");
-    const stepAction = document.getElementById("demo-step-action");
-    const stepProgress = document.getElementById("demo-step-progress");
-
-    if (stepBadge) stepBadge.textContent = `Paso ${stepObj.step}/14`;
-    const infoBtnLabel = document.getElementById("info-btn-label");
-    if (infoBtnLabel) infoBtnLabel.textContent = `Paso ${stepObj.step}`;
-    if (stepTitle) stepTitle.textContent = stepObj.title;
-    if (stepDesc) stepDesc.textContent = stepObj.desc;
-    if (stepAction) stepAction.textContent = stepObj.actionHint;
-    if (stepProgress) stepProgress.style.width = `${((this.currentStepIndex + 1) / 14) * 100}%`;
-
-    // 4. Update screen selector dropdown value
-    const screenSelect = document.getElementById("demo-screen-select");
-    if (screenSelect) screenSelect.value = this.currentScreen;
-
-    // 5. Update squad selection counter on Screen E
-    const squadCounterEl = document.getElementById("squad-selection-counter");
-    if (squadCounterEl) {
-      const count = this.selectedSquadIds.size;
-      squadCounterEl.textContent = `${count} / 12 Convocados`;
-      const publishBtn = document.getElementById("squad-publish-btn");
-      if (publishBtn) {
-        publishBtn.innerHTML = `Publicar Convocatoria Oficial (${count}) <span class="material-symbols-outlined text-[18px]">arrow_forward</span>`;
-        if (count === 12) {
-          publishBtn.disabled = false;
-          publishBtn.classList.remove("opacity-50", "cursor-not-allowed");
-        } else {
-          publishBtn.disabled = true;
-          publishBtn.classList.add("opacity-50", "cursor-not-allowed");
-        }
-      }
-    }
-
-    // 6. Update Substitution Status on Screen F
-    const alertBox = document.getElementById("injury-alert-box");
-    const replacementSection = document.getElementById("replacement-assistant-box");
-    const resolvedBox = document.getElementById("substitution-resolved-box");
-    const substituteRow = document.getElementById("roster-ane-row");
-    const ibaiRow = document.getElementById("roster-ibai-row");
-
-    if (alertBox && replacementSection && resolvedBox) {
-      if (this.aneSubstituted) {
-        alertBox.classList.add("hidden");
-        replacementSection.classList.add("hidden");
-        resolvedBox.classList.remove("hidden");
-        if (substituteRow) substituteRow.classList.remove("hidden");
-        if (ibaiRow) {
-          ibaiRow.classList.add("opacity-50", "line-through");
-        }
-      } else {
-        alertBox.classList.remove("hidden");
-        replacementSection.classList.remove("hidden");
-        resolvedBox.classList.add("hidden");
-        if (substituteRow) substituteRow.classList.add("hidden");
-        if (ibaiRow) {
-          ibaiRow.classList.remove("line-through");
-        }
-      }
-    }
-
-    // 7. Scroll mobile frame viewport to top
-    const phoneContainer = document.getElementById("phone-viewport");
-    if (phoneContainer) phoneContainer.scrollTop = 0;
+    this.setRole("onboard");
+    this.applyCurrentStep();
+    this.showToast("Demo reiniciada al inicio de Onboarding.");
   }
 }
 
 // Global instance
-window.teamApp = new TeamAppState();
-window.toggleInfoCard = function() {
-  const card = document.getElementById('demo-step-card');
-  const icon = document.getElementById('info-btn-icon');
-  if (card) {
-    card.classList.toggle('hidden');
-    if (icon) {
-      icon.textContent = card.classList.contains('hidden') ? 'expand_more' : 'expand_less';
-    }
-  }
-};
+const teamApp = new TeamAppState();
+window.teamApp = teamApp;
+
 document.addEventListener("DOMContentLoaded", () => {
-  window.teamApp.render();
+  teamApp.init();
 });

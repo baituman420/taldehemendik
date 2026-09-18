@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Event Hub - Torneo Apertura Oyón</title>
+<!-- Material Symbols Outlined Font -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with form plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline": "#747686",
+            "on-secondary-fixed": "#002114",
+            "on-secondary": "#ffffff",
+            "error": "#ba1a1a",
+            "surface": "#faf8ff",
+            "surface-container-low": "#f2f3ff",
+            "surface-variant": "#dae2fd",
+            "surface-dim": "#d2d9f4",
+            "primary-fixed": "#dce1ff",
+            "tertiary-fixed-dim": "#ffb4ab",
+            "secondary-container": "#82f5c1",
+            "on-tertiary-fixed-variant": "#93000b",
+            "surface-container-high": "#e2e7ff",
+            "primary-fixed-dim": "#b7c4ff",
+            "on-primary-container": "#cad3ff",
+            "background": "#faf8ff",
+            "inverse-primary": "#b7c4ff",
+            "surface-container-highest": "#dae2fd",
+            "on-tertiary-container": "#ffc7c1",
+            "outline-variant": "#c4c5d7",
+            "on-background": "#131b2e",
+            "inverse-on-surface": "#eef0ff",
+            "surface-container-lowest": "#ffffff",
+            "primary": "#0037b0",
+            "primary-container": "#1d4ed8",
+            "on-primary": "#ffffff",
+            "on-secondary-container": "#00714e",
+            "on-secondary-fixed-variant": "#005137",
+            "on-error": "#ffffff",
+            "tertiary": "#8f000b",
+            "tertiary-container": "#bb0112",
+            "on-surface": "#131b2e",
+            "on-error-container": "#93000a",
+            "secondary-fixed": "#85f8c4",
+            "on-surface-variant": "#434655",
+            "on-primary-fixed": "#001551",
+            "secondary": "#006c4a",
+            "inverse-surface": "#283044",
+            "surface-tint": "#2151da",
+            "tertiary-fixed": "#ffdad6",
+            "secondary-fixed-dim": "#68dba9"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "gutter": "1rem",
+            "margin-mobile": "1rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "gutter-mobile": "0.75rem",
+            "space-xl": "2rem",
+            "margin": "1rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "headline-xl": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "stat-display": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "body-lg": ["17px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "body-md": ["15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "stat-display": ["36px", { "lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "headline-lg": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    body {
+      background-color: #f1f5f9;
+      -webkit-tap-highlight-color: transparent;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex justify-center text-on-surface antialiased">
+<!-- Mobile Viewport Container (390px Max Standard) -->
+<div class="w-full max-w-[390px] min-h-screen bg-surface flex flex-col relative pb-28 shadow-xl">
+<!-- Top Navigation Bar (Task-Focused Sub-page navigation) -->
+<header class="sticky top-0 z-40 flex items-center justify-between px-margin-mobile py-space-sm w-full bg-surface-container-lowest border-b border-outline-variant/30 shadow-sm">
+<a class="inline-flex items-center gap-0.5 text-primary hover:text-primary-container active:scale-[0.98] transition-transform" href="#agenda">
+<span class="material-symbols-outlined text-[20px]" data-icon="chevron_left">chevron_left</span>
+<span class="font-label-md text-label-md font-bold">Agenda</span>
+</a>
+<div class="text-center px-1">
+<h1 class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight truncate max-w-[190px]">Torneo Apertura</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Sábado 20 Sep · 09:30 h</p>
+</div>
+<button aria-label="Compartir evento" class="w-9 h-9 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container active:scale-[0.98] transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="share">share</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-margin-mobile pt-space-md space-y-space-md">
+<!-- Event Hero Card -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 p-space-md shadow-[0_1px_3px_rgba(15,23,42,0.08)]">
+<!-- Badges Row -->
+<div class="flex items-center justify-between gap-2 mb-space-sm">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="emoji_events" data-weight="fill" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+            Torneo Oficial
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-bold border border-primary/20">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            En recogida
+          </span>
+</div>
+<!-- Title and Schedule -->
+<h2 class="font-headline-md text-headline-md text-on-surface font-extrabold tracking-tight">Torneo Apertura Oyón</h2>
+<div class="flex items-center gap-1.5 text-on-surface-variant mt-1">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="calendar_today">calendar_today</span>
+<p class="font-body-sm text-body-sm font-medium text-on-surface">Sábado 20 Sep · 09:30 - 14:00</p>
+</div>
+<!-- Venue / Location -->
+<div class="flex items-start justify-between gap-2 mt-space-sm pt-space-sm border-t border-surface-container-high">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary shrink-0 mt-0.5" data-icon="place">place</span>
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface leading-snug">Polideportivo Municipal Oyón</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pabellón 1 · Pista Central</p>
+</div>
+</div>
+<a class="inline-flex items-center gap-0.5 text-primary font-label-sm text-label-sm font-bold shrink-0 hover:underline pt-0.5" href="#map">
+<span>Cómo llegar</span>
+<span class="material-symbols-outlined text-[13px]" data-icon="open_in_new">open_in_new</span>
+</a>
+</div>
+<!-- Callout: Locker Room Arrival Warning -->
+<div class="mt-space-md p-space-sm rounded-lg bg-surface-container-low border border-primary/20 flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="schedule">schedule</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-label-md font-bold text-on-surface">Citación vestuario: 08:45 h</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Obligatorio 45 min antes del primer pitido</p>
+</div>
+</div>
+</section>
+<!-- Section 1: DISPONIBILIDAD (Active Step - Rule 1 Progressive Disclosure) -->
+<section class="bg-surface-container-lowest rounded-xl border-2 border-primary-container p-space-md shadow-[0_2px_8px_rgba(29,78,216,0.1)] relative">
+<!-- Section Header -->
+<div class="flex items-start justify-between gap-2 mb-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm font-extrabold text-primary uppercase tracking-wider">Fase 1 de 2</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                Paso activo / Abierto
+              </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">1. Disponibilidad del equipo</h3>
+</div>
+</div>
+<!-- Deadline Pill -->
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm mb-space-md border border-outline-variant/30">
+<span class="material-symbols-outlined text-[14px] text-tertiary-container" data-icon="timer">timer</span>
+<span>Cierre hoy a las 20:00 h · <strong class="text-on-surface">Quedan 8 horas</strong></span>
+</div>
+<!-- Key Numbers Grid (High Contrast Athletics Cards) -->
+<div class="grid grid-cols-3 gap-2 mb-space-md">
+<!-- Disponibles -->
+<div class="bg-surface-container-lowest rounded-lg border border-secondary/30 p-2.5 flex flex-col items-center text-center shadow-xs">
+<span class="material-symbols-outlined text-secondary text-[22px] mb-1" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-stat-display text-[26px] leading-[28px] font-extrabold text-secondary">14</span>
+<span class="font-label-sm text-label-sm font-bold text-on-secondary-container mt-1">Disponibles</span>
+</div>
+<!-- Bajas -->
+<div class="bg-surface-container-lowest rounded-lg border border-error/30 p-2.5 flex flex-col items-center text-center shadow-xs">
+<span class="material-symbols-outlined text-error text-[22px] mb-1" data-icon="cancel" data-weight="fill" style="font-variation-settings: 'FILL' 1;">cancel</span>
+<span class="font-stat-display text-[26px] leading-[28px] font-extrabold text-error">2</span>
+<span class="font-label-sm text-label-sm font-bold text-on-error-container mt-1">Bajas / No</span>
+</div>
+<!-- Pendientes -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline/40 p-2.5 flex flex-col items-center text-center shadow-xs">
+<span class="material-symbols-outlined text-[#b45309] text-[22px] mb-1" data-icon="schedule" data-weight="fill" style="font-variation-settings: 'FILL' 1;">schedule</span>
+<span class="font-stat-display text-[26px] leading-[28px] font-extrabold text-[#b45309]">2</span>
+<span class="font-label-sm text-label-sm font-bold text-[#b45309] mt-1">Pendientes</span>
+</div>
+</div>
+<!-- Visual Progress / Breakdown Bar -->
+<div class="space-y-1.5 mb-space-md">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant font-medium">
+<span>Progreso de respuestas (18 jugadores)</span>
+<span class="font-bold text-on-surface">88% respondido</span>
+</div>
+<div class="w-full h-3 rounded-full bg-surface-container flex overflow-hidden p-0.5 gap-0.5">
+<!-- 14 / 18 = 78% -->
+<div class="h-full bg-secondary rounded-l-full transition-all duration-300" style="width: 78%;" title="14 Disponibles"></div>
+<!-- 2 / 18 = 11% -->
+<div class="h-full bg-error transition-all duration-300" style="width: 11%;" title="2 Bajas"></div>
+<!-- 2 / 18 = 11% -->
+<div class="h-full bg-[#f59e0b] rounded-r-full transition-all duration-300" style="width: 11%;" title="2 Pendientes"></div>
+</div>
+<div class="flex items-center justify-between text-[11px] font-label-sm text-on-surface-variant px-1 pt-0.5">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary"></span>14 Sí (78%)</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-error"></span>2 No (11%)</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#f59e0b]"></span>2 Espera (11%)</span>
+</div>
+</div>
+<!-- Pending Callout Alert Banner -->
+<div class="rounded-lg bg-surface-container-low border border-outline-variant p-3 mb-space-md flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[#b45309] text-[20px] shrink-0 mt-0.5" data-icon="warning">warning</span>
+<div class="flex-1 min-w-0">
+<p class="font-label-sm text-label-sm font-bold text-on-surface">Respuestas pendientes de confirmar:</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+<strong class="text-on-surface">Ane Mintegi (#16)</strong> y <strong class="text-on-surface">Peio Gómez (#9)</strong> aún no han respondido al aviso.
+            </p>
+</div>
+</div>
+<!-- Action Row -->
+<div class="flex flex-col gap-2">
+<button class="w-full h-[50px] bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg rounded-xl flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="campaign">campaign</span>
+<span>Recordar a pendientes (2)</span>
+</button>
+<button class="w-full h-[44px] bg-surface-container-lowest hover:bg-surface-container-low text-on-surface font-label-md text-label-md rounded-xl border border-outline-variant flex items-center justify-center gap-1.5 active:scale-[0.98] transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="groups">groups</span>
+<span>Ver desglose de respuestas</span>
+</button>
+</div>
+</section>
+<!-- Section 2: CONVOCATORIA (Progressive Disclosure / Locked Step) -->
+<section class="bg-surface-container-lowest/80 rounded-xl border border-outline-variant/50 p-space-md relative overflow-hidden">
+<!-- Top Status -->
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm font-extrabold text-outline uppercase tracking-wider">Fase 2 de 2</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-medium border border-outline-variant/30">
+<span class="material-symbols-outlined text-[13px]" data-icon="lock">lock</span>
+            Bloqueado
+          </span>
+</div>
+<div class="flex items-start gap-2.5 mb-2">
+<div class="w-8 h-8 rounded-full bg-surface-container text-outline flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="format_list_numbered">format_list_numbered</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface leading-tight">2. Convocatoria Oficial</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-medium">12 plazas reglamentarias para acta</p>
+</div>
+</div>
+<!-- Lock Reason / Notice -->
+<div class="p-space-sm rounded-lg bg-surface-container-low/60 border border-outline-variant/40 mt-3 mb-space-md">
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<strong class="text-on-surface font-medium">Paso 2 · Pendiente de cerrar disponibilidad.</strong> Podrás seleccionar los 12 convocados una vez cerrado el plazo o cuando respondan todos los jugadores.
+          </p>
+</div>
+<!-- Disabled CTA preview -->
+<button class="w-full h-[50px] bg-surface-container text-outline font-label-lg text-label-lg rounded-xl flex items-center justify-center gap-2 cursor-not-allowed border border-outline-variant/40" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="lock">lock</span>
+<span>Preparar convocatoria (12 jugadores)</span>
+</button>
+</section>
+<!-- Section 3: LOGÍSTICA & AVISO DEL EVENTO -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 p-space-md shadow-sm space-y-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">3. Logística y Pautas de Equipo</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Información compartida para familias y jugadores</p>
+</div>
+<!-- Equipación Card -->
+<div class="p-3 rounded-lg bg-surface-container-low border border-outline-variant/30 flex items-start gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="checkroom">checkroom</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-label-md font-bold text-on-surface">1ª Equipación Oficial (Azul)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Obligatorio llevar sudadera de calentamiento y medias de repuesto.</p>
+</div>
+</div>
+<!-- Nota Técnica del Míster -->
+<div class="p-3 rounded-lg bg-surface-container-low border border-outline-variant/30 flex items-start gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container-high text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="sports_whistle">drive_file_rename</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-label-md font-bold text-on-surface">Nota técnica del míster</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Traer botella de agua individual marcada y calzado de repuesto para pista cubierta.</p>
+</div>
+</div>
+<!-- Botiquín y Seguro Chip -->
+<div class="flex items-center gap-2 p-2.5 rounded-lg bg-secondary-container/20 border border-secondary-container text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px] text-secondary shrink-0" data-icon="verified_user" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<p class="font-label-sm text-label-sm font-bold">Fichas federativas y seguro escolar en regla (18/18)</p>
+</div>
+</section>
+</main>
+<!-- Bottom Sticky Action Bar (Sidebar / Bottom Navigation Container optimized for Sideline Coach) -->
+<footer class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[390px] z-50 bg-surface-container-lowest/95 backdrop-blur-md px-margin-mobile py-2.5 border-t border-outline-variant/40 shadow-[0_-4px_16px_rgba(15,23,42,0.08)]">
+<div class="flex items-center gap-2">
+<button class="flex-1 h-[48px] bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg rounded-xl flex items-center justify-center gap-2 active:scale-[0.98] transition-transform shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="forward_to_inbox">forward_to_inbox</span>
+<span>Enviar aviso a familias</span>
+</button>
+<button aria-label="Más opciones" class="w-[48px] h-[48px] bg-surface-container text-on-surface rounded-xl flex items-center justify-center hover:bg-surface-container-high active:scale-95 transition-all border border-outline-variant/30" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</footer>
+</div>
+</body></html>

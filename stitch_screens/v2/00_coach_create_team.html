@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Talde Hemendik! - Crear Equipo</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-surface-variant": "#434655",
+            "error": "#ba1a1a",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "inverse-on-surface": "#eef0ff",
+            "background": "#faf8ff",
+            "primary-container": "#1d4ed8",
+            "on-tertiary-fixed-variant": "#93000b",
+            "on-primary-fixed-variant": "#0039b5",
+            "outline-variant": "#c4c5d7",
+            "surface-container-high": "#e2e7ff",
+            "surface-tint": "#2151da",
+            "primary-fixed": "#dce1ff",
+            "primary": "#0037b0",
+            "surface-dim": "#d2d9f4",
+            "primary-fixed-dim": "#b7c4ff",
+            "on-tertiary-container": "#ffc7c1",
+            "on-secondary-fixed": "#002114",
+            "surface": "#faf8ff",
+            "on-background": "#131b2e",
+            "error-container": "#ffdad6",
+            "on-surface": "#131b2e",
+            "on-primary-container": "#cad3ff",
+            "tertiary-fixed": "#ffdad6",
+            "secondary-fixed-dim": "#68dba9",
+            "on-secondary": "#ffffff",
+            "on-primary": "#ffffff",
+            "tertiary-container": "#bb0112",
+            "tertiary-fixed-dim": "#ffb4ab",
+            "on-error-container": "#93000a",
+            "surface-container-highest": "#dae2fd",
+            "secondary-fixed": "#85f8c4",
+            "outline": "#747686",
+            "inverse-primary": "#b7c4ff",
+            "secondary": "#006c4a",
+            "on-error": "#ffffff",
+            "surface-variant": "#dae2fd",
+            "inverse-surface": "#283044",
+            "on-primary-fixed": "#001551",
+            "surface-container-low": "#f2f3ff",
+            "secondary-container": "#82f5c1",
+            "surface-container": "#eaedff",
+            "tertiary": "#8f000b",
+            "on-secondary-container": "#00714e",
+            "on-tertiary-fixed": "#410002",
+            "on-secondary-fixed-variant": "#005137",
+            "surface-bright": "#faf8ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin-mobile": "1rem",
+            "space-xs": "0.25rem",
+            "margin": "1rem",
+            "gutter": "1rem",
+            "space-xl": "2rem",
+            "gutter-mobile": "0.75rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "stat-display": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-lg": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+            "body-sm": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}],
+            "body-md": ["15px", {"lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "headline-md": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "stat-display": ["36px", {"lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+            "label-lg": ["15px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "700"}],
+            "body-lg": ["17px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "500"}],
+            "headline-xl": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex justify-center selection:bg-primary-container selection:text-on-primary">
+<!-- Mobile Screen Wrapper (390px Max) -->
+<main class="w-full max-w-[390px] bg-background min-h-screen flex flex-col shadow-2xl relative pb-12">
+<!-- Top Navigation Bar (Task-focused onboarding screen: Shell bottom nav suppressed per rules) -->
+<header class="bg-surface-container-lowest sticky top-0 z-40 px-margin-mobile h-14 flex items-center justify-between shadow-sm border-b border-outline-variant">
+<div class="flex items-center gap- space-sm">
+<button aria-label="Volver" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-surface-container active:scale-[0.98] transition-transform text-on-surface" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface leading-tight">Crea tu equipo</span>
+</div>
+</div>
+<!-- Step Badge Indicator -->
+<div class="bg-surface-container-high px-2.5 py-1 rounded-full flex items-center gap-1 border border-outline-variant">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-primary font-bold">Paso 1 de 2: Tu Equipo</span>
+</div>
+</header>
+<!-- Content Container -->
+<div class="flex-1 px-margin-mobile pt-space-md space-y-space-md">
+<!-- Form Section Card: Datos básicos del equipo -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant p-space-md shadow-sm space-y-space-md">
+<div class="flex items-center justify-between pb-space-xs border-b border-surface-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="sports_soccer">sports_soccer</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Datos básicos del equipo</h2>
+</div>
+<span class="font-label-sm text-label-sm text-primary bg-surface-container-high px-2 py-0.5 rounded-full font-bold">CD Oyón</span>
+</div>
+<!-- Field: Nombre del equipo -->
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface font-bold flex items-center justify-between" for="team-name">
+<span>Nombre del equipo</span>
+<span class="text-error font-label-sm text-label-sm">*</span>
+</label>
+<div class="relative">
+<input class="w-full h-[50px] bg-surface-container-lowest rounded-xl border-[1.5px] border-outline-variant px-3.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-0 focus:outline-none transition-colors" id="team-name" type="text" value="Infantil A"/>
+<span class="absolute right-3 top-3.5 text-on-surface-variant material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</div>
+</div>
+<!-- Field: Club o Entidad (opcional) -->
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface font-bold flex items-center justify-between" for="club-name">
+<span>Club o Entidad</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-normal">(opcional)</span>
+</label>
+<input class="w-full h-[50px] bg-surface-container-lowest rounded-xl border-[1.5px] border-outline-variant px-3.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-0 focus:outline-none transition-colors" id="club-name" type="text" value="CD Oyón"/>
+</div>
+<!-- Sport Selector Pills -->
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface font-bold block">Deporte</label>
+<div class="flex gap-1.5 overflow-x-auto pb-1 no-scrollbar -mx-1 px-1">
+<button class="bg-primary-container text-on-primary font-label-md text-label-md px-3.5 py-2 rounded-full whitespace-nowrap shadow-sm active:scale-[0.98] transition-transform flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="sports_soccer">sports_soccer</span>
+<span>Fútbol</span>
+</button>
+<button class="bg-surface-container-lowest text-on-surface-variant border border-outline-variant font-label-md text-label-md px-3.5 py-2 rounded-full whitespace-nowrap hover:bg-surface-container active:scale-[0.98] transition-transform" type="button">
+              Baloncesto
+            </button>
+<button class="bg-surface-container-lowest text-on-surface-variant border border-outline-variant font-label-md text-label-md px-3.5 py-2 rounded-full whitespace-nowrap hover:bg-surface-container active:scale-[0.98] transition-transform" type="button">
+              Balonmano
+            </button>
+<button class="bg-surface-container-lowest text-on-surface-variant border border-outline-variant font-label-md text-label-md px-3.5 py-2 rounded-full whitespace-nowrap hover:bg-surface-container active:scale-[0.98] transition-transform" type="button">
+              Fútbol Sala
+            </button>
+<button class="bg-surface-container-lowest text-on-surface-variant border border-outline-variant font-label-md text-label-md px-3.5 py-2 rounded-full whitespace-nowrap hover:bg-surface-container active:scale-[0.98] transition-transform" type="button">
+              Otro
+            </button>
+</div>
+</div>
+<!-- Grid: Categoría & Temporada -->
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Categoría Selector -->
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface font-bold block">Categoría</label>
+<div class="relative">
+<select class="w-full h-[50px] bg-surface-container-lowest rounded-xl border-[1.5px] border-outline-variant px-3 font-body-md text-body-md text-on-surface appearance-none focus:border-primary-container focus:ring-0 focus:outline-none">
+<option selected="">Infantil (12-13 años)</option>
+<option>Alevín (10-11 años)</option>
+<option>Cadete (14-15 años)</option>
+<option>Juvenil (16-18 años)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-3.5 pointer-events-none text-on-surface-variant text-[20px]" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<!-- Temporada Selector -->
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface font-bold block">Temporada</label>
+<div class="h-[50px] bg-surface-container-low rounded-xl border-[1.5px] border-outline-variant px-3 flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-bold">2024 / 2025</span>
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="verified">verified</span>
+</div>
+</div>
+</div>
+<!-- Lugar Habitual (Opcional) -->
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface font-bold flex items-center justify-between" for="pitch-location">
+<span>Lugar habitual</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-normal">(opcional)</span>
+</label>
+<div class="relative">
+<input class="w-full h-[50px] bg-surface-container-lowest rounded-xl border-[1.5px] border-outline-variant pl-10 pr-3.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-0 focus:outline-none transition-colors" id="pitch-location" type="text" value="Campo Municipal de Oyón"/>
+<span class="material-symbols-outlined absolute left-3 top-3.5 text-primary text-[20px]" data-icon="location_on">location_on</span>
+</div>
+</div>
+</section>
+<!-- Plantilla precargada banner -->
+<section class="bg-[#ECFDF5] border border-[#A7F3D0] rounded-xl p-space-sm flex items-start gap-3 shadow-sm">
+<div class="w-8 h-8 rounded-full bg-[#D1FAE5] text-secondary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px] font-bold" data-icon="check_circle">check_circle</span>
+</div>
+<div class="space-y-0.5">
+<p class="font-label-md text-label-md text-[#065F46] font-extrabold leading-tight">
+            ✓ 18 jugadores precargados para esta temporada
+          </p>
+<p class="font-body-sm text-body-sm text-[#047857]">
+            (importados de la ficha federativa)
+          </p>
+</div>
+</section>
+<!-- Invitación al equipo generada (Card destacada de éxito / activación) -->
+<section class="bg-surface-container-lowest rounded-2xl border-2 border-primary/20 p-space-md shadow-md space-y-space-md relative overflow-hidden">
+<!-- Subtle athletic accent background badge -->
+<div class="absolute -right-6 -top-6 w-24 h-24 bg-surface-container-high rounded-full opacity-40 pointer-events-none flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[54px] opacity-20" data-icon="celebration">celebration</span>
+</div>
+<div class="relative z-10 space-y-1">
+<div class="inline-flex items-center gap-1.5 bg-[#ECFDF5] px-2.5 py-0.5 rounded-full border border-[#A7F3D0] mb-1">
+<span class="material-symbols-outlined text-secondary text-[16px]" data-icon="emoji_events">emoji_events</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">¡Equipo creado con éxito!</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface font-extrabold">Tu equipo está listo</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Las familias necesitan este código para solicitar unirse a tu equipo:
+          </p>
+</div>
+<!-- Big code display box -->
+<div class="bg-surface-container-low rounded-xl p-space-md border border-outline-variant flex flex-col items-center justify-center space-y-2 relative">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Código de acceso</span>
+<div class="flex items-center justify-center gap-3">
+<span class="font-stat-display text-stat-display font-extrabold text-primary tracking-widest font-mono select-all">
+              OYON16
+            </span>
+</div>
+<!-- Copy Button -->
+<button class="mt-1 inline-flex items-center gap-1.5 bg-surface-container-lowest border border-outline-variant hover:bg-surface-container px-3.5 py-1.5 rounded-lg active:scale-[0.98] transition-all text-primary font-label-md text-label-md font-bold shadow-sm" onclick="copyCodeFeedback(this)" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="content_copy">content_copy</span>
+<span id="copy-btn-text">Copiar código</span>
+</button>
+</div>
+<!-- Secondary info box / reassurance -->
+<div class="bg-surface-container rounded-xl p-3 flex items-start gap-2.5 border border-outline-variant/60">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5" data-icon="shield">shield</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+            El código permite a las familias solicitar acceso. Tú validarás a qué jugador representa cada tutor para proteger la privacidad.
+          </p>
+</div>
+<!-- Actions Container (One-handed zone) -->
+<div class="space-y-space-sm pt-space-xs">
+<!-- Action 1: WhatsApp Button -->
+<button class="w-full h-[50px] bg-[#16a34a] hover:bg-[#15803d] text-white rounded-xl font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-all" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="share">share</span>
+<span>Compartir invitación por WhatsApp</span>
+</button>
+<!-- Action 2: Primary CTA 'Ir a la mesa del entrenador' -->
+<button class="w-full h-[52px] bg-primary-container hover:bg-primary text-on-primary rounded-xl font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-md active:scale-[0.98] transition-all" type="button">
+<span>Ir a la mesa del entrenador</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Bottom Sideline Coach Notice -->
+<footer class="text-center pt-2 pb-6">
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+          Talde Hemendik! • Gestión de cantera CD Oyón
+        </p>
+</footer>
+</div>
+</main>
+<script>
+    function copyCodeFeedback(btn) {
+      const code = 'OYON16';
+      navigator.clipboard?.writeText(code);
+      const textSpan = document.getElementById('copy-btn-text');
+      const originalText = textSpan.innerText;
+      textSpan.innerText = '¡Copiado!';
+      btn.classList.add('bg-secondary-fixed', 'text-on-secondary-fixed');
+      
+      setTimeout(() => {
+        textSpan.innerText = originalText;
+        btn.classList.remove('bg-secondary-fixed', 'text-on-secondary-fixed');
+      }, 2000);
+    }
+  </script>
+</body></html>

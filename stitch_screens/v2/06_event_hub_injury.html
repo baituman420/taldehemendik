@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CD Oyón · Gestión de Incidencia de Convocatoria</title>
+<!-- Material Symbols Outlined font -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Plus Jakarta Sans font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration Script -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-container": "#ffc7c1",
+            "on-tertiary-fixed": "#410002",
+            "on-tertiary-fixed-variant": "#93000b",
+            "on-secondary-fixed": "#002114",
+            "primary-container": "#1d4ed8",
+            "on-secondary-fixed-variant": "#005137",
+            "primary-fixed": "#dce1ff",
+            "tertiary-fixed": "#ffdad6",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-high": "#e2e7ff",
+            "on-primary-container": "#cad3ff",
+            "tertiary-fixed-dim": "#ffb4ab",
+            "surface-variant": "#dae2fd",
+            "error-container": "#ffdad6",
+            "tertiary-container": "#bb0112",
+            "on-error-container": "#93000a",
+            "surface": "#faf8ff",
+            "primary": "#0037b0",
+            "outline": "#747686",
+            "on-primary": "#ffffff",
+            "on-background": "#131b2e",
+            "on-primary-fixed": "#001551",
+            "surface-container-highest": "#dae2fd",
+            "on-secondary": "#ffffff",
+            "primary-fixed-dim": "#b7c4ff",
+            "on-surface-variant": "#434655",
+            "secondary": "#006c4a",
+            "secondary-fixed": "#85f8c4",
+            "inverse-primary": "#b7c4ff",
+            "inverse-on-surface": "#eef0ff",
+            "surface-dim": "#d2d9f4",
+            "inverse-surface": "#283044",
+            "surface-container": "#eaedff",
+            "secondary-container": "#82f5c1",
+            "on-error": "#ffffff",
+            "background": "#faf8ff",
+            "tertiary": "#8f000b",
+            "outline-variant": "#c4c5d7",
+            "surface-container-low": "#f2f3ff",
+            "error": "#ba1a1a",
+            "on-tertiary": "#ffffff",
+            "on-surface": "#131b2e",
+            "on-primary-fixed-variant": "#0039b5",
+            "surface-tint": "#2151da",
+            "surface-bright": "#faf8ff",
+            "secondary-fixed-dim": "#68dba9",
+            "on-secondary-container": "#00714e"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "1rem",
+            "space-xs": "0.25rem",
+            "margin": "1rem",
+            "gutter": "1rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2rem",
+            "space-md": "1rem",
+            "gutter-mobile": "0.75rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "stat-display": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "700" }],
+            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-lg": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "stat-display": ["36px", { "lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "body-md": ["15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "body-lg": ["17px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .icon-filled {
+      font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md antialiased selection:bg-primary selection:text-on-primary">
+<!-- Outer Mobile Container Simulator (Strict 390px Viewport) -->
+<div class="mx-auto w-full max-w-[390px] min-h-screen bg-background flex flex-col relative pb-28 shadow-xl">
+<!-- TOP APP BAR & SUB-NAVIGATION HEADER -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest border-b border-outline-variant shadow-sm px-margin-mobile py-2.5">
+<div class="flex items-center justify-between">
+<!-- Back action -->
+<button aria-label="Volver a la Agenda" class="flex items-center gap-1 text-primary active:scale-[0.97] transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="chevron_left">chevron_left</span>
+<span class="font-label-md text-label-md text-primary">Agenda</span>
+</button>
+<!-- Header Text -->
+<div class="text-center px-1">
+<h1 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate max-w-[190px]">Torneo Apertura Oyón</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-medium">Sábado 20 Sep · 09:30 h</p>
+</div>
+<!-- Trailing action -->
+<button aria-label="Compartir incidencia" class="w-9 h-9 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-[0.96]" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="share">share</span>
+</button>
+</div>
+</header>
+<!-- MAIN SCROLLABLE CONTENT CANVAS -->
+<main class="flex-1 px-margin-mobile pt-3.5 space-y-4">
+<!-- EVENT SUMMARY / STATUS RIBBON & QUORUM -->
+<section class="bg-surface-container-lowest rounded-xl p-3.5 border border-outline-variant shadow-sm">
+<div class="flex items-center justify-between gap-2 mb-2">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm border border-primary/20">
+              Torneo Oficial
+            </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm border border-error/20 animate-pulse">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+              Incidencia urgente
+            </span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">F-8 Alevín/Inf.</span>
+</div>
+<div class="flex items-start justify-between gap-2 border-t border-surface-container-high pt-2.5">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5" data-icon="stadium">stadium</span>
+<div>
+<p class="font-headline-sm text-[14px] leading-tight text-on-surface font-bold">Instalaciones Municipales Oyón</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Sábado 20 Sep · 09:30 - 14:00 h</p>
+</div>
+</div>
+</div>
+<!-- Quórum Callout Bar -->
+<div class="mt-3 p-2.5 rounded-lg bg-surface-container-low border border-outline-variant/60 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]" data-icon="group_remove">group_remove</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Quórum Federación</p>
+<p class="font-label-lg text-label-lg text-on-surface">11 / 12 convocados</p>
+</div>
+</div>
+<div class="text-right">
+<span class="inline-block px-2 py-1 rounded bg-tertiary-container text-on-tertiary font-label-sm text-label-sm font-bold shadow-sm">
+              -1 plaza requerida
+            </span>
+</div>
+</div>
+</section>
+<!-- SECTION 1: ALERTA DE INCIDENCIA ACTIVA (HIGH VISIBILITY EMERGENCY CARD) -->
+<section aria-label="Alerta de Incidencia Activa" class="bg-surface-container-lowest rounded-xl border-2 border-error/40 shadow-sm overflow-hidden">
+<!-- High Contrast Header Bar -->
+<div class="bg-error px-3.5 py-2.5 flex items-center justify-between text-on-error">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[22px] icon-filled" data-icon="medical_services">medical_services</span>
+<span class="font-label-lg text-label-lg tracking-wide uppercase">Baja médica en la convocatoria</span>
+</div>
+<span class="material-symbols-outlined text-[18px]" data-icon="priority_high">priority_high</span>
+</div>
+<div class="p-3.5 space-y-3">
+<!-- Player Affected Pill Card -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low border border-outline-variant">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="w-11 h-11 rounded-full bg-surface-dim flex items-center justify-center font-headline-sm text-headline-sm font-bold text-on-surface border-2 border-outline-variant">
+                  IA
+                </div>
+<span class="absolute -bottom-1 -right-1 bg-surface-container-highest text-on-surface font-label-sm text-[10px] px-1.5 py-0.2 rounded-full border border-outline font-extrabold">#9</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-sm text-[15px] font-bold text-on-surface leading-tight">Ibai Aranguren</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Delantero Centro · Titular</p>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-error-container text-tertiary font-label-sm text-[11px] font-bold border border-error/30">
+              Baja confirmada
+            </span>
+</div>
+<!-- Medical Context & Report Info -->
+<div class="bg-surface-container-low/70 rounded-lg p-3 border border-outline-variant/60 space-y-1.5 text-on-surface">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px] mt-0.5" data-icon="clinical_notes">clinical_notes</span>
+<p class="font-body-sm text-body-sm">
+<strong class="font-label-md text-on-surface">Motivo:</strong> Esguince leve de tobillo (Grado I) en sesión de entrenamiento escolar.
+              </p>
+</div>
+<div class="flex items-center gap-2 pt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="history">history</span>
+<span>Notificado por familia (Elena Gómez) ayer 19:40 h</span>
+</div>
+</div>
+<!-- Call to action status alert message -->
+<div class="p-2.5 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-start gap-2 border border-tertiary/20">
+<span class="material-symbols-outlined text-tertiary text-[20px] shrink-0 mt-0.5 icon-filled" data-icon="warning">warning</span>
+<p class="font-label-md text-label-md leading-snug">
+              Falta 1 jugador para completar los 12 reglamentarios del acta federativa antes del sábado.
+            </p>
+</div>
+</div>
+</section>
+<!-- SECTION 2: SELECCIONAR SUSTITUTO REGLAMENTARIO -->
+<section aria-label="Selección de Sustituto" class="bg-surface-container-lowest rounded-xl p-3.5 border border-outline-variant shadow-sm space-y-3">
+<div>
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Seleccionar sustituto reglamentario</h2>
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-primary font-label-sm text-[11px]">3 en reserva</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            3 jugadores disponibles en la lista de reserva (criterio neutral del cuerpo técnico):
+          </p>
+</div>
+<!-- 3 Selectable Player Cards with Pure Ergonomics -->
+<div aria-label="Lista de jugadores sustitutos disponibles" class="space-y-2.5" role="radiogroup">
+<!-- Candidate 1: Ane Mintegi (SELECTED) -->
+<div class="player-card relative p-3 rounded-xl border-2 border-primary-container bg-surface-container-high/40 cursor-pointer transition-all active:scale-[0.98]" id="sub-1" onclick="selectPlayer('sub-1')">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold text-[14px]">
+                    AM
+                  </div>
+<span class="absolute -bottom-1 -right-1 bg-primary text-on-primary font-label-sm text-[10px] px-1 rounded-full font-bold">#16</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface font-bold">Ane Mintegi</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Centrocampista Polivalente</p>
+</div>
+</div>
+<!-- Radio Indicator Checked -->
+<div class="radio-slot text-primary">
+<span class="material-symbols-outlined text-[24px] icon-filled" data-icon="check_circle">check_circle</span>
+</div>
+</div>
+<!-- Meta Availability Pill -->
+<div class="mt-2 pt-2 border-t border-primary/20 flex items-center justify-between text-secondary font-label-sm text-label-sm">
+<span class="inline-flex items-center gap-1.5 font-bold">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                Disponible · Confirmó asistencia ayer
+              </span>
+<span class="text-on-surface-variant font-medium">Asist. previa: 100%</span>
+</div>
+</div>
+<!-- Candidate 2: Nahia Garcia (UNSELECTED) -->
+<div class="player-card relative p-3 rounded-xl border border-outline-variant bg-surface-container-lowest hover:border-outline cursor-pointer transition-all active:scale-[0.98]" id="sub-2" onclick="selectPlayer('sub-2')">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="w-10 h-10 rounded-full bg-surface-container-low text-on-surface-variant flex items-center justify-center font-bold text-[14px] border border-outline-variant">
+                    NG
+                  </div>
+<span class="absolute -bottom-1 -right-1 bg-surface-container-highest text-on-surface font-label-sm text-[10px] px-1 rounded-full font-bold">#12</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface font-bold">Nahia Garcia</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Centrocampista · Reserva activa</p>
+</div>
+</div>
+<!-- Radio Indicator Unchecked -->
+<div class="radio-slot text-outline">
+<span class="material-symbols-outlined text-[24px]" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+</div>
+</div>
+<!-- Meta Availability Pill -->
+<div class="mt-2 pt-2 border-t border-outline-variant/60 flex items-center justify-between text-secondary font-label-sm text-label-sm">
+<span class="inline-flex items-center gap-1.5 font-bold">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                Disponible · Confirmó asistencia
+              </span>
+<span class="text-on-surface-variant font-medium">Asist. previa: 90%</span>
+</div>
+</div>
+<!-- Candidate 3: Irati Fernandez (UNSELECTED) -->
+<div class="player-card relative p-3 rounded-xl border border-outline-variant bg-surface-container-lowest hover:border-outline cursor-pointer transition-all active:scale-[0.98]" id="sub-3" onclick="selectPlayer('sub-3')">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="w-10 h-10 rounded-full bg-surface-container-low text-on-surface-variant flex items-center justify-center font-bold text-[14px] border border-outline-variant">
+                    IF
+                  </div>
+<span class="absolute -bottom-1 -right-1 bg-surface-container-highest text-on-surface font-label-sm text-[10px] px-1 rounded-full font-bold">#15</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface font-bold">Irati Fernandez</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Delantera / Extremo ofensivo</p>
+</div>
+</div>
+<!-- Radio Indicator Unchecked -->
+<div class="radio-slot text-outline">
+<span class="material-symbols-outlined text-[24px]" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+</div>
+</div>
+<!-- Meta Availability Pill -->
+<div class="mt-2 pt-2 border-t border-outline-variant/60 flex items-center justify-between text-secondary font-label-sm text-label-sm">
+<span class="inline-flex items-center gap-1.5 font-bold">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                Disponible · Confirmó asistencia
+              </span>
+<span class="text-on-surface-variant font-medium">Asist. previa: 85%</span>
+</div>
+</div>
+</div>
+<!-- Reassurance and CTA Trigger Container -->
+<div class="pt-2 space-y-2">
+<!-- Primary CTA Button (Height 52px / h-[52px]) -->
+<button class="w-full h-[52px] px-4 rounded-xl bg-primary-container text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-transform" type="button">
+<span>Confirmar sustitución y notificar a la familia</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="send">send</span>
+</button>
+<!-- Helper Text -->
+<div class="flex items-center justify-center gap-1.5 text-center text-on-surface-variant font-label-sm text-label-sm px-1">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0 icon-filled" data-icon="verified_user">verified_user</span>
+<span>Se enviará aviso automático a Ane Mintegi y se actualizará el acta oficial.</span>
+</div>
+</div>
+</section>
+<!-- SECTION 3: RESUMEN DE CONVOCATORIA ACTUAL (11 CONFIRMADOS + 1 VACANTE) -->
+<section class="bg-surface-container-lowest rounded-xl p-3.5 border border-outline-variant shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Convocatoria actual (11 / 12)</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              La plaza de Ibai (#9) quedará cubierta por el sustituto seleccionado.
+            </p>
+</div>
+<span class="h-7 px-2.5 rounded-full bg-surface-container-high text-primary font-label-md text-label-md flex items-center font-bold">
+            11 OK
+          </span>
+</div>
+<!-- Visual Breakdown of 11 Active Confirmed Players + Replacement Slot -->
+<div class="divide-y divide-outline-variant/60 rounded-lg border border-outline-variant/80 overflow-hidden bg-surface-container-lowest">
+<!-- Substitute Vacant Slot Pending -->
+<div class="p-2.5 bg-primary-fixed/20 flex items-center justify-between border-l-4 border-primary">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-[12px]">
+                #9*
+              </div>
+<div>
+<p class="font-label-md text-label-md text-primary font-bold">Plaza Vacante (Sustituto en selección)</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Reemplazo reglamentario de Ibai Aranguren</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary text-on-primary font-label-sm text-[10px] font-bold">
+<span class="material-symbols-outlined text-[12px]" data-icon="swap_horiz">swap_horiz</span>
+              En asignación
+            </span>
+</div>
+<!-- #1 Gorka Elejalde -->
+<div class="p-2.5 flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-[12px]">
+                #1
+              </div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold">Gorka Elejalde</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Portero</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 text-secondary font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px] icon-filled" data-icon="check_circle">check_circle</span>
+              Confirmado
+            </span>
+</div>
+<!-- #2 Eneko Zabala -->
+<div class="p-2.5 flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-[12px]">
+                #2
+              </div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold">Eneko Zabala</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Defensa</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 text-secondary font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px] icon-filled" data-icon="check_circle">check_circle</span>
+              Confirmado
+            </span>
+</div>
+<!-- #3 Julen Ortiz -->
+<div class="p-2.5 flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-[12px]">
+                #3
+              </div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold">Julen Ortiz</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Lateral</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 text-secondary font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px] icon-filled" data-icon="check_circle">check_circle</span>
+              Confirmado
+            </span>
+</div>
+<!-- #4 Jon Beltrán -->
+<div class="p-2.5 flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-[12px]">
+                #4
+              </div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold">Jon Beltrán</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Defensa Central</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 text-secondary font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px] icon-filled" data-icon="check_circle">check_circle</span>
+              Confirmado
+            </span>
+</div>
+<!-- #5 Markel Saenz -->
+<div class="p-2.5 flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-[12px]">
+                #5
+              </div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold">Markel Saenz</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Pivote</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 text-secondary font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px] icon-filled" data-icon="check_circle">check_circle</span>
+              Confirmado
+            </span>
+</div>
+<!-- #6 Ander Lopez -->
+<div class="p-2.5 flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-[12px]">
+                #6
+              </div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold">Ander Lopez</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Interior</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 text-secondary font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px] icon-filled" data-icon="check_circle">check_circle</span>
+              Confirmado
+            </span>
+</div>
+<!-- #7 Unai Martinez -->
+<div class="p-2.5 flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-[12px]">
+                #7
+              </div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold">Unai Martinez</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Extremo</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 text-secondary font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px] icon-filled" data-icon="check_circle">check_circle</span>
+              Confirmado
+            </span>
+</div>
+<!-- #8 Oier Gomez -->
+<div class="p-2.5 flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-[12px]">
+                #8
+              </div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold">Oier Gomez</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Mediapunta</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 text-secondary font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px] icon-filled" data-icon="check_circle">check_circle</span>
+              Confirmado
+            </span>
+</div>
+<!-- #10 Mikel Zabaleta -->
+<div class="p-2.5 flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-[12px]">
+                #10
+              </div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold">Mikel Zabaleta</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Centrocampista</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 text-secondary font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px] icon-filled" data-icon="check_circle">check_circle</span>
+              Confirmado
+            </span>
+</div>
+<!-- #11 Aimar Ortiz -->
+<div class="p-2.5 flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-[12px]">
+                #11
+              </div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold">Aimar Ortiz</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Delantero</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 text-secondary font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px] icon-filled" data-icon="check_circle">check_circle</span>
+              Confirmado
+            </span>
+</div>
+<!-- #14 Iker Baroja -->
+<div class="p-2.5 flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-[12px]">
+                #14
+              </div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold">Iker Baroja</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Extremo</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 text-secondary font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px] icon-filled" data-icon="check_circle">check_circle</span>
+              Confirmado
+            </span>
+</div>
+</div>
+</section>
+</main>
+<!-- BOTTOM NAVIGATION BAR (Anchored Shell from JSON: Active 'Agenda') -->
+<nav aria-label="Navegación principal" class="fixed bottom-0 left-0 w-full z-50 flex items-center justify-around px-margin-mobile py-space-xs bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant dark:border-outline shadow-[0_-4px_16px_rgba(15,23,42,0.06)] max-w-[390px] mx-auto right-0">
+<!-- Inicio (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant font-medium gap-0.5 py-1 hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-95" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Inicio</span>
+</button>
+<!-- Agenda (ACTIVE TAB) -->
+<button aria-current="page" class="flex flex-col items-center justify-center text-primary dark:text-inverse-primary font-bold gap-0.5 py-1 active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[22px] icon-filled" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-sm text-label-sm">Agenda</span>
+</button>
+<!-- Equipo (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant font-medium gap-0.5 py-1 hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-95" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="groups">groups</span>
+<span class="font-label-sm text-label-sm">Equipo</span>
+</button>
+<!-- Avisos (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant font-medium gap-0.5 py-1 hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-95" type="button">
+<div class="relative">
+<span class="material-symbols-outlined text-[22px]" data-icon="campaign">campaign</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-tertiary"></span>
+</div>
+<span class="font-label-sm text-label-sm">Avisos</span>
+</button>
+</nav>
+</div>
+<!-- Micro-interaction Script for Interactive Selection -->
+<script>
+    function selectPlayer(id) {
+      const cards = document.querySelectorAll('.player-card');
+      cards.forEach(card => {
+        const radioSlot = card.querySelector('.radio-slot');
+        if (card.id === id) {
+          card.classList.remove('border-outline-variant', 'bg-surface-container-lowest');
+          card.classList.add('border-primary-container', 'bg-surface-container-high/40', 'border-2');
+          radioSlot.classList.remove('text-outline');
+          radioSlot.classList.add('text-primary');
+          radioSlot.innerHTML = `<span class="material-symbols-outlined text-[24px] icon-filled" data-icon="check_circle">check_circle</span>`;
+        } else {
+          card.classList.remove('border-primary-container', 'bg-surface-container-high/40', 'border-2');
+          card.classList.add('border-outline-variant', 'bg-surface-container-lowest');
+          radioSlot.classList.remove('text-primary');
+          radioSlot.classList.add('text-outline');
+          radioSlot.innerHTML = `<span class="material-symbols-outlined text-[24px]" data-icon="radio_button_unchecked">radio_button_unchecked</span>`;
+        }
+      });
+    }
+  </script>
+</body></html>

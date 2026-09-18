@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Confirmar disponibilidad - CD Oyón</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Touch optimization */
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary": "#8f000b",
+            "on-secondary-fixed-variant": "#005137",
+            "on-primary": "#ffffff",
+            "primary-fixed": "#dce1ff",
+            "on-secondary-container": "#00714e",
+            "on-primary-container": "#cad3ff",
+            "on-tertiary-fixed-variant": "#93000b",
+            "on-tertiary": "#ffffff",
+            "error-container": "#ffdad6",
+            "surface-container-highest": "#dae2fd",
+            "on-surface-variant": "#434655",
+            "primary-container": "#1d4ed8",
+            "outline": "#747686",
+            "on-background": "#131b2e",
+            "outline-variant": "#c4c5d7",
+            "inverse-primary": "#b7c4ff",
+            "on-primary-fixed-variant": "#0039b5",
+            "secondary-container": "#82f5c1",
+            "secondary-fixed": "#85f8c4",
+            "primary": "#0037b0",
+            "surface-container": "#eaedff",
+            "surface-tint": "#2151da",
+            "secondary": "#006c4a",
+            "error": "#ba1a1a",
+            "surface-container-low": "#f2f3ff",
+            "surface-bright": "#faf8ff",
+            "on-surface": "#131b2e",
+            "inverse-on-surface": "#eef0ff",
+            "surface": "#faf8ff",
+            "on-primary-fixed": "#001551",
+            "surface-container-lowest": "#ffffff",
+            "inverse-surface": "#283044",
+            "primary-fixed-dim": "#b7c4ff",
+            "secondary-fixed-dim": "#68dba9",
+            "on-tertiary-fixed": "#410002",
+            "tertiary-fixed": "#ffdad6",
+            "on-secondary": "#ffffff",
+            "on-error-container": "#93000a",
+            "surface-container-high": "#e2e7ff",
+            "on-error": "#ffffff",
+            "background": "#faf8ff",
+            "surface-dim": "#d2d9f4",
+            "tertiary-fixed-dim": "#ffb4ab",
+            "tertiary-container": "#bb0112",
+            "on-tertiary-container": "#ffc7c1",
+            "on-secondary-fixed": "#002114",
+            "surface-variant": "#dae2fd"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "3xl": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-mobile": "0.75rem",
+            "space-xl": "2rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "margin": "1rem",
+            "space-md": "1rem",
+            "margin-mobile": "1rem",
+            "space-sm": "0.5rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "stat-display": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "body-lg": ["17px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "stat-display": ["36px", { "lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "headline-lg": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-md": ["15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-white pb-36 min-h-screen flex justify-center">
+<!-- Mobile Viewport Container (~390px width) -->
+<div class="w-full max-w-[420px] bg-background min-h-screen flex flex-col relative shadow-xl">
+<!-- Sub-page Focused Header (Navigation Shell Suppressed as per Task-Focused Flow) -->
+<header class="sticky top-0 z-30 bg-surface-container-lowest/95 backdrop-blur-md px-margin-mobile py-space-sm flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<button aria-label="Volver atrás" class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface hover:bg-surface-container-high active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_back">arrow_back</span>
+</button>
+<div>
+<h1 class="font-headline-sm text-headline-sm text-on-surface leading-tight">Confirmar disponibilidad</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Torneo Apertura Oyón</p>
+</div>
+</div>
+<div class="px-2.5 py-1 rounded-full bg-surface-container-high border border-outline-variant flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">Infantil A</span>
+</div>
+</header>
+<!-- Main Content Flow -->
+<main class="flex-1 px-margin-mobile pt-3 space-y-4">
+<!-- Hero Event Summary Card -->
+<section class="bg-surface-container-lowest rounded-2xl border border-outline-variant/60 shadow-[0_1px_3px_rgba(15,23,42,0.06)] overflow-hidden">
+<!-- Player Identity Bar -->
+<div class="px-space-md pt-space-md pb-3 flex items-center justify-between border-b border-surface-container-low bg-surface-bright">
+<div class="flex items-center gap-3">
+<div class="relative w-10 h-10 rounded-full bg-primary-container text-white flex items-center justify-center font-headline-sm text-headline-sm shadow-sm font-extrabold ring-2 ring-white">
+              #9
+            </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Ibai Aranguren</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-secondary-container text-on-secondary-fixed-variant tracking-wider uppercase">
+                  Titular
+                </span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="shield">shield</span>
+                Delantero Centro · Dorsal 9
+              </span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]" data-icon="verified_user">verified_user</span>
+</div>
+<!-- Event Core Content -->
+<div class="p-space-md space-y-3">
+<div class="flex items-start justify-between gap-2">
+<div>
+<span class="font-label-sm text-label-sm text-primary-container font-extrabold uppercase tracking-wide">Jornada Oficial</span>
+<h2 class="font-headline-md text-headline-md text-on-surface leading-snug">Torneo Apertura Oyón</h2>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary-container shrink-0 font-bold text-xs border border-outline-variant/40">
+              CDO
+            </div>
+</div>
+<!-- Match Logistics List with Crisp Contrast -->
+<div class="space-y-2.5 pt-1">
+<!-- Date & Hours -->
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary-container text-[20px] mt-0.5 shrink-0" data-icon="calendar_today">calendar_today</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold">Sábado 20 Sep · 09:30 - 14:00 h</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Fase de grupos &amp; eliminatorias</p>
+</div>
+</div>
+<!-- Citación Mandatory -->
+<div class="flex items-start gap-2.5 bg-surface-container-low p-2.5 rounded-xl border border-outline-variant/50">
+<span class="material-symbols-outlined text-tertiary text-[20px] mt-0.5 shrink-0" data-icon="schedule">schedule</span>
+<div>
+<p class="font-label-md text-label-md text-tertiary font-extrabold">Citación: 08:45 h en vestuarios</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Obligatorio presentarse 45 min antes del inicio con equipación completa.</p>
+</div>
+</div>
+<!-- Pitch Location -->
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary-container text-[20px] mt-0.5 shrink-0" data-icon="location_on">location_on</span>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-surface font-bold">Polideportivo Municipal de Oyón</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+                  Pista Central Cubierta · Acceso Puerta 2
+                  <span class="material-symbols-outlined text-[14px] text-primary-container" data-icon="open_in_new">open_in_new</span>
+</p>
+</div>
+</div>
+</div>
+<!-- Deadline Urgent Banner Pill -->
+<div class="mt-2 bg-[#FFFBEB] border border-[#FDE68A] rounded-xl px-3 py-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-[#92400E] text-[18px] animate-pulse" data-icon="hourglass_top">hourglass_top</span>
+<span class="font-label-sm text-label-sm text-[#92400E] font-extrabold leading-tight">
+              Cierra hoy a las 20:00 h · Quedan 8 horas
+            </span>
+</div>
+</div>
+</section>
+<!-- Protagonist Selector: 3 Big Touch-Friendly RSVP Options -->
+<section class="space-y-2.5">
+<div class="flex items-center justify-between px-1">
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold tracking-tight">
+            Indica la respuesta para Ibai
+          </h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded-full">
+            1 toque rápido
+          </span>
+</div>
+<div aria-label="Opciones de disponibilidad" class="space-y-2.5" role="radiogroup">
+<!-- Option 1: YES (ACTIVE SELECTED STATE) -->
+<label class="relative flex items-start gap-3.5 p-3.5 rounded-2xl cursor-pointer border-2 border-emerald-500 bg-emerald-50/70 shadow-sm transition-all duration-150 active:scale-[0.98]" id="rsvp-yes-label">
+<input checked="" class="sr-only" name="rsvp_selection" onchange="updateRsvpSelection('yes')" type="radio" value="yes"/>
+<!-- Left Big Icon -->
+<div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+<span class="material-symbols-outlined text-[24px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- Text Content -->
+<div class="flex-1 pr-2">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-emerald-900 font-extrabold tracking-tight">SÍ, PUEDE ASISTIR</span>
+</div>
+<p class="font-body-sm text-body-sm text-emerald-800 font-medium mt-0.5 leading-snug">
+                Confirmar que Ibai estará en el polideportivo a las 08:45 h.
+              </p>
+</div>
+<!-- Radio Indicator -->
+<div class="w-6 h-6 rounded-full border-2 border-emerald-600 bg-emerald-600 text-white flex items-center justify-center shrink-0 self-center">
+<span class="material-symbols-outlined text-[16px] font-bold" data-icon="check">check</span>
+</div>
+</label>
+<!-- Option 2: NO -->
+<label class="relative flex items-start gap-3.5 p-3.5 rounded-2xl cursor-pointer border border-[#FECACA] bg-surface-container-lowest hover:bg-rose-50/30 transition-all duration-150 active:scale-[0.98]" id="rsvp-no-label">
+<input class="sr-only" name="rsvp_selection" onchange="updateRsvpSelection('no')" type="radio" value="no"/>
+<!-- Left Icon -->
+<div class="w-10 h-10 rounded-full bg-[#FEF2F2] text-[#991B1B] border border-[#FECACA] flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[24px]" data-icon="cancel">cancel</span>
+</div>
+<!-- Text Content -->
+<div class="flex-1 pr-2">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold tracking-tight">NO PUEDE ASISTIR</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-normal mt-0.5 leading-snug">
+                No estará disponible. Se avisará al míster para liberar su plaza reglamentaria.
+              </p>
+</div>
+<!-- Radio Indicator -->
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant bg-white flex items-center justify-center shrink-0 self-center"></div>
+</label>
+<!-- Option 3: MAYBE / UNKNOWN -->
+<label class="relative flex items-start gap-3.5 p-3.5 rounded-2xl cursor-pointer border border-[#FDE68A] bg-surface-container-lowest hover:bg-amber-50/30 transition-all duration-150 active:scale-[0.98]" id="rsvp-maybe-label">
+<input class="sr-only" name="rsvp_selection" onchange="updateRsvpSelection('maybe')" type="radio" value="maybe"/>
+<!-- Left Icon -->
+<div class="w-10 h-10 rounded-full bg-[#FFFBEB] text-[#92400E] border border-[#FDE68A] flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[24px]" data-icon="hourglass_empty">hourglass_empty</span>
+</div>
+<!-- Text Content -->
+<div class="flex-1 pr-2">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold tracking-tight">TODAVÍA NO LO SÉ</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-normal mt-0.5 leading-snug">
+                Pendiente de conciliar. Responderé antes del cierre (20:00 h).
+              </p>
+</div>
+<!-- Radio Indicator -->
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant bg-white flex items-center justify-center shrink-0 self-center"></div>
+</label>
+</div>
+</section>
+<!-- Section: Motivo u observación (Opcional) -->
+<section class="bg-surface-container-lowest p-space-md rounded-2xl border border-outline-variant/60 shadow-[0_1px_3px_rgba(15,23,42,0.06)] space-y-3">
+<div class="flex items-center justify-between">
+<label class="font-label-lg text-label-lg text-on-surface font-bold flex items-center gap-1.5" for="coach-notes">
+<span class="material-symbols-outlined text-[18px] text-primary-container" data-icon="chat">chat</span>
+            Observación para el cuerpo técnico
+          </label>
+<span class="font-label-sm text-label-sm text-outline font-medium">(Opcional)</span>
+</div>
+<!-- Quick Tap Helper Chips -->
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1.5 font-semibold">Atajos frecuentes para añadir:</p>
+<div class="flex flex-wrap gap-1.5">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface border border-outline-variant/70 font-label-sm text-label-sm transition-colors active:scale-95 flex items-center gap-1" onclick="appendNote('Necesita transporte / coche')" type="button">
+<span class="material-symbols-outlined text-[14px] text-primary-container" data-icon="directions_car">directions_car</span>
+              Necesita transporte / coche
+            </button>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface border border-outline-variant/70 font-label-sm text-label-sm transition-colors active:scale-95 flex items-center gap-1" onclick="appendNote('Molestia física leve')" type="button">
+<span class="material-symbols-outlined text-[14px] text-tertiary" data-icon="healing">healing</span>
+              Molestia física leve
+            </button>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface border border-outline-variant/70 font-label-sm text-label-sm transition-colors active:scale-95 flex items-center gap-1" onclick="appendNote('Llegará 10 min tarde')" type="button">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant" data-icon="timer">timer</span>
+              Llegará 10 min tarde
+            </button>
+</div>
+</div>
+<!-- Textarea input -->
+<div class="relative">
+<textarea class="w-full rounded-xl border-1.5 border-outline-variant bg-surface p-3 text-on-surface font-body-md text-body-md placeholder:text-outline focus:border-primary-container focus:ring-0 focus:outline-none resize-none transition-all" id="coach-notes" placeholder="Escribe aquí si necesita transporte, tiene alguna molestia física o cualquier nota para el entrenador Mikel..." rows="3"></textarea>
+<div class="flex justify-end mt-1">
+<span class="font-label-sm text-label-sm text-outline">Visible solo para entrenadores</span>
+</div>
+</div>
+</section>
+<!-- Coach Squad Status Mini Summary -->
+<div class="p-3 bg-surface-container-low rounded-xl border border-outline-variant/40 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant" data-icon="group">group</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">Estado actual convocatoria</span>
+</div>
+<div class="flex items-center gap-2 font-label-sm text-label-sm">
+<span class="text-secondary font-extrabold flex items-center gap-0.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> 11 SÍ
+          </span>
+<span class="text-tertiary font-extrabold flex items-center gap-0.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> 1 NO
+          </span>
+<span class="text-amber-700 font-extrabold flex items-center gap-0.5">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span> 2 Duda
+          </span>
+</div>
+</div>
+</main>
+<!-- Bottom Sticky Action Container (Thumb Zone Anchor) -->
+<aside class="sticky bottom-0 z-40 bg-surface-container-lowest/98 backdrop-blur-md px-margin-mobile pt-3 pb-5 border-t border-outline-variant/60 shadow-[0_-8px_20px_rgba(15,23,42,0.08)]">
+<!-- Dominant CTA -->
+<button class="w-full h-[52px] rounded-xl bg-primary-container hover:bg-[#1e40af] active:bg-[#173cb0] active:scale-[0.98] text-white font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-[0_4px_12px_rgba(29,78,216,0.25)] transition-all duration-150" id="save-btn" onclick="triggerSaveFeedback()" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="check_circle">check_circle</span>
+<span>Guardar respuesta</span>
+</button>
+<!-- Reassurance Microcopy & Peace of Mind Pill -->
+<div class="mt-2.5 flex flex-col items-center gap-1.5">
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center font-medium">
+          Podrás modificar tu respuesta en cualquier momento hasta hoy a las 20:00 h.
+        </p>
+<div class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container border border-outline-variant/60">
+<span class="material-symbols-outlined text-[13px] text-secondary" data-icon="lock">lock</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Notificación instantánea a cuerpo técnico CD Oyón</span>
+</div>
+</div>
+</aside>
+</div>
+<!-- Inline Micro-interactions for Sideline Polish -->
+<script>
+    function updateRsvpSelection(type) {
+      const yesCard = document.getElementById('rsvp-yes-label');
+      const noCard = document.getElementById('rsvp-no-label');
+      const maybeCard = document.getElementById('rsvp-maybe-label');
+
+      // Reset all cards to inactive state
+      [yesCard, noCard, maybeCard].forEach(card => {
+        card.className = "relative flex items-start gap-3.5 p-3.5 rounded-2xl cursor-pointer border border-outline-variant/60 bg-surface-container-lowest hover:bg-surface-container-low/50 transition-all duration-150 active:scale-[0.98]";
+        const radioIndicator = card.querySelector('div:last-child');
+        radioIndicator.className = "w-6 h-6 rounded-full border-2 border-outline-variant bg-white flex items-center justify-center shrink-0 self-center";
+        radioIndicator.innerHTML = "";
+      });
+
+      if (type === 'yes') {
+        yesCard.className = "relative flex items-start gap-3.5 p-3.5 rounded-2xl cursor-pointer border-2 border-emerald-500 bg-emerald-50/70 shadow-sm transition-all duration-150 active:scale-[0.98]";
+        const ind = yesCard.querySelector('div:last-child');
+        ind.className = "w-6 h-6 rounded-full border-2 border-emerald-600 bg-emerald-600 text-white flex items-center justify-center shrink-0 self-center";
+        ind.innerHTML = `<span class="material-symbols-outlined text-[16px] font-bold" data-icon="check">check</span>`;
+      } else if (type === 'no') {
+        noCard.className = "relative flex items-start gap-3.5 p-3.5 rounded-2xl cursor-pointer border-2 border-rose-500 bg-rose-50/80 shadow-sm transition-all duration-150 active:scale-[0.98]";
+        const ind = noCard.querySelector('div:last-child');
+        ind.className = "w-6 h-6 rounded-full border-2 border-rose-600 bg-rose-600 text-white flex items-center justify-center shrink-0 self-center";
+        ind.innerHTML = `<span class="material-symbols-outlined text-[16px] font-bold" data-icon="close">close</span>`;
+      } else if (type === 'maybe') {
+        maybeCard.className = "relative flex items-start gap-3.5 p-3.5 rounded-2xl cursor-pointer border-2 border-amber-500 bg-amber-50/80 shadow-sm transition-all duration-150 active:scale-[0.98]";
+        const ind = maybeCard.querySelector('div:last-child');
+        ind.className = "w-6 h-6 rounded-full border-2 border-amber-600 bg-amber-600 text-white flex items-center justify-center shrink-0 self-center";
+        ind.innerHTML = `<span class="material-symbols-outlined text-[16px] font-bold" data-icon="hourglass_top">hourglass_top</span>`;
+      }
+    }
+
+    function appendNote(text) {
+      const textarea = document.getElementById('coach-notes');
+      if (textarea.value.trim() === '') {
+        textarea.value = text;
+      } else if (!textarea.value.includes(text)) {
+        textarea.value += ' · ' + text;
+      }
+      textarea.focus();
+    }
+
+    function triggerSaveFeedback() {
+      const btn = document.getElementById('save-btn');
+      const originalHTML = btn.innerHTML;
+      
+      btn.classList.remove('bg-primary-container');
+      btn.classList.add('bg-secondary');
+      btn.innerHTML = `<span class="material-symbols-outlined text-[22px]" data-icon="done_all">done_all</span><span>¡Disponibilidad Confirmada!</span>`;
+      
+      setTimeout(() => {
+        btn.classList.remove('bg-secondary');
+        btn.classList.add('bg-primary-container');
+        btn.innerHTML = originalHTML;
+      }, 2400);
+    }
+  </script>
+</body></html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Agenda del equipo - CD Oyón Infantil A</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Plus Jakarta Sans Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline-variant": "#c4c5d7",
+            "secondary": "#006c4a",
+            "error-container": "#ffdad6",
+            "error": "#ba1a1a",
+            "inverse-primary": "#b7c4ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-tint": "#2151da",
+            "on-primary-fixed-variant": "#0039b5",
+            "on-tertiary-fixed": "#410002",
+            "primary-container": "#1d4ed8",
+            "surface-container-low": "#f2f3ff",
+            "on-primary-fixed": "#001551",
+            "surface-bright": "#faf8ff",
+            "tertiary-fixed": "#ffdad6",
+            "secondary-container": "#82f5c1",
+            "tertiary-container": "#bb0112",
+            "on-background": "#131b2e",
+            "on-secondary-fixed-variant": "#005137",
+            "secondary-fixed": "#85f8c4",
+            "tertiary-fixed-dim": "#ffb4ab",
+            "on-surface-variant": "#434655",
+            "inverse-surface": "#283044",
+            "on-tertiary-container": "#ffc7c1",
+            "on-primary-container": "#cad3ff",
+            "on-error": "#ffffff",
+            "primary-fixed-dim": "#b7c4ff",
+            "on-primary": "#ffffff",
+            "surface-container": "#eaedff",
+            "surface-dim": "#d2d9f4",
+            "on-tertiary-fixed-variant": "#93000b",
+            "on-secondary-container": "#00714e",
+            "primary": "#0037b0",
+            "background": "#faf8ff",
+            "surface-container-high": "#e2e7ff",
+            "on-surface": "#131b2e",
+            "secondary-fixed-dim": "#68dba9",
+            "surface-container-highest": "#dae2fd",
+            "tertiary": "#8f000b",
+            "surface-variant": "#dae2fd",
+            "inverse-on-surface": "#eef0ff",
+            "on-secondary-fixed": "#002114",
+            "on-secondary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "on-error-container": "#93000a",
+            "outline": "#747686",
+            "primary-fixed": "#dce1ff",
+            "surface": "#faf8ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-xl": "2rem",
+            "space-md": "1rem",
+            "gutter-mobile": "0.75rem",
+            "margin-mobile": "1rem",
+            "space-sm": "0.5rem",
+            "gutter": "1rem",
+            "margin": "1rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "body-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "stat-display": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-md": ["15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-lg": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "body-lg": ["17px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "stat-display": ["36px", { "lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased min-h-full flex flex-col justify-between selection:bg-primary selection:text-on-primary">
+<!-- Mobile Screen Wrapper Container (Max 430px for authentic smartphone preview, centered on larger displays) -->
+<div class="w-full max-w-[430px] mx-auto min-h-screen flex flex-col bg-surface shadow-xl relative pb-28">
+<!-- TopAppBar (Shared Component verbatim execution) -->
+<header class="sticky top-0 z-40 flex items-center justify-between px-margin-mobile py-space-sm w-full bg-surface-container-lowest border-b border-outline-variant shadow-sm">
+<div class="flex items-center gap-2.5">
+<!-- Leading Crest Avatar -->
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary font-bold text-xs shadow-inner ring-2 ring-primary-fixed">
+          OY
+        </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">CD Oyón · Infantil A</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            Temporada 24/25
+          </span>
+</div>
+</div>
+<button aria-label="Notificaciones" class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-margin-mobile pt-4 flex flex-col gap-4">
+<!-- Header Section: Main Title & Action Button -->
+<section class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Agenda del equipo</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">El tiempo y los compromisos del grupo</p>
+</div>
+<!-- High-priority CTA -->
+<button class="h-10 px-3.5 bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md rounded-xl flex items-center gap-1.5 shadow-sm active:scale-[0.98] transition-transform shrink-0">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Crear evento</span>
+</button>
+</section>
+<!-- Filter Tabs / Pill Segments -->
+<section aria-label="Filtro temporal" class="grid grid-cols-3 p-1 bg-surface-container-high rounded-xl gap-1">
+<button class="py-2 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm text-center transition-all">
+          Esta semana
+        </button>
+<button class="py-2 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md text-center transition-colors">
+          Próximos
+        </button>
+<button class="py-2 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md text-center transition-colors">
+          Historial
+        </button>
+</section>
+<!-- Headcount Summary Widget (Athletic Quick-Counter Bar) -->
+<div class="bg-surface-container-low border border-outline-variant/60 rounded-xl p-3 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">insights</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">Estado semanal</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface">94% asistencia</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+<span class="font-label-sm text-label-sm text-on-surface">1 alerta</span>
+</div>
+</div>
+</div>
+<!-- Chronological Timeline List -->
+<div class="flex flex-col gap-5">
+<!-- ================= GROUP 1: HOY ================= -->
+<div class="flex flex-col gap-2">
+<!-- Day Header with live indicator -->
+<div class="flex items-center justify-between px-0.5">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary"></span>
+</span>
+<h2 class="font-label-lg text-label-lg text-on-surface tracking-wide uppercase">HOY · Jueves 18 Sep</h2>
+</div>
+<span class="font-label-sm text-label-sm bg-secondary-container/40 text-on-secondary-container px-2 py-0.5 rounded-md font-bold">
+              Día de sesión
+            </span>
+</div>
+<!-- Card 1: Entrenamiento Semanal -->
+<article class="bg-surface-container-lowest rounded-2xl border border-outline-variant/80 p-4 shadow-sm flex flex-col gap-3.5 transition-all">
+<!-- Event Title & Category -->
+<div class="flex items-start justify-between gap-2">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-sm text-label-sm bg-surface-container text-primary font-bold px-2 py-0.5 rounded">
+                    Entrenamiento
+                  </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sesión #14</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Entrenamiento semanal</h3>
+</div>
+<span class="material-symbols-outlined text-outline">fitness_center</span>
+</div>
+<!-- Logistic Details -->
+<div class="bg-surface-bright rounded-xl p-3 border border-outline-variant/40 flex flex-col gap-2 text-body-sm font-body-sm text-on-surface">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">schedule</span>
+<span><strong>17:30 - 19:00</strong> <span class="text-on-surface-variant font-normal">(Citación 17:15h vestuario)</span></span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">location_on</span>
+<span class="text-on-surface-variant">Campo Municipal Oyón · <strong class="text-on-surface font-semibold">Hierba Artificial</strong></span>
+</div>
+</div>
+<!-- Status & Attendance Pill -->
+<div class="flex items-center justify-between pt-1">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed/50 border border-secondary text-on-secondary-container">
+<span class="material-symbols-outlined text-[16px] text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm text-label-sm font-bold">Disponibilidad cerrada · 16 confirmados</span>
+</div>
+</div>
+<!-- Primary Action Button for Coaches -->
+<div class="pt-1 grid grid-cols-2 gap-2">
+<button class="h-11 rounded-xl bg-surface-container-high hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined text-[18px]">checklist</span>
+<span>Pasar lista</span>
+</button>
+<button class="h-11 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center gap-1.5 active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined text-[18px]">sports_soccer</span>
+<span>Ver sesión</span>
+</button>
+</div>
+</article>
+</div>
+<!-- ================= GROUP 2: SÁBADO (HIGH PRIORITY) ================= -->
+<div class="flex flex-col gap-2">
+<!-- Day Header -->
+<div class="flex items-center justify-between px-0.5">
+<h2 class="font-label-lg text-label-lg text-on-surface tracking-wide uppercase flex items-center gap-1.5">
+<span>SÁBADO · 20 Sep</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+</h2>
+<span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-bold px-2 py-0.5 rounded-md">
+              Oficial
+            </span>
+</div>
+<!-- Card 2: Torneo Apertura Oyón (Alert Treatment) -->
+<article class="bg-surface-container-lowest rounded-2xl border-2 border-tertiary/30 p-4 shadow-sm flex flex-col gap-3 relative overflow-hidden">
+<!-- Alert top stripe accent -->
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-tertiary"></div>
+<!-- Event Category & High Priority Badge -->
+<div class="flex items-start justify-between gap-2 pt-1">
+<div>
+<div class="flex items-center gap-1.5 mb-1 flex-wrap">
+<span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-bold px-2.5 py-0.5 rounded-full">
+                    Torneo Oficial · Jornada Matinal
+                  </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-extrabold">Torneo Apertura Oyón</h3>
+</div>
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+</div>
+</div>
+<!-- Schedule & Location Box -->
+<div class="bg-surface-bright rounded-xl p-3 border border-outline-variant/40 flex flex-col gap-2 text-body-sm font-body-sm text-on-surface">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[18px]">alarm</span>
+<span><strong>09:30 - 14:00</strong> <span class="text-tertiary font-bold">(Llegada vestuario: 08:45h)</span></span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-outline text-[18px]">domain</span>
+<span class="text-on-surface">Polideportivo Municipal Oyón · Pistas Centrales</span>
+</div>
+</div>
+<!-- Incident Alert Banner -->
+<div class="bg-error-container/40 border border-tertiary/40 rounded-xl p-3 flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-tertiary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span class="font-label-md text-label-md font-bold">1 incidencia pendiente</span>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container-lowest text-on-surface px-2 py-0.5 rounded-md font-bold border border-outline-variant/60">
+                  Convocatoria 11/12
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant pl-6">
+                Baja de última hora pendiente de sustituto reglamentario (Hugo M. lesión leve).
+              </p>
+</div>
+<!-- Dominant Coach Action Button -->
+<button class="h-12 w-full bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg rounded-xl flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-transform mt-1">
+<span class="material-symbols-outlined text-[20px]">manage_accounts</span>
+<span>Gestionar evento</span>
+</button>
+</article>
+</div>
+<!-- ================= GROUP 3: LUNES ================= -->
+<div class="flex flex-col gap-2">
+<!-- Day Header -->
+<div class="flex items-center justify-between px-0.5">
+<h2 class="font-label-lg text-label-lg text-on-surface tracking-wide uppercase">LUNES · 22 Sep</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Próxima semana</span>
+</div>
+<!-- Card 3: Entrenamiento Técnico -->
+<article class="bg-surface-container-lowest rounded-2xl border border-outline-variant/80 p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div>
+<span class="font-label-sm text-label-sm bg-surface-container text-primary font-bold px-2 py-0.5 rounded inline-block mb-1">
+                  Preparación
+                </span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Entrenamiento técnico</h3>
+</div>
+<span class="material-symbols-outlined text-outline">sports</span>
+</div>
+<!-- Logistics -->
+<div class="bg-surface-bright rounded-xl p-3 border border-outline-variant/40 flex flex-col gap-2 text-body-sm font-body-sm text-on-surface">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">schedule</span>
+<span><strong>17:30 - 19:00</strong></span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">location_on</span>
+<span class="text-on-surface-variant">Campo Municipal Oyón</span>
+</div>
+</div>
+<!-- Response Counter Bar -->
+<div class="bg-surface-container-low rounded-xl p-3 border border-outline-variant/40 flex flex-col gap-2">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-on-surface-variant flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[16px] text-outline">hourglass_top</span>
+                  Esperando respuestas (6/18)
+                </span>
+<span class="text-primary font-bold">33% respondido</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-outline-variant/40 h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 33%"></div>
+</div>
+</div>
+<!-- Quick Action -->
+<button class="h-11 w-full bg-surface-container-high hover:bg-surface-container text-primary font-label-md text-label-md rounded-xl flex items-center justify-center gap-2 border border-outline-variant/50 active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined text-[18px]">campaign</span>
+<span>Recordar a familias</span>
+</button>
+</article>
+</div>
+</div>
+<!-- End of list padding -->
+<div class="h-4"></div>
+</main>
+<!-- Bottom Navigation Bar (Verbatim JSON & Design System Anchor Logic) -->
+<!-- Agenda is the active destination matching screen intent -->
+<nav aria-label="Navegación principal" class="fixed bottom-0 left-0 w-full z-50 flex items-center justify-around px-margin-mobile py-space-xs bg-surface-container-lowest border-t border-outline-variant shadow-[0_-4px_16px_rgba(15,23,42,0.06)]">
+<!-- Tab 1: Inicio -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-medium gap-0.5 py-1 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Inicio</span>
+</a>
+<!-- Tab 2: Agenda (ACTIVE) -->
+<a class="flex flex-col items-center justify-center text-primary font-bold gap-0.5 py-1 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span class="font-label-sm text-label-sm">Agenda</span>
+</a>
+<!-- Tab 3: Equipo -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-medium gap-0.5 py-1 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-label-sm text-label-sm">Equipo</span>
+</a>
+<!-- Tab 4: Avisos -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-medium gap-0.5 py-1 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">campaign</span>
+<span class="font-label-sm text-label-sm">Avisos</span>
+</a>
+</nav>
+</div>
+</body></html>
