@@ -35,6 +35,9 @@ for sid, file_path in screens_source:
 # =========================================================================
 global_scrubs = [
     ("2024/25", "2026/27"),
+    ("24/25", "26/27"),
+    ("Fútbol Base Federado", "Fútbol Base · Cantera"),
+    ("Demo federada activa", "Demo activa"),
     ("2024 / 2025", "2026 / 2027"),
     ("2024-2025", "2026-2027"),
     ("Temporada 2024/2025", "Temporada 2026/2027"),
@@ -70,6 +73,13 @@ global_scrubs = [
     ("Acceso legal concedido", "Acceso concedido"),
     ("Validación por el cuerpo técnico", "Validación del entrenador"),
     ("RGPD Cantera", "Privacidad del Menor"),
+    ("no puede asistir por fiebre", "no puede asistir (nota: está enfermo)"),
+    ("Incidencia Médica Activa", "Incidencia de Convocatoria Activa"),
+    ("Alerta Médica de Alta Importancia Operativa", "Estado Semanal de Disponibilidad"),
+    ("Datos de Emergencia y Médicos", "Datos de Contacto"),
+    ("Abriendo selector de estado médico", "Abriendo selector de disponibilidad"),
+    ("Medical Context & Report Info", "Contexto de Asistencia"),
+    ("Quick Medical / Roster Toggle Action", "Acción de Disponibilidad"),
     ("Nº Licencia: FV-2011-8942", "CD Oyón Infantil A")
 ]
 

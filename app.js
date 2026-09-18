@@ -7,7 +7,7 @@
  * Núcleo Operativo: EQUIPO (Inicio, Agenda, Equipo, Avisos).
  */
 
-// Dataset limpio: Sin scope creep médico/clínico ni federativo
+// Dataset limpio: Dataset operativo enfocado en asistencia y equipo
 const SQUAD_DATA = [
   { id: 1, number: 1, name: "Gorka Elejalde", role: "Portero", status: "CONVOCADO", rsvp: "Confirmado ayer 19:10", tutor: "Iker Elejalde", phone: "611 22 33 44" },
   { id: 2, number: 2, name: "Eneko Zabala", role: "Defensa", status: "CONVOCADO", rsvp: "Confirmado hoy 08:15", tutor: "Joseba Zabala", phone: "622 33 44 55" },
